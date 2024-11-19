@@ -69,10 +69,10 @@ MonoBehaviour:
   Path: Assets/Helios-Tau/Build/Desktop/UnityScene.bank
   Name: UnityScene
   StudioPath: bank:/UnityScene
-  lastModified: 638675597623484020
+  lastModified: 638676379012694527
   FileSizes:
   - Name: Desktop
-    Value: 769728
+    Value: 785056
   Exists: 1
 --- !u!114 &-3873556540394822522
 MonoBehaviour:
@@ -124,12 +124,13 @@ MonoBehaviour:
   - {fileID: -3873556540394822522}
   - {fileID: -9053086490388678272}
   - {fileID: 999530065083916722}
+  - {fileID: 7700205843348023808}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2610878044326072918}
   StringsBanks:
   - {fileID: 1687190810442398547}
-  cacheTime: 638675597623484020
+  cacheTime: 638676379012694527
   cacheVersion: 131621
 --- !u!114 &999530065083916722
 MonoBehaviour:
@@ -173,10 +174,10 @@ MonoBehaviour:
   Path: Assets/Helios-Tau/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638675597623443850
+  lastModified: 638676379012217022
   FileSizes:
   - Name: Desktop
-    Value: 1084
+    Value: 1122
   Exists: 1
 --- !u!114 &2610878044326072918
 MonoBehaviour:
@@ -193,10 +194,10 @@ MonoBehaviour:
   Path: Assets/Helios-Tau/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638675597623433804
+  lastModified: 638676379012171775
   FileSizes:
   - Name: Desktop
-    Value: 1036
+    Value: 16608
   Exists: 1
 --- !u!114 &4938338848894064349
 MonoBehaviour:
@@ -225,6 +226,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 22000
+--- !u!114 &7700205843348023808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/DoorOpen
+  m_EditorClassIdentifier: 
+  Path: event:/DoorOpen
+  Guid:
+    Data1: 265146281
+    Data2: 1154377325
+    Data3: 814011012
+    Data4: -487453772
+  Banks:
+  - {fileID: 2610878044326072918}
+  - {fileID: -4785906108859822178}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1404
 --- !u!114 &9123190022160137084
 MonoBehaviour:
   m_ObjectHideFlags: 0
