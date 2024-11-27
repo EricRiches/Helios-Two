@@ -169,7 +169,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: c71886439b1a409408ec83fc7e5e8a1f, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: e2a8ca23056bdbb41a8537753579b711, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &161532156
 Transform:
@@ -657,6 +657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 1889243035}
+  currentBehavior: 0
 --- !u!195 &925291409
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -779,6 +780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbd6bd336516c9f488f7b8e032ad123d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackedMonster: {fileID: 925291408}
   Vision_Distance: 0
   Hear_InputPosition: {fileID: 925291413}
   Hear_Distance: 25

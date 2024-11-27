@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MonsterSenses : MonoBehaviour
 {
+    [SerializeField] MonsterBehavior attackedMonster;
+
     [Header("Vision")]
     [SerializeField] float Vision_Distance;
 
@@ -23,7 +25,7 @@ public class MonsterSenses : MonoBehaviour
             Debug.Log(HearTotalPercent.ToString() + "% of the sound was heard");
             if (HearTotalPercent >= Hear_VolumeCutOff)
             {
-                Debug.Log("Monster heard that");
+                attackedMonster.TriggerHeardSounds(soundPosition);
             }
         }
     }

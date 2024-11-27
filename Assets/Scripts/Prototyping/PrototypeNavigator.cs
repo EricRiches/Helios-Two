@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class PrototypeNavigator : MonoBehaviour
+public class PrototypeNavigator : MonsterBehavior
 {
     NavMeshAgent controller;
     [SerializeField] MonsterNavigationGrid grid;
+
+    [SerializeField] PrototypeMonsterBehvaior currentBehavior;
 
     void Start()
     {
@@ -17,14 +19,31 @@ public class PrototypeNavigator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        switch (currentBehavior)
         {
-            Vector3 roamPosition;
+            case PrototypeMonsterBehvaior.Roam:
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    Vector3 roamPosition;
 
-            if (grid.FindRoamPosition(out roamPosition))
-            {
-                controller.destination = roamPosition;
-            }
+                    if (grid.FindRoamPosition(out roamPosition))
+                    {
+                        controller.destination = roamPosition;
+                    }
+                }
+                break;
         }
     }
+
+    public override void TriggerHeardSounds(Vector3 SoundPosition)
+    {
+        currentBehavior = PrototypeMonsterBehvaior.HeardPlayer;
+        controller.destination = SoundPosition;
+    }
+}
+
+public enum PrototypeMonsterBehvaior
+{
+    Roam,
+    HeardPlayer
 }
