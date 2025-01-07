@@ -7,7 +7,7 @@ public class ButtonPrompts : MonoBehaviour
     public static ButtonPrompts instance;
 
     public GameObject InteractionPrompt;
-    public GameObject Prompt2;
+    public GameObject ExitPrompt;
     public GameObject Prompt3;
 
     private void Awake()

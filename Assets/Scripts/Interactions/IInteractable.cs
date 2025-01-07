@@ -6,7 +6,6 @@ public interface IInteractable
 {
     public abstract void OnInteractableHoverEnter();
     public abstract void OnInteractableHoverExit();
-
     public abstract void OnInteract();
 
     public void SetObjectOutline(Renderer rend, bool value) //If you want this to actually work, make sure there is a material using the " Outline " Shader.
