@@ -12,6 +12,17 @@ public class PlayerInteractions : MonoBehaviour
     IInteractable currentInteractable;
     Renderer currentInteractableRenderer;
 
+    private void Start()
+    {
+        CheckHoveringInteractable();
+        /* When running the game normally, MonoBehaviour will compile frequently used 
+         * code AT RUNTIME, not during the build proccess or wtv. This is more efficient,
+         * but the instant it begins compiling the code there is a noticable lag spike.
+         * this only happens once, the very first time the code is run, so we now 
+         * have a ~100 ms lag spike at the time of loading, instead of mid gameplay.
+         * which is preferable to looking at your first interactable object and lagging
+         */
+    }
 
     private void Update()
     {
@@ -29,35 +40,33 @@ public class PlayerInteractions : MonoBehaviour
 
     }
 
+    private Ray ray;
+    private RaycastHit hit;
+
     void CheckHoveringInteractable()
     {
-        Ray ray = new Ray(playerCamera.position, playerCamera.forward);
-        RaycastHit hit;                                                     // basic raycast from camera, forwards. only interacts with the layer " Interactable "
-
+        ray.origin = playerCamera.position;
+        ray.direction = playerCamera.forward;
 
         if (Physics.Raycast(ray, out hit, interactRange, interactableLayer))
         {
-
-            if (!isHoveringInteractable) // don't try to hover any new objects until you have unhovered the previous one.
+            if (!isHoveringInteractable)
             {
-                if (hit.collider.gameObject.TryGetInterface(out currentInteractable)) // if hit, search gameobjects components for any component which implements IInteractable interface.
+                if (hit.collider.gameObject.TryGetComponent(out currentInteractable))
                 {
-                    currentInteractableRenderer = hit.collider.GetComponent<Renderer>(); // store this to avoid re getting it later.
-                    currentInteractable.OnInteractableHoverEnter(); // tell the IInteractable class that was found you are hovering over it.
+                    currentInteractableRenderer = hit.collider.GetComponent<Renderer>();
+                    currentInteractable.OnInteractableHoverEnter();
                     currentInteractable.SetObjectOutline(currentInteractableRenderer, true);
                     isHoveringInteractable = true;
                 }
             }
-
         }
-        else if (isHoveringInteractable) // if raycast missed, and you were previously hovering something, exit hovering mode.
+        else if (isHoveringInteractable)
         {
             currentInteractable.OnInteractableHoverExit();
             currentInteractable.SetObjectOutline(currentInteractableRenderer, false);
             isHoveringInteractable = false;
         }
-
-
     }
 
 }

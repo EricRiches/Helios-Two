@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,8 +14,7 @@ public interface IInteractable
         
         foreach (var mat in rend.materials)
         {
-            if (value) { mat.EnableKeyword("_ENABLE_OUTLINE"); }
-            else mat.DisableKeyword("_ENABLE_OUTLINE");
+            mat.SetFloat("_Enabled", Convert.ToInt32(value));
         }
     }
 }

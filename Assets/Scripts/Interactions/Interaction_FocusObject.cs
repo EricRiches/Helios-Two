@@ -20,16 +20,17 @@ public class Interaction_FocusObject : MonoBehaviour, IInteractable
     public void OnInteract()
     {
         if(LerpCoroutine == null)  StartCoroutine(LerpCameraToPosition());
+        ButtonPrompts.instance.SetInteractionPrompt(false);
     }
 
     public void OnInteractableHoverEnter()
     {
-        ButtonPrompts.instance.SetInteractionPrompt(true);
+       ButtonPrompts.instance.SetInteractionPrompt(true);
     }
 
     public void OnInteractableHoverExit()
     {
-        ButtonPrompts.instance.SetInteractionPrompt(false);
+       ButtonPrompts.instance.SetInteractionPrompt(false);
     }
 
 

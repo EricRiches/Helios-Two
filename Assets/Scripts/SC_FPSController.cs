@@ -36,7 +36,7 @@ public class SC_FPSController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         // Lock cursor
-
+        SetCursorLockState(true);
     }
     public void SetCanMove(bool value)
     {
