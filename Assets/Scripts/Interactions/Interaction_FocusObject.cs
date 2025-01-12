@@ -13,13 +13,16 @@ public class Interaction_FocusObject : MonoBehaviour, IInteractable
     const float distanceThreshold = 8f;
     const float durationMultiplier = 0.5f;
     Coroutine LerpCoroutine;
+    public bool forceExit;
+    public bool ExitFocus => Input.GetKeyDown(KeyCode.Escape) || forceExit;
+
     private void Start()
     {
         OnFocus.AddListener(ListenForExit);
     }
     public void OnInteract()
     {
-        if(LerpCoroutine == null)  StartCoroutine(LerpCameraToPosition());
+        if(LerpCoroutine == null)  LerpCoroutine = StartCoroutine(LerpCameraToPosition());
         ButtonPrompts.instance.SetInteractionPrompt(false);
     }
 
@@ -68,6 +71,7 @@ public class Interaction_FocusObject : MonoBehaviour, IInteractable
         player.position = target.position;
         player.rotation = target.rotation;
 
+
     }
 
     void ListenForExit()
@@ -76,10 +80,11 @@ public class Interaction_FocusObject : MonoBehaviour, IInteractable
 
         IEnumerator WaitForExit()
         {
-            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Escape));
+            yield return new WaitUntil(() => ExitFocus);
             if(LerpCoroutine != null) StopCoroutine(LerpCoroutine); // if you try to exit while in the lerp process, cancel it.
             LerpCoroutine = null;
             OnUnFocus.Invoke();
+            forceExit = false;
         }
     }
 
