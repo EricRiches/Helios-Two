@@ -5,17 +5,11 @@ using UnityEngine;
 public class LookAtPlayer : MonoBehaviour
 {
 
-    public GameObject player;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject camera;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        transform.LookAt(player.transform);
+        transform.LookAt(camera.transform);
     }
 }
