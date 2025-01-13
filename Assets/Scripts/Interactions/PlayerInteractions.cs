@@ -15,7 +15,8 @@ public class PlayerInteractions : MonoBehaviour
     private void Start()
     {
         CheckHoveringInteractable();
-        /* When running the game normally, MonoBehaviour will compile frequently used 
+        /* this is what i think is happening from googling.
+         * When running the game normally, MonoBehaviour will compile frequently used 
          * code AT RUNTIME, not during the build proccess or wtv. This is more efficient,
          * but the instant it begins compiling the code there is a noticable lag spike.
          * this only happens once, the very first time the code is run, so we now 

@@ -6,9 +6,10 @@ public class ButtonPrompts : MonoBehaviour
 {
     public static ButtonPrompts instance;
 
-    public GameObject InteractionPrompt;
-    public GameObject ExitPrompt;
-    public GameObject Prompt3;
+    [SerializeField] GameObject InteractionPrompt;
+    [SerializeField] GameObject ExitPrompt;
+    [SerializeField] GameObject PanelNavigation;
+    [SerializeField] GameObject UseTool;
 
     private void Awake()
     {
@@ -19,5 +20,19 @@ public class ButtonPrompts : MonoBehaviour
     public void SetInteractionPrompt(bool value)
     {
         InteractionPrompt.SetActive(value);
+    }
+
+    public void SetExitPrompt(bool value)
+    {
+        ExitPrompt.SetActive(value);
+    }
+
+    public void SetPanelNavPrompt(bool value)
+    {
+        PanelNavigation.SetActive(value);
+    }
+    public void SetUseTool(bool value)
+    {
+        UseTool.SetActive(value);
     }
 }

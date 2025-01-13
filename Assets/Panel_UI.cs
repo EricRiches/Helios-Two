@@ -60,13 +60,15 @@ public class Panel_UI : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (OnFocusCoroutine != null && Input.GetKeyDown(KeyCode.E)) OnSelect();
+
+        if (Input.GetKeyDown(KeyCode.F)) { OnSelect(); }
     }
 
     void OnSelect()
     {
+        if (OnFocusCoroutine == null) return;
         options[selectedIndex].Activate.Invoke(); // invoke wtv we subscribe to the event for that option.
         StopCoroutine(OnFocusCoroutine); // stop checking input for changing index.
         OnFocusCoroutine = null;
