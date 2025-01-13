@@ -15,6 +15,7 @@ public class MonsterSenses : MonoBehaviour
     [SerializeField] float Vision_Distance;
     [SerializeField] float Vision_Degrees;
     [SerializeField, Range(0, 1)] float Prototype_VisionSphere;
+    [SerializeField] LayerMask SightMask;
 
     [Header("Hearing")]
     [SerializeField] Transform Hear_InputPosition;
@@ -37,7 +38,7 @@ public class MonsterSenses : MonoBehaviour
             Debug.Log(HearTotalPercent.ToString() + "% of the sound was heard");
             if (HearTotalPercent >= Hear_VolumeCutOff)
             {
-                attackedMonster.TriggerHeardSounds(soundPosition);
+                attackedMonster.TriggerHeardSounds(soundPosition, HearTotalPercent / Hear_VolumeCutOff);
             }
         }
     }
@@ -56,7 +57,23 @@ public class MonsterSenses : MonoBehaviour
 
             if (AngleBetween <= Vision_Degrees)
             {
-                isPlayerInAngle = 2;
+                RaycastHit hit;
+                if (Physics.Raycast(Eye_ConeHelper.position, Eye_ConeHelper.forward, out hit, Vision_Distance, SightMask))
+                {
+                    if (hit.transform == Player)
+                    {
+                        isPlayerInAngle = 2;
+                        attackedMonster.SetPlayerPosition = hit.point;
+                    }
+                    else
+                    {
+                        isPlayerInAngle = 1;
+                    }
+                }
+                else
+                {
+                    isPlayerInAngle = 1;
+                }
             }
             else
             {
@@ -72,7 +89,7 @@ public class MonsterSenses : MonoBehaviour
     private void OnDrawGizmos/*Selected*/()
     {
         Gizmos.color = Color.blue;
-        //Gizmos.DrawWireSphere(Hear_InputPosition.position, Hear_Distance);
+        Gizmos.DrawWireSphere(Hear_InputPosition.position, Hear_Distance);
 
         Vector3 Point1 = Vector3.zero;
         Vector3 Point2 = Vector3.zero;

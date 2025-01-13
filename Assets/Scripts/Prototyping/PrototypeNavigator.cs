@@ -35,15 +35,26 @@ public class PrototypeNavigator : MonsterBehavior
         }
     }
 
-    public override void TriggerHeardSounds(Vector3 SoundPosition)
+    public override void TriggerHeardSounds(Vector3 SoundPosition, float soundPercent)
     {
         currentBehavior = PrototypeMonsterBehvaior.HeardPlayer;
         controller.destination = SoundPosition;
+    }
+
+    public override Vector3 SetPlayerPosition 
+    {        
+        set
+        {
+            base.SetPlayerPosition = value;
+            currentBehavior = PrototypeMonsterBehvaior.SawPlayer;
+            controller.destination = value;
+        }
     }
 }
 
 public enum PrototypeMonsterBehvaior
 {
     Roam,
-    HeardPlayer
+    HeardPlayer,
+    SawPlayer
 }
