@@ -48,12 +48,13 @@ MonoBehaviour:
   Banks:
   - {fileID: -4785906108859822178}
   IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 5142694576810663063}
   MinDistance: 1
-  MaxDistance: 20
-  Length: 820
+  MaxDistance: 100
+  Length: 0
 --- !u!114 &-4785906108859822178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,10 +70,10 @@ MonoBehaviour:
   Path: Assets/Helios-Tau/Build/Desktop/UnityScene.bank
   Name: UnityScene
   StudioPath: bank:/UnityScene
-  lastModified: 638721492146063608
+  lastModified: 638729059826271864
   FileSizes:
   - Name: Desktop
-    Value: 785056
+    Value: 833632
   Exists: 1
 --- !u!114 &-3873556540394822522
 MonoBehaviour:
@@ -130,7 +131,7 @@ MonoBehaviour:
   - {fileID: 2610878044326072918}
   StringsBanks:
   - {fileID: 1687190810442398547}
-  cacheTime: 638721492146063608
+  cacheTime: 638729059826271864
   cacheVersion: 131621
 --- !u!114 &999530065083916722
 MonoBehaviour:
@@ -174,10 +175,10 @@ MonoBehaviour:
   Path: Assets/Helios-Tau/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638721492145563601
+  lastModified: 638729017927054192
   FileSizes:
   - Name: Desktop
-    Value: 1122
+    Value: 1174
   Exists: 1
 --- !u!114 &2610878044326072918
 MonoBehaviour:
@@ -194,7 +195,7 @@ MonoBehaviour:
   Path: Assets/Helios-Tau/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638721492145303380
+  lastModified: 638729017927008036
   FileSizes:
   - Name: Desktop
     Value: 16608
@@ -226,6 +227,32 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 22000
+--- !u!114 &5142694576810663063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/FootSteps/Footsteps
+  m_EditorClassIdentifier: 
+  Name: Footsteps
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3186550494
+    data2: 2683455735
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Standard
+  - Wet
+  Exists: 1
 --- !u!114 &7700205843348023808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,7 +280,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1404
+  Length: 1464
 --- !u!114 &9123190022160137084
 MonoBehaviour:
   m_ObjectHideFlags: 0
