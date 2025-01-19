@@ -816,6 +816,7 @@ GameObject:
   - component: {fileID: 1808376382415255548}
   - component: {fileID: 2128144300947851800}
   - component: {fileID: 9157662250867948915}
+  - component: {fileID: 1932861706757155885}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -882,7 +883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a2216ec7f202fe42ad46a1f478c8afd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emitter: {fileID: 0}
+  emitter: {fileID: 1932861706757155885}
 --- !u!95 &2128144300947851800
 Animator:
   serializedVersion: 5
@@ -920,6 +921,37 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 2.3, z: -3}
   m_TimeToStationary: 0.5
+--- !u!114 &1932861706757155885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6007419560169655441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 265146281
+      Data2: 1154377325
+      Data3: 814011012
+      Data4: -487453772
+    Path: event:/DoorOpen
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 100
 --- !u!1 &6035346928386766148
 GameObject:
   m_ObjectHideFlags: 0

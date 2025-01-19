@@ -5,7 +5,7 @@
 			<value>DoorOpen</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{cad3e6f1-0366-4eea-870a-aba3201b364b}</destination>
@@ -57,7 +57,11 @@
 			<destination>{d27662ef-90cd-4a9f-b79d-45ca694fed43}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{d42b9efe-6a76-4226-9f6b-2cbe34c679da}" />
+	<object class="EventAutomatableProperties" id="{d42b9efe-6a76-4226-9f6b-2cbe34c679da}">
+		<property name="maximumDistance">
+			<value>100</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{94306b7b-08e2-4588-aa83-a86f8c14e175}" />
 	<object class="Timeline" id="{561ecdb6-e6c7-484c-a4b7-16e705eac4e8}">
 		<relationship name="modules">
@@ -65,6 +69,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{68035811-7f86-4ae6-9cb9-581f815d6f2e}">
+		<property name="volume">
+			<value>-15</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{e2defac3-6cd4-41e1-8640-6a73535618ce}</destination>
 		</relationship>
@@ -77,7 +84,7 @@
 	</object>
 	<object class="SingleSound" id="{00a4cc71-c06a-49f9-995f-f9222bc65c6e}">
 		<property name="start">
-			<value>0.35999999999999999</value>
+			<value>0.10000000000000001</value>
 		</property>
 		<property name="length">
 			<value>1.1040000000000001</value>
@@ -96,6 +103,7 @@
 		<relationship name="effects">
 			<destination>{20796707-b0ff-4d3c-8394-208998085342}</destination>
 			<destination>{d827f190-903b-4411-b516-b399ed2ec6c3}</destination>
+			<destination>{b5718d1b-9822-4a48-8e24-0c5834438090}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{28de499f-9049-44bc-bb0f-81c0f0a38d2f}" />
@@ -106,15 +114,16 @@
 			<value>0.899999976</value>
 		</property>
 		<relationship name="modulators">
-			<destination>{db9c4512-ed9e-474a-814a-8c7957872e8f}</destination>
+			<destination>{9629beb2-aedd-4cdb-857b-1f0d2466fd02}</destination>
 		</relationship>
 	</object>
-	<object class="RandomizerModulator" id="{db9c4512-ed9e-474a-814a-8c7957872e8f}">
+	<object class="SpatialiserEffect" id="{b5718d1b-9822-4a48-8e24-0c5834438090}" />
+	<object class="RandomizerModulator" id="{9629beb2-aedd-4cdb-857b-1f0d2466fd02}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>pitch</value>
 		</property>
 		<property name="amount">
-			<value>8</value>
+			<value>6.5</value>
 		</property>
 	</object>
 </objects>

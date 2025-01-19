@@ -70,10 +70,10 @@ MonoBehaviour:
   Path: Assets/Helios-Tau/Build/Desktop/UnityScene.bank
   Name: UnityScene
   StudioPath: bank:/UnityScene
-  lastModified: 638729059826271864
+  lastModified: 638729071237188236
   FileSizes:
   - Name: Desktop
-    Value: 833632
+    Value: 833920
   Exists: 1
 --- !u!114 &-3873556540394822522
 MonoBehaviour:
@@ -131,7 +131,7 @@ MonoBehaviour:
   - {fileID: 2610878044326072918}
   StringsBanks:
   - {fileID: 1687190810442398547}
-  cacheTime: 638729059826271864
+  cacheTime: 638729071237188236
   cacheVersion: 131621
 --- !u!114 &999530065083916722
 MonoBehaviour:
@@ -175,7 +175,7 @@ MonoBehaviour:
   Path: Assets/Helios-Tau/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638729017927054192
+  lastModified: 638729071236627619
   FileSizes:
   - Name: Desktop
     Value: 1174
@@ -195,10 +195,10 @@ MonoBehaviour:
   Path: Assets/Helios-Tau/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638729017927008036
+  lastModified: 638729071236595964
   FileSizes:
   - Name: Desktop
-    Value: 16608
+    Value: 16864
   Exists: 1
 --- !u!114 &4938338848894064349
 MonoBehaviour:
@@ -275,12 +275,12 @@ MonoBehaviour:
   - {fileID: 2610878044326072918}
   - {fileID: -4785906108859822178}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
-  Length: 1464
+  MaxDistance: 100
+  Length: 1204
 --- !u!114 &9123190022160137084
 MonoBehaviour:
   m_ObjectHideFlags: 0

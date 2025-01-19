@@ -17,7 +17,7 @@ public class Doors : MonoBehaviour
         if (other.CompareTag("Monster") || other.CompareTag("Player"))
         {
             animator.SetTrigger("OPEN");
-            //emitter.Play();
+            emitter.Play();
         }
     }
 
@@ -26,7 +26,7 @@ public class Doors : MonoBehaviour
         if (other.CompareTag("Monster") || other.CompareTag("Player"))
         {
             animator.SetTrigger("CLOSE");
-            //emitter.Play();
+            emitter.Play();
         }
     }
 }
