@@ -26,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3714810760905049007}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.123, y: 5.4483, z: -3.007}
   m_LocalScale: {x: 0.36981902, y: 1.3275, z: 5.951395}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3880905752594401365}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7472505087571270315
 MeshFilter:
@@ -200,6 +200,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8292608601621023675}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b458083036047614fa572f76cfe4ad66,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7028554801098018597}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b458083036047614fa572f76cfe4ad66,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4014912266488248537}
     - targetCorrespondingSourceObject: {fileID: 4271309310879736428, guid: b458083036047614fa572f76cfe4ad66,
         type: 3}
       insertIndex: -1
@@ -328,3 +336,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &7028554801098018597
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4508225911876260591}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5, y: 5, z: 5}
+  m_Center: {x: 0, y: 2.25, z: -3}
+--- !u!114 &4014912266488248537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4508225911876260591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 962ee9b3712a4f04b83397b97b125911, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CanOpen: 0
