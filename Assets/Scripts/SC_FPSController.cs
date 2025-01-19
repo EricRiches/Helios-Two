@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class SC_FPSController : MonoBehaviour
 {
+    public static SC_FPSController instance;
+    Rigidbody rb;
+
     public float walkingSpeed = 7.5f;
     public float runningSpeed = 11.5f;
     public float jumpSpeed = 8.0f;
@@ -18,27 +21,60 @@ public class SC_FPSController : MonoBehaviour
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0;
 
-    [HideInInspector]
     public bool canMove = true;
+
+
+    private void Awake()
+    {
+        if(instance != null) Destroy(instance);
+        instance = this;
+    }
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        rb = GetComponent<Rigidbody>();
 
         // Lock cursor
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        SetCursorLockState(true);
+    }
+    public void SetCanMove(bool value)
+    {
+        canMove = value;
+        if (!value)
+        {
+            rb.velocity = Vector3.zero;
+        }
+    }
+    public void SetCursorLockState(bool value)
+    {
+        if (value)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 
+    public void ForceVerticaCameraRotation()
+    {
+
+    }
     void Update()
     {
+        if (!canMove) return; 
+
         // We are grounded, so recalculate move direction based on axes
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
         // Press Left Shift to run
         bool isRunning = Input.GetKey(KeyCode.LeftShift);
-        float curSpeedX = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Vertical") : 0;
-        float curSpeedY = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Horizontal") : 0;
+        float curSpeedX = (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Vertical");
+        float curSpeedY = (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Horizontal");
         float movementDirectionY = moveDirection.y;
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
 

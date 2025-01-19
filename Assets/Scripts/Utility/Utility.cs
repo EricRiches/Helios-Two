@@ -14,7 +14,7 @@ public class Utility : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
 
@@ -31,6 +31,25 @@ public static class VectorExtensions
         return new(vector.x, y, vector.z);
     }
 
-    
+
 
 }
+
+public static class GameObjectExtensions
+{
+    public static bool TryGetInterface<T>(this GameObject obj, out T result) where T : class
+    {
+        Component[] components = obj.GetComponents<Component>();
+        foreach (var component in components)
+        {
+            if (component is T foundInterface)
+            {
+                result = foundInterface;
+                return true;
+            }
+        }
+        result = null;
+        return false;
+    }
+}
+
