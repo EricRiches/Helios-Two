@@ -1,3 +1,5 @@
+using FMOD.Studio;
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -34,6 +36,7 @@ public abstract class Tool_MultiTool
 public class Flashlight : Tool_MultiTool
 {
     Light light;
+    EventReference sound;
     public bool isOn
     {
         get
@@ -54,11 +57,19 @@ public class Flashlight : Tool_MultiTool
     public override void UseTool()
     {
         light.enabled = !light.enabled;
-        
+        var  eventInstance = RuntimeManager.CreateInstance(sound);
+        eventInstance.start();
+
+        eventInstance.release();
+
     }
     public void SetIntensity(float intensity)
     {
         light.intensity = intensity;
+    }
+    public void SetEventReference(EventReference sound)
+    {
+        this.sound = sound;
     }
 
     public override void OnSwapOff() { light.enabled = false; }
