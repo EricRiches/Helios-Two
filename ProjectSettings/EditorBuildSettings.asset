@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/MedicalWing.unity
+    guid: d221800e2b431644a903df1635e6b3e1
+  - enabled: 1
+    path: Assets/Scenes/Bridge.unity
+    guid: 13910f74d6a74164e8b1e0a9087cca60
+  - enabled: 1
+    path: Assets/Scenes/CrewDeck.unity
+    guid: 75ae2d2271496ef4f9dad5abf81f64a1
   m_configObjects: {}
