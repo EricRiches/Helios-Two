@@ -7,6 +7,7 @@ public class ButtonPrompts : MonoBehaviour
     public static ButtonPrompts instance;
 
     [SerializeField] GameObject InteractionPrompt;
+    [SerializeField] GameObject HoldInteractPrompt;
     [SerializeField] GameObject ExitPrompt;
     [SerializeField] GameObject PanelNavigation;
     [SerializeField] GameObject UseTool;
@@ -26,7 +27,7 @@ public class ButtonPrompts : MonoBehaviour
     {
         ExitPrompt.SetActive(value);
     }
-
+    public void SetHoldInteractPrompt(bool value) { HoldInteractPrompt.SetActive(value); }
     public void SetPanelNavPrompt(bool value)
     {
         PanelNavigation.SetActive(value);

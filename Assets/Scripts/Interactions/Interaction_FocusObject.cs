@@ -14,6 +14,10 @@ public class Interaction_FocusObject : MonoBehaviour, IInteractable
     const float durationMultiplier = 0.5f;
     Coroutine LerpCoroutine;
     public bool forceExit;
+    public bool interactable = false;
+
+    public bool Interactable => interactable;
+
     //public bool ExitFocus => Input.GetKeyDown(KeyCode.Escape) || forceExit;
 
     private void Start()
@@ -21,23 +25,28 @@ public class Interaction_FocusObject : MonoBehaviour, IInteractable
         OnFocus.AddListener(ListenForExit);
     }
 
-    public void OnInteract()
+    public void OnInteractDown()
     {
+        if (!Interactable) return;
         if(LerpCoroutine == null)  LerpCoroutine = StartCoroutine(LerpCameraToPosition());
         ButtonPrompts.instance.SetInteractionPrompt(false);
     }
 
     public void OnInteractableHoverEnter()
     {
-       ButtonPrompts.instance.SetInteractionPrompt(true);
+        if (!Interactable) return;
+        ButtonPrompts.instance.SetInteractionPrompt(true);
     }
 
     public void OnInteractableHoverExit()
     {
-       ButtonPrompts.instance.SetInteractionPrompt(false);
+        if (!Interactable) return;
+        ButtonPrompts.instance.SetInteractionPrompt(false);
     }
 
+    public void OnInteractUp() { }
 
+    public void SetInteractable(bool value) { interactable = value; }
     public IEnumerator LerpCameraToPosition()
     {
 

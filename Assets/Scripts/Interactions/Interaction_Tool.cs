@@ -7,13 +7,19 @@ public class Interaction_Tool : MonoBehaviour, IInteractable
 {
     public Tool toolType;
 
-    public void OnInteract()
+    public bool Interactable => true;
+
+    public void OnInteractDown()
     {
         if (MultiTool.instance.currentTool.CheckToolType(this))
         {
             Debug.Log("CorrectTool");
         }
         else Debug.Log("IncorrectTool");
+    }
+    public void OnInteractUp()
+    {
+
     }
 
     public void OnInteractableHoverEnter()

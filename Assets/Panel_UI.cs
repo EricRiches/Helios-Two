@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class Panel_UI : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class Panel_UI : MonoBehaviour
     bool invert = false;
     string axisName;
     [SerializeField] Vector3 cursorOffset = new Vector3(-160, 12.5f, 0);
+    [SerializeField] UnityEvent OnOptionSelect;
 
     Coroutine OnFocusCoroutine;
     private void Start()
@@ -77,6 +79,7 @@ public class Panel_UI : MonoBehaviour
             focusObject.forceExit = true;
         }
 
-        selectedIndex = 0; 
+        selectedIndex = 0;
+        OnOptionSelect.Invoke();
     }
 }

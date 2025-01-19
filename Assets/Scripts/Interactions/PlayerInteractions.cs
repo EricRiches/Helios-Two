@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class PlayerInteractions : MonoBehaviour
 {
+    public static PlayerInteractions instance;
     [SerializeField] Transform playerCamera;
-    public readonly float interactRange = 15f; // The distance the raycast will travel
+    [SerializeField] float interactRange = 15f; // The distance the raycast will travel
     public LayerMask interactableLayer;
 
     [SerializeField] bool isHoveringInteractable;
     IInteractable currentInteractable;
     Renderer currentInteractableRenderer;
+
+    private void Awake()
+    {
+        if(instance!= null) Destroy(instance);
+        instance = this;
+    }
 
     private void Start()
     {
@@ -31,7 +38,15 @@ public class PlayerInteractions : MonoBehaviour
         {
             if (isHoveringInteractable && currentInteractable != null)
             {
-                currentInteractable.OnInteract();
+                currentInteractable.OnInteractDown();
+            }
+        }
+
+        if(Input.GetKeyUp(KeyCode.E))
+        {
+            if(currentInteractable!= null)
+            {
+                currentInteractable.OnInteractUp();
             }
         }
     }
@@ -57,7 +72,7 @@ public class PlayerInteractions : MonoBehaviour
                 {
                     currentInteractableRenderer = hit.collider.GetComponent<Renderer>();
                     currentInteractable.OnInteractableHoverEnter();
-                    currentInteractable.SetObjectOutline(currentInteractableRenderer, true);
+                    if(currentInteractableRenderer != null && currentInteractable.Interactable) currentInteractable.SetObjectOutline(currentInteractableRenderer, true);
                     isHoveringInteractable = true;
                 }
             }
@@ -65,7 +80,7 @@ public class PlayerInteractions : MonoBehaviour
         else if (isHoveringInteractable)
         {
             currentInteractable.OnInteractableHoverExit();
-            currentInteractable.SetObjectOutline(currentInteractableRenderer, false);
+            if (currentInteractableRenderer != null) currentInteractable.SetObjectOutline(currentInteractableRenderer, false);
             isHoveringInteractable = false;
         }
     }
