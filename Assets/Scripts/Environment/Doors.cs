@@ -6,7 +6,7 @@ public class Doors : MonoBehaviour
 {
     private Animator animator;
     public FMODUnity.StudioEventEmitter emitter;
-
+    [SerializeField] bool CanOpen = true;
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -14,6 +14,7 @@ public class Doors : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (!CanOpen) return;
         if (other.CompareTag("Monster") || other.CompareTag("Player"))
         {
             animator.SetTrigger("OPEN");
@@ -23,10 +24,18 @@ public class Doors : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        if (!CanOpen) return;
         if (other.CompareTag("Monster") || other.CompareTag("Player"))
         {
             animator.SetTrigger("CLOSE");
             emitter.Play();
         }
     }
+
+    public void ForceClose()
+    {
+        animator.SetTrigger("CLOSE");
+    }
+
+    public void SetCanOpen(bool value) { CanOpen = value; }
 }
