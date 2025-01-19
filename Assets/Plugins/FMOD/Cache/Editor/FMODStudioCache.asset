@@ -126,12 +126,13 @@ MonoBehaviour:
   - {fileID: -9053086490388678272}
   - {fileID: 999530065083916722}
   - {fileID: 7700205843348023808}
+  - {fileID: 2735473318720098247}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2610878044326072918}
   StringsBanks:
   - {fileID: 1687190810442398547}
-  cacheTime: 638729071237188236
+  cacheTime: 638729076329108085
   cacheVersion: 131621
 --- !u!114 &999530065083916722
 MonoBehaviour:
@@ -175,10 +176,10 @@ MonoBehaviour:
   Path: Assets/Helios-Tau/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638729071236627619
+  lastModified: 638729076329108085
   FileSizes:
   - Name: Desktop
-    Value: 1174
+    Value: 1218
   Exists: 1
 --- !u!114 &2610878044326072918
 MonoBehaviour:
@@ -195,11 +196,38 @@ MonoBehaviour:
   Path: Assets/Helios-Tau/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638729071236595964
+  lastModified: 638729076329065163
   FileSizes:
   - Name: Desktop
-    Value: 16864
+    Value: 130560
   Exists: 1
+--- !u!114 &2735473318720098247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BloodMonster
+  m_EditorClassIdentifier: 
+  Path: event:/BloodMonster
+  Guid:
+    Data1: 1382128585
+    Data2: 1198905448
+    Data3: -1659446121
+    Data4: -1284493945
+  Banks:
+  - {fileID: 2610878044326072918}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 250
+  Length: 8653
 --- !u!114 &4938338848894064349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,8 +300,8 @@ MonoBehaviour:
     Data3: 814011012
     Data4: -487453772
   Banks:
-  - {fileID: 2610878044326072918}
   - {fileID: -4785906108859822178}
+  - {fileID: 2610878044326072918}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
