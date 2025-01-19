@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using FMOD.Studio;
 
 public class MultiTool : MonoBehaviour
 {
@@ -42,6 +43,7 @@ public class MultiTool : MonoBehaviour
     {
         tools[Tool.Flashlight] = flashlight;
         flashlight.SetLight(flashlight_light);
+        flashlight.SetEventReference(flashlightSound);
         tools[Tool.Sonic_Burst] = sonic_Burst;
         tools[Tool.Freeze_Spray] = freeze_Spray;
         tools[Tool.Hack_Panel] = hack_Panel;

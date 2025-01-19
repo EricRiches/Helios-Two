@@ -16,8 +16,8 @@ TagManager:
   - Ground
   - Walls
   - Monster
-  - 
-  - 
+  - Interactable
+  - Player
   - 
   - 
   - 
