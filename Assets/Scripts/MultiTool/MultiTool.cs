@@ -1,3 +1,4 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -14,6 +15,7 @@ public class MultiTool : MonoBehaviour
     public static Freeze_Spray freeze_Spray = new();
     public static Hack_Panel hack_Panel = new();
 
+    public EventReference flashlightSound;
     public static Dictionary<Tool, Tool_MultiTool> tools = new Dictionary<Tool, Tool_MultiTool>();
     [SerializeField]LayerMask flashlightRaycastLayermask;
     public float arcDegrees = 10f;
@@ -21,6 +23,7 @@ public class MultiTool : MonoBehaviour
 
     public bool canUseTool = true;
 
+   
 
 
 
@@ -102,11 +105,12 @@ public class MultiTool : MonoBehaviour
         float halfFov = arcDegrees / 2f;  // Calculate the half field of view
 
         int halfResolution = raycastResolution / 2;
+        int quartResolution = halfResolution / 2;
 
         // Raycast a grid around the camera viewport
         for (int x = -halfResolution; x < halfResolution; x++)
         {
-            for (int y = -halfResolution; y < halfResolution; y++)
+            for (int y = -quartResolution; y < quartResolution; y++)
             {
                 // Calculate the angular offset for the x-axis (spread rays across the horizontal arc)
                 float angleOffsetX = (x / (float)raycastResolution) * arcDegrees;// - halfFov; // Spread rays from -halfFov to +halfFov

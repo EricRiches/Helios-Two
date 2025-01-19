@@ -21,8 +21,10 @@ public class SC_FPSController : MonoBehaviour
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0;
 
-    public bool canMove = true;
+    [SerializeField] bool canMove = true;
+    [SerializeField] bool canJump = true;
 
+    
 
     private void Awake()
     {
@@ -46,6 +48,7 @@ public class SC_FPSController : MonoBehaviour
             rb.velocity = Vector3.zero;
         }
     }
+    public void SetCanJump(bool value) {  canJump = value; }
     public void SetCursorLockState(bool value)
     {
         if (value)
@@ -78,7 +81,7 @@ public class SC_FPSController : MonoBehaviour
         float movementDirectionY = moveDirection.y;
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
 
-        if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
+        if (Input.GetButton("Jump") && canJump && characterController.isGrounded)
         {
             moveDirection.y = jumpSpeed;
         }
