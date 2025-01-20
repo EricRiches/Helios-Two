@@ -158,6 +158,7 @@ GameObject:
   - component: {fileID: 4517209487581901940}
   - component: {fileID: 8919992830532158730}
   - component: {fileID: 7938731268842117689}
+  - component: {fileID: 1474465429600642989}
   - component: {fileID: -4329471080786663350}
   - component: {fileID: 1578590507954612278}
   - component: {fileID: 8033499551017103513}
@@ -293,8 +294,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   footstepType: 0
   footstepInterval: 0.5
-  emitter: {fileID: -4329471080786663350}
+  footstepEmitter: {fileID: -4329471080786663350}
+  paEmitter: {fileID: 1474465429600642989}
   characterController: {fileID: 4517209487581901940}
+--- !u!114 &1474465429600642989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4553404097433228371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1031483226
+      Data2: 1111167747
+      Data3: 184348826
+      Data4: -2073078902
+    Path: event:/PALines
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!114 &-4329471080786663350
 MonoBehaviour:
   m_ObjectHideFlags: 0
