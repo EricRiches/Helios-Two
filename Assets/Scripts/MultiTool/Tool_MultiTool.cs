@@ -57,10 +57,13 @@ public class Flashlight : Tool_MultiTool
     public override void UseTool()
     {
         light.enabled = !light.enabled;
-        var  eventInstance = RuntimeManager.CreateInstance(sound);
-        eventInstance.start();
+        if (!sound.IsNull)
+        {
+            var eventInstance = RuntimeManager.CreateInstance(sound);
+            eventInstance.start();
 
-        eventInstance.release();
+            eventInstance.release();
+        }
 
     }
     public void SetIntensity(float intensity)
