@@ -374,11 +374,11 @@ MonoBehaviour:
   flashlight_light: {fileID: 5685556985630401868}
   flashlightSound:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1574935674
+      Data2: 1077770616
+      Data3: 779147666
+      Data4: -2030078347
+    Path: event:/FlashLightOff]
   flashlightRaycastLayermask:
     serializedVersion: 2
     m_Bits: 2047
