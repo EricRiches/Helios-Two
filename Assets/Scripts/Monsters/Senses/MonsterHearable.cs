@@ -18,13 +18,19 @@ public class MonsterHearable : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S))
+        /*if (Input.GetKeyDown(KeyCode.S))
+        {
+            PlaySound();
+        }*/
+        
+        
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
         {
             PlaySound();
         }
     }
 
-    void PlaySound()
+    public void PlaySound()
     {
         MonsterSenses[] monstersInScene = FindObjectsOfType<MonsterSenses>();
 

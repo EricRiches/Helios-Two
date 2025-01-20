@@ -25,6 +25,15 @@ public class PlayerAudio : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKey((KeyCode.LeftShift)))
+        {
+            footstepInterval = 0.35f;
+        }
+        else
+        {
+            footstepInterval = 0.5f;
+        }
+        
         yet += Time.deltaTime;
 
         if (yet >= footstepInterval)
