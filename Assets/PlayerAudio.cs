@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using FMODUnity;
@@ -5,19 +6,20 @@ using UnityEngine;
 
 public class PlayerAudio : MonoBehaviour
 {
-    //[SerializeField] private FMODUnity.EventReference _Footsteps;
-    //private FMOD.Studio.EventInstance Footsteps;
+    //[SerializeField] private FMODUnity.EventReference _PAsystem;
+    //private FMOD.Studio.EventInstance PAsystem;
     public int footstepType = 0;
     public float footstepInterval = 0.5f;
     private float yet;
-    public StudioEventEmitter emitter;
+    public StudioEventEmitter footstepEmitter;
+    public StudioEventEmitter paEmitter;
     public CharacterController characterController;
     
     void Awake()
     {
-        //if (!_Footsteps.IsNull)
+       // if (!_PAsystem.IsNull)
         //{
-        //    Footsteps = FMODUnity.RuntimeManager.CreateInstance(_Footsteps);
+        //    PAsystem = FMODUnity.RuntimeManager.CreateInstance(_PAsystem);
        // }
     }
 
@@ -33,11 +35,20 @@ public class PlayerAudio : MonoBehaviour
             {
                 if (characterController.isGrounded)
                 {
-                    emitter.Play();
+                    footstepEmitter.Play();
                 }
                 
             }
             
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("PATrigger"))
+        {
+            paEmitter.Play();
+            Destroy(other);
         }
     }
 

@@ -55,6 +55,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 100
   Length: 0
+--- !u!114 &-7031400300141972945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FlashLightOn
+  m_EditorClassIdentifier: 
+  Path: event:/FlashLightOn
+  Guid:
+    Data1: -511811188
+    Data2: 1283896343
+    Data3: -616050510
+    Data4: -1203546050
+  Banks:
+  - {fileID: 2610878044326072918}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 288
 --- !u!114 &-4785906108859822178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,11 +97,65 @@ MonoBehaviour:
   Path: Assets/Helios-Tau/Build/Desktop/UnityScene.bank
   Name: UnityScene
   StudioPath: bank:/UnityScene
-  lastModified: 638729089023038518
+  lastModified: 638729071237188236
   FileSizes:
   - Name: Desktop
     Value: 833920
   Exists: 1
+--- !u!114 &-4706091141216455728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PALines
+  m_EditorClassIdentifier: 
+  Path: event:/PALines
+  Guid:
+    Data1: 1031483226
+    Data2: 1111167747
+    Data3: 184348826
+    Data4: -2073078902
+  Banks:
+  - {fileID: 2610878044326072918}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 40435
+--- !u!114 &-3998246390709156536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FlashLightOff]
+  m_EditorClassIdentifier: 
+  Path: event:/FlashLightOff]
+  Guid:
+    Data1: -1574935674
+    Data2: 1077770616
+    Data3: 779147666
+    Data4: -2030078347
+  Banks:
+  - {fileID: 2610878044326072918}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 216
 --- !u!114 &-3873556540394822522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,12 +208,15 @@ MonoBehaviour:
   - {fileID: 999530065083916722}
   - {fileID: 7700205843348023808}
   - {fileID: 2735473318720098247}
+  - {fileID: -3998246390709156536}
+  - {fileID: -7031400300141972945}
+  - {fileID: -4706091141216455728}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2610878044326072918}
   StringsBanks:
   - {fileID: 1687190810442398547}
-  cacheTime: 638729089023038518
+  cacheTime: 638729156165095733
   cacheVersion: 131621
 --- !u!114 &999530065083916722
 MonoBehaviour:
@@ -176,10 +260,10 @@ MonoBehaviour:
   Path: Assets/Helios-Tau/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638729089022977441
+  lastModified: 638729156165095733
   FileSizes:
   - Name: Desktop
-    Value: 1218
+    Value: 1356
   Exists: 1
 --- !u!114 &2610878044326072918
 MonoBehaviour:
@@ -196,10 +280,10 @@ MonoBehaviour:
   Path: Assets/Helios-Tau/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638729089022972343
+  lastModified: 638729156165070471
   FileSizes:
   - Name: Desktop
-    Value: 130560
+    Value: 1039552
   Exists: 1
 --- !u!114 &2735473318720098247
 MonoBehaviour:
@@ -300,8 +384,8 @@ MonoBehaviour:
     Data3: 814011012
     Data4: -487453772
   Banks:
-  - {fileID: 2610878044326072918}
   - {fileID: -4785906108859822178}
+  - {fileID: 2610878044326072918}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
