@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CrewDeck.unity
     guid: 75ae2d2271496ef4f9dad5abf81f64a1
+  - enabled: 1
+    path: Assets/Scenes/EngineeringWing.unity
+    guid: 80144109569264647aa8576f7092b745
+  - enabled: 1
+    path: Assets/Scenes/HangarBay.unity
+    guid: 0be3d5713b9201d408d3a13bd14a7a8e
   m_configObjects: {}
