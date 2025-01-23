@@ -42,7 +42,7 @@ public class MonsterSenses : MonoBehaviour
                 Debug.Log(HearTotalPercent.ToString() + "% of the sound was heard");
                 if (HearTotalPercent >= Hear_VolumeCutOff)
                 {
-                    attackedMonster.TriggerHeardSounds(soundPosition, HearTotalPercent / Hear_VolumeCutOff);
+                    attackedMonster.TriggerHeardSounds(soundPosition, HearTotalPercent);
                 }
             }
         }
