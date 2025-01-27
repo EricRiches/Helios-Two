@@ -61,6 +61,11 @@ public class PlayerAudio : MonoBehaviour
         }
     }
 
+    public void PaPlay()
+    {
+        paEmitter.Play();
+    }
+
     private void PlayFootSteps()
     {
         
