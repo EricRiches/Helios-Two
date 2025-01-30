@@ -8,6 +8,7 @@ public static class CarryOvers
     static int logNum = 0;
     static List<AudioClip> logFiles = new List<AudioClip>();
     static List<GameObject> logObjects = new List<GameObject>();
+    static bool isListEmpty = true;
 
     static bool multiTool = false;
     static bool flashlight = false;
@@ -42,9 +43,14 @@ public static class CarryOvers
 
     public static void SetLogList(List<AudioClip> audioClips)
     {
-        for (int i = 0; i < audioClips.Count; i++)
+        if (isListEmpty)
         {
-            logFiles.Add(audioClips[i]);
+            for (int i = 0; i < audioClips.Count; i++)
+            {
+                logFiles.Add(audioClips[i]);
+            }
+
+            isListEmpty = false;
         }
     }
 
