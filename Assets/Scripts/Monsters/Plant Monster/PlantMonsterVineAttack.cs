@@ -2,11 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlantMonsterStaringPlants : MonoBehaviour
+public class PlantMonsterVineAttack : MonoBehaviour
 {
-    [SerializeField] Transform PlayerPosition;
-    [SerializeField] Transform FlowerTop;
-
     PlantMonsterManager manager;
 
     private void Start()
@@ -14,8 +11,11 @@ public class PlantMonsterStaringPlants : MonoBehaviour
         manager = FindAnyObjectByType<PlantMonsterManager>();
     }
 
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        FlowerTop.LookAt(PlayerPosition);
+        if (other.tag == "Player")
+        {
+            manager.HitPlayer(name);
+        }
     }
 }
