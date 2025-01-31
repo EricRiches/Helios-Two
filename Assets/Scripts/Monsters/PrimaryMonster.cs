@@ -24,9 +24,12 @@ public class PrimaryMonster : MonsterBehavior
     [Header("See")]
     [SerializeField] float ChaseSpeed;
     [SerializeField] float SawWaitAtPointTime;
+    bool isCurrentlyChasingPlayer;
 
     [Header("")]
     [SerializeField] float WaitTime;
+
+    [HideInInspector]public float speedMultiplier = 1;
 
     void Start()
     {
@@ -47,7 +50,7 @@ public class PrimaryMonster : MonsterBehavior
         {
             case PrimaryMonsterBehvaior.Roam:
 
-                controller.speed = RoamSpeed;
+                controller.speed = RoamSpeed * speedMultiplier;
                 if (WaitTime > 0)
                 {
                     WaitTime -=Time.deltaTime;
@@ -73,10 +76,10 @@ public class PrimaryMonster : MonsterBehavior
             case PrimaryMonsterBehvaior.HeardPlayer:
                 if (WaitTime <= 0)
                 {
-                    controller.speed = SearchSpeed;
+                    controller.speed = SearchSpeed * speedMultiplier;
                     if (controller.remainingDistance <= 0.1f)
                     {
-                        WaitTime = HeardWaitAtPointTime;
+                        WaitTime = SawWaitAtPointTime;
                     }
                 }
                 else
@@ -99,10 +102,54 @@ public class PrimaryMonster : MonsterBehavior
                     }
                 }
                 break;
+            case PrimaryMonsterBehvaior.SawPlayer:
+                if (WaitTime <= 0)
+                {
+                    controller.speed = ChaseSpeed * speedMultiplier;
+                    if (controller.remainingDistance <= 0.1f)
+                    {
+                        WaitTime = HeardWaitAtPointTime;
+                        isCurrentlyChasingPlayer = false;
+                    }
+                }
+                else
+                {
+                    WaitTime -= Time.deltaTime;
+
+                    if (WaitTime <= 0)
+                    {
+                        currentBehavior = PrimaryMonsterBehvaior.Roam;
+                        if (!ContinueWalkingAfterHearing)
+                        {
+                            Vector3 roamPosition;
+
+                            if (grid.FindRoamPosition(out roamPosition))
+                            {
+                                controller.destination = roamPosition;
+                            }
+                        }
+                    }
+                }
+                break;
         }
     }
 
     public override void TriggerHeardSounds(Vector3 SoundPosition, float soundPercent)
+    {
+        if (currentBehavior != PrimaryMonsterBehvaior.SawPlayer)
+        {
+            TriggerHeardSoundsCode(SoundPosition, soundPercent);
+        }
+        else
+        {
+            if (!isCurrentlyChasingPlayer)
+            {
+                controller.destination = SoundPosition;
+            }
+        }
+    }
+
+    void TriggerHeardSoundsCode(Vector3 SoundPosition, float soundPercent)
     {
         currentBehavior = PrimaryMonsterBehvaior.HeardPlayer;
         if (soundPercent >= HearStateChangerPercent)
@@ -124,6 +171,7 @@ public class PrimaryMonster : MonsterBehavior
             base.SetPlayerPosition = value;
             currentBehavior = PrimaryMonsterBehvaior.SawPlayer;
             controller.destination = value;
+            isCurrentlyChasingPlayer = true;
         }
     }
 }
