@@ -10,7 +10,7 @@ public abstract class Tool_MultiTool
 {
     protected Tool toolType;
     protected bool isUnlocked = false;
-    public bool IsUnlocked => isUnlocked;
+    public virtual bool IsUnlocked => isUnlocked;
     /// <summary>
     /// Check if Tool_Interaction is using the correct tool type.
     /// </summary>
@@ -118,6 +118,7 @@ public class Hack_Panel : Tool_MultiTool
     // current interactable to activate when tool used.
     IInteractable storedInteractable;
 
+    public override bool IsUnlocked => true;
     // readonly field for the types that cannot be hacked.
     private static readonly HashSet<Type> excludedTypes = new HashSet<Type>
     {
@@ -134,6 +135,7 @@ public class Hack_Panel : Tool_MultiTool
     {
         if (storedInteractable == null || !storedInteractable.Interactable) return;
         storedInteractable.OnInteractDown();
+        Debug.Log("tool used2");
 
     }
 
@@ -142,6 +144,7 @@ public class Hack_Panel : Tool_MultiTool
     public void SetInteractable(IInteractable interactable)
     {
         if (excludedTypes.Contains(interactable.GetType())) return; // if the class the iinteractable is attached to is excluded, return.
+
         storedInteractable = interactable; // else set interactable.
     }
 

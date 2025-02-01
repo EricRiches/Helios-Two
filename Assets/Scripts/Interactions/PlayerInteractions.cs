@@ -39,6 +39,11 @@ public class PlayerInteractions : MonoBehaviour
             if (isHoveringInteractable && currentInteractable != null)
             {
                 currentInteractable.OnInteractDown();
+
+                if (MultiTool.instance.currentTool != null && MultiTool.instance.currentTool.CheckToolType(Tool.Hack_Panel))
+                {
+                    MultiTool.hack_Panel.SetInteractable(currentInteractable);
+                }
             }
         }
 
@@ -70,10 +75,13 @@ public class PlayerInteractions : MonoBehaviour
             {
                 if (hit.collider.gameObject.TryGetComponent(out currentInteractable))
                 {
-                    currentInteractableRenderer = hit.collider.GetComponent<Renderer>();
-                    currentInteractable.OnInteractableHoverEnter();
-                    if(currentInteractableRenderer != null && currentInteractable.Interactable) currentInteractable.SetObjectOutline(currentInteractableRenderer, true);
-                    isHoveringInteractable = true;
+                    if (currentInteractable.Interactable)
+                    {
+                        currentInteractableRenderer = hit.collider.GetComponent<Renderer>();
+                        currentInteractable.OnInteractableHoverEnter();
+                        if (currentInteractableRenderer != null) currentInteractable.SetObjectOutline(currentInteractableRenderer, true);
+                        isHoveringInteractable = true;
+                    }
                 }
             }
         }

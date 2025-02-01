@@ -14,23 +14,27 @@ public class Interaction_General : MonoBehaviour, IInteractable
     [SerializeField] protected UnityEvent OnHoverExit;
     public virtual void OnInteractableHoverEnter()
     {
+        if (!interactable) return;
         ButtonPrompts.instance.SetInteractionPrompt(true);
         OnHoverEnter.Invoke();
     }
 
     public virtual void OnInteractableHoverExit()
     {
+        if (!interactable) return;
         ButtonPrompts.instance.SetInteractionPrompt(false);
         OnHoverExit.Invoke();
     }
 
     public virtual void OnInteractDown()
     {
+        if (!interactable) return;
         OnInteractPress.Invoke();
     }
 
     public virtual void OnInteractUp()
     {
+        if (!interactable) return;
         OnInteractRelease.Invoke();
     }
 
