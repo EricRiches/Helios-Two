@@ -14,7 +14,7 @@ public interface IInteractable
 
     public void SetObjectOutline(Renderer rend, bool value) //If you want this to actually work, make sure there is a material using the " Outline " Shader.
     {
-        
+        if (!Interactable) return;
         foreach (var mat in rend.materials)
         {
             mat.SetFloat("_Enabled", Convert.ToInt32(value));

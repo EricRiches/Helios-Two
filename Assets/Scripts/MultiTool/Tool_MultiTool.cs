@@ -2,7 +2,9 @@ using FMOD.Studio;
 using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using System;
 
 public abstract class Tool_MultiTool
 {
@@ -113,6 +115,16 @@ public class Freeze_Spray : Tool_MultiTool
 
 public class Hack_Panel : Tool_MultiTool
 {
+    // current interactable to activate when tool used.
+    IInteractable storedInteractable;
+
+    // readonly field for the types that cannot be hacked.
+    private static readonly HashSet<Type> excludedTypes = new HashSet<Type>
+    {
+        typeof(Interaction_GeneratorSwitch),
+        typeof(Interaction_FocusObject)
+    };
+
     public Hack_Panel()
     {
         toolType = Tool.Hack_Panel;
@@ -120,10 +132,18 @@ public class Hack_Panel : Tool_MultiTool
 
     public override void UseTool()
     {
-        Debug.Log("Hacker Panel was used");
+        if (storedInteractable == null || !storedInteractable.Interactable) return;
+        storedInteractable.OnInteractDown();
+
     }
 
     public override void OnSwapOff() { }
+
+    public void SetInteractable(IInteractable interactable)
+    {
+        if (excludedTypes.Contains(interactable.GetType())) return; // if the class the iinteractable is attached to is excluded, return.
+        storedInteractable = interactable; // else set interactable.
+    }
 
 }
 

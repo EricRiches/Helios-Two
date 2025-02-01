@@ -3365,7 +3365,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7560056766349538633, guid: badeff57affdde941a19dbef60cea541,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2085429375}
+      addedObject: {fileID: 2085429379}
   m_SourcePrefab: {fileID: 100100000, guid: badeff57affdde941a19dbef60cea541, type: 3}
 --- !u!1 &96966871
 GameObject:
@@ -6304,8 +6304,8 @@ Transform:
   m_GameObject: {fileID: 172442068}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.18, y: -0.449, z: -0}
-  m_LocalScale: {x: 15, y: 1, z: 15}
+  m_LocalPosition: {x: 11.85, y: -0.449, z: 0}
+  m_LocalScale: {x: 33.5, y: 1, z: 20.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1045566509}
@@ -19351,17 +19351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6084036051748894955, guid: b2a9d4f3630d27e44aae7a99077702a8,
         type: 3}
-      propertyPath: m_ImplicitCom
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6084036051748894955, guid: b2a9d4f3630d27e44aae7a99077702a8,
-        type: 3}
-      propertyPath: m_Interpolate
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6084036051748894955, guid: b2a9d4f3630d27e44aae7a99077702a8,
-        type: 3}
-      propertyPath: m_IsKinematic
+      propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7644535101390535285, guid: b2a9d4f3630d27e44aae7a99077702a8,
@@ -33000,11 +32990,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bfd615d0ad5fae4bb5eaf0381252606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPos: {x: 0, y: 201.7862, z: 0}
-  targetPos: {x: 18192.525, y: 2481.6, z: 25979.04}
-  duration: 30
+  startPos: {x: 18192.53, y: 201.7862, z: 25979.04}
+  endPos: {x: 18192.53, y: 2481.6, z: 25979.04}
   player: {fileID: 1780542118}
-  OnTargetReached:
+  atTop: 0
+  EitherPositionReached:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2085429379}
+        m_TargetAssemblyTypeName: Interaction_2WayToggleable, Assembly-CSharp
+        m_MethodName: SetInteractable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1780542123}
+        m_TargetAssemblyTypeName: SC_FPSController, Assembly-CSharp
+        m_MethodName: SetCanJump
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1045566508}
+        m_TargetAssemblyTypeName: Elevator, Assembly-CSharp
+        m_MethodName: FlipAtTop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  EndPositionReached:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1785468721}
@@ -33019,9 +33048,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1780542123}
-        m_TargetAssemblyTypeName: SC_FPSController, Assembly-CSharp
-        m_MethodName: SetCanJump
+  StartPositionReached:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1495598595}
+        m_TargetAssemblyTypeName: Doors, Assembly-CSharp
+        m_MethodName: SetCanOpen
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -63760,7 +63792,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 92377439}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2085429375
+--- !u!114 &2085429379
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63769,10 +63801,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2085429369}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e343369e09e45f04eb2e2bb9088d8303, type: 3}
+  m_Script: {fileID: 11500000, guid: 6ec4ceaebfa0ddc4881c2bcffef364ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactable: 1
+  interactable: 0
   OnInteractPress:
     m_PersistentCalls:
       m_Calls:
@@ -63848,6 +63880,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1785468721}
+        m_TargetAssemblyTypeName: Doors, Assembly-CSharp
+        m_MethodName: SetCanOpen
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2085429379}
+        m_TargetAssemblyTypeName: Interaction_2WayToggleable, Assembly-CSharp
+        m_MethodName: SetInteractable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnInteractRelease:
     m_PersistentCalls:
       m_Calls: []
@@ -63857,6 +63913,93 @@ MonoBehaviour:
   OnHoverExit:
     m_PersistentCalls:
       m_Calls: []
+  OnInteractPress_StateB:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1045566507}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1495598595}
+        m_TargetAssemblyTypeName: Doors, Assembly-CSharp
+        m_MethodName: ForceClose
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1495598595}
+        m_TargetAssemblyTypeName: Doors, Assembly-CSharp
+        m_MethodName: SetCanOpen
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1785468721}
+        m_TargetAssemblyTypeName: Doors, Assembly-CSharp
+        m_MethodName: ForceClose
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1785468721}
+        m_TargetAssemblyTypeName: Doors, Assembly-CSharp
+        m_MethodName: SetCanOpen
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1780542123}
+        m_TargetAssemblyTypeName: SC_FPSController, Assembly-CSharp
+        m_MethodName: SetCanJump
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 2085429379}
+        m_TargetAssemblyTypeName: Interaction_2WayToggleable, Assembly-CSharp
+        m_MethodName: SetInteractable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!43 &2089413427
 Mesh:
   m_ObjectHideFlags: 0
