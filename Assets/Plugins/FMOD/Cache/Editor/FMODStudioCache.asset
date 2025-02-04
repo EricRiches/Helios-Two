@@ -82,6 +82,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 288
+--- !u!114 &-5711859095301902217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BlastDoor
+  m_EditorClassIdentifier: 
+  Path: event:/BlastDoor
+  Guid:
+    Data1: -943161389
+    Data2: 1237510717
+    Data3: 82248353
+    Data4: 1037796894
+  Banks:
+  - {fileID: 2610878044326072918}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 500
+  Length: 16423
 --- !u!114 &-4785906108859822178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,7 +124,7 @@ MonoBehaviour:
   Path: Assets/Helios-Tau/Build/Desktop/UnityScene.bank
   Name: UnityScene
   StudioPath: bank:/UnityScene
-  lastModified: 638740115723594870
+  lastModified: 638729071237188236
   FileSizes:
   - Name: Desktop
     Value: 833920
@@ -211,12 +238,13 @@ MonoBehaviour:
   - {fileID: -3998246390709156536}
   - {fileID: -7031400300141972945}
   - {fileID: -4706091141216455728}
+  - {fileID: -5711859095301902217}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2610878044326072918}
   StringsBanks:
   - {fileID: 1687190810442398547}
-  cacheTime: 638740115723594870
+  cacheTime: 638742710034367563
   cacheVersion: 131621
 --- !u!114 &999530065083916722
 MonoBehaviour:
@@ -260,10 +288,10 @@ MonoBehaviour:
   Path: Assets/Helios-Tau/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638740115723562748
+  lastModified: 638742710034367563
   FileSizes:
   - Name: Desktop
-    Value: 1356
+    Value: 1406
   Exists: 1
 --- !u!114 &2610878044326072918
 MonoBehaviour:
@@ -280,10 +308,10 @@ MonoBehaviour:
   Path: Assets/Helios-Tau/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638740115723562748
+  lastModified: 638742710034336613
   FileSizes:
   - Name: Desktop
-    Value: 1039552
+    Value: 1204608
   Exists: 1
 --- !u!114 &2735473318720098247
 MonoBehaviour:
@@ -384,8 +412,8 @@ MonoBehaviour:
     Data3: 814011012
     Data4: -487453772
   Banks:
-  - {fileID: 2610878044326072918}
   - {fileID: -4785906108859822178}
+  - {fileID: 2610878044326072918}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
