@@ -13,11 +13,11 @@ public class SC_FPSController : MonoBehaviour
     public float runningSpeed = 11.5f;
     public float jumpSpeed = 8.0f;
     public float gravity = 20.0f;
-    public Camera playerCamera;
+    public Transform playerCamera;
     public float lookSpeed = 2.0f;
     public float lookXLimit = 45.0f;
 
-    CharacterController characterController;
+    [HideInInspector] public CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0;
 
@@ -69,6 +69,8 @@ public class SC_FPSController : MonoBehaviour
     }
     void Update()
     {
+        if (!characterController.enabled) {  return; }
+
         if (!canMove) return; 
 
         // We are grounded, so recalculate move direction based on axes

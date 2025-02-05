@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MonsterBehavior : MonoBehaviour
 {
+    protected Vector3 RespawnPosition;
+
     public virtual void TriggerHeardSounds(Vector3 SoundPosition, float soundPercent)
     {
 
@@ -17,5 +19,10 @@ public class MonsterBehavior : MonoBehaviour
         {
             PlayerPosition = value;
         }
+    }
+
+    public virtual void PlayerReset()
+    {
+        transform.position = RespawnPosition;
     }
 }

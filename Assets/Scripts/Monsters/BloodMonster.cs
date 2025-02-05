@@ -17,9 +17,18 @@ public class BloodMonster : MonsterBehavior
     [SerializeField] float ChaseSpeed;
     float MovementTimer;
 
+    [Header("Death")]
+    [SerializeField] Animator BloodMonsterAnimator;
+    [SerializeField] float DeathDistance;
+    [SerializeField] Transform DeathCamera;
+
+    SC_FPSController playerLocation;
+
     void Start()
     {
         controller = FindObjectOfType<NavMeshAgent>();
+        playerLocation = FindObjectOfType<SC_FPSController>();
+        RespawnPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -57,12 +66,38 @@ public class BloodMonster : MonsterBehavior
             MovementTimer -= SecondsItTakesForMovementCycle * 2;
         }
         controller.speed = (Mathf.Sin((MovementTimer / SecondsItTakesForMovementCycle) * Mathf.PI * 2) + 1) * (moveSpeed / 2);
+
+        if (Vector3.Distance(transform.position, playerLocation.transform.position) <= DeathDistance)
+        {
+            Debug.Log("Player Died");
+
+            BloodMonsterAnimator.SetTrigger("Is Dead");
+            DeathCamera.gameObject.SetActive(true);
+        }
     }
 
     public override void TriggerHeardSounds(Vector3 SoundPosition, float soundPercent)
     {
         currentBehavior = BloodMonsterMonsterBehvaior.HeardPlayer;
         controller.destination = SoundPosition;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, DeathDistance);
+    }
+
+    public override void PlayerReset()
+    {
+        Vector3 roamPosition;
+
+        if (grid.FindRoamPosition(out roamPosition))
+        {
+            controller.destination = roamPosition;
+        }
+
+        base.PlayerReset();
     }
 }
 
