@@ -161,7 +161,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 2
+  m_CollisionDetection: 0
 --- !u!143 &4517209487581901940
 CharacterController:
   m_ObjectHideFlags: 0
@@ -204,9 +204,10 @@ MonoBehaviour:
   runningSpeed: 60
   jumpSpeed: 15.1
   gravity: 20
-  playerCamera: {fileID: 0}
+  playerCamera: {fileID: 5745961676621538323}
   lookSpeed: 2
   lookXLimit: 80
+  characterController: {fileID: 0}
   canMove: 1
   canJump: 1
 --- !u!114 &7938731268842117689
