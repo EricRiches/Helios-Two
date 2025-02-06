@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerInteractions : MonoBehaviour
@@ -21,15 +23,7 @@ public class PlayerInteractions : MonoBehaviour
 
     private void Start()
     {
-        CheckHoveringInteractable();
-        /* this is what i think is happening from googling.
-         * When running the game normally, MonoBehaviour will compile frequently used 
-         * code AT RUNTIME, not during the build proccess or wtv. This is more efficient,
-         * but the instant it begins compiling the code there is a noticable lag spike.
-         * this only happens once, the very first time the code is run, so we now 
-         * have a ~100 ms lag spike at the time of loading, instead of mid gameplay.
-         * which is preferable to looking at your first interactable object and lagging
-         */
+       // CheckHoveringInteractable();
     }
 
     private void Update()
@@ -68,7 +62,6 @@ public class PlayerInteractions : MonoBehaviour
     {
         ray.origin = playerCamera.position;
         ray.direction = playerCamera.forward;
-
         if (Physics.Raycast(ray, out hit, interactRange, interactableLayer))
         {
             if (!isHoveringInteractable)
@@ -87,6 +80,7 @@ public class PlayerInteractions : MonoBehaviour
         }
         else if (isHoveringInteractable)
         {
+            
             currentInteractable.OnInteractableHoverExit();
             if (currentInteractableRenderer != null) currentInteractable.SetObjectOutline(currentInteractableRenderer, false);
             isHoveringInteractable = false;
@@ -94,5 +88,4 @@ public class PlayerInteractions : MonoBehaviour
     }
 
 }
-
 
