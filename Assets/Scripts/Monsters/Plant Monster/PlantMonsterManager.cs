@@ -44,6 +44,5 @@ public class PlantMonsterManager : MonoBehaviour
     public void HitPlayer(string MurdererName)
     {
         Debug.Log("Player Died to " + MurdererName);
-        playerLocation.
     }
 }
