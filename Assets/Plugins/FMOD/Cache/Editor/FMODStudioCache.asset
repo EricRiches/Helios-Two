@@ -124,7 +124,7 @@ MonoBehaviour:
   Path: Assets/Helios-Tau/Build/Desktop/UnityScene.bank
   Name: UnityScene
   StudioPath: bank:/UnityScene
-  lastModified: 638747161830260375
+  lastModified: 638740115723594870
   FileSizes:
   - Name: Desktop
     Value: 833920
@@ -244,7 +244,7 @@ MonoBehaviour:
   - {fileID: 2610878044326072918}
   StringsBanks:
   - {fileID: 1687190810442398547}
-  cacheTime: 638747161830260375
+  cacheTime: 638742917107651184
   cacheVersion: 131621
 --- !u!114 &999530065083916722
 MonoBehaviour:
@@ -288,7 +288,7 @@ MonoBehaviour:
   Path: Assets/Helios-Tau/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638747161827965250
+  lastModified: 638742917107651184
   FileSizes:
   - Name: Desktop
     Value: 1406
@@ -308,7 +308,7 @@ MonoBehaviour:
   Path: Assets/Helios-Tau/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638747161827955249
+  lastModified: 638742917107575190
   FileSizes:
   - Name: Desktop
     Value: 1204608
