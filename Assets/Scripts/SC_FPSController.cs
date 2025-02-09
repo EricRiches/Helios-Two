@@ -69,8 +69,8 @@ public class SC_FPSController : MonoBehaviour
     }
     void Update()
     {
+        if (PauseMenu.IsPaused) return;
         if (!characterController.enabled) {  return; }
-
         if (!canMove) return; 
 
         // We are grounded, so recalculate move direction based on axes

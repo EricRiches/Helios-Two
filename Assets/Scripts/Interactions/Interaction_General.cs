@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Interaction_General : MonoBehaviour, IInteractable
 {
-    [SerializeField] protected bool interactable;
+    [SerializeField] protected bool interactable = true;
     public bool Interactable => interactable;
 
     [SerializeField] protected UnityEvent OnInteractPress;
