@@ -22,7 +22,7 @@ public class ButtonPrompts : MonoBehaviour
     public void SetInteractionPrompt(bool value)
     {
         InteractionPrompt.SetActive(value);
-        if (value && MultiTool.instance.currentTool.CheckToolType(Tool.Hack_Panel)) // only set active if hack panel is equipped.
+        if (value  && MultiTool.instance.currentTool != null&& MultiTool.instance.currentTool.CheckToolType(Tool.Hack_Panel)) // only set active if hack panel is equipped.
         {
             HackToolPrompt.SetActive(value);
         }
