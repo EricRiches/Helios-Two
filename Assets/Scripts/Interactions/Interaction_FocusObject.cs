@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class Interaction_FocusObject : MonoBehaviour, IInteractable
 {
@@ -98,6 +99,13 @@ public class Interaction_FocusObject : MonoBehaviour, IInteractable
             forceExit = false;
         }
     }
+
+
+    public void TakeTramToLocation(string sceneName)
+    {
+        SceneTransition.instance.LoadSceneToTram(sceneName);
+    }
+
 
     private void OnDestroy() 
     {

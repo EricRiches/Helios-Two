@@ -483,9 +483,9 @@ MonoBehaviour:
   Activate:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8472494091624102686}
-        m_TargetAssemblyTypeName: UI_Option, Assembly-CSharp
-        m_MethodName: Test
+      - m_Target: {fileID: 7190525064304566939}
+        m_TargetAssemblyTypeName: Interaction_FocusObject, Assembly-CSharp
+        m_MethodName: TakeTramToLocation
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -815,9 +815,9 @@ MonoBehaviour:
   Activate:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4360773050928306160}
-        m_TargetAssemblyTypeName: UI_Option, Assembly-CSharp
-        m_MethodName: Test
+      - m_Target: {fileID: 7190525064304566939}
+        m_TargetAssemblyTypeName: Interaction_FocusObject, Assembly-CSharp
+        m_MethodName: TakeTramToLocation
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -879,9 +879,9 @@ MonoBehaviour:
   Activate:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5173672104212305010}
-        m_TargetAssemblyTypeName: UI_Option, Assembly-CSharp
-        m_MethodName: Test
+      - m_Target: {fileID: 7190525064304566939}
+        m_TargetAssemblyTypeName: Interaction_FocusObject, Assembly-CSharp
+        m_MethodName: TakeTramToLocation
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -919,15 +919,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7560056766349538633}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: -0.000000053385076, z: 0.70710677, w: 0.00000005338508}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0.7071068, w: 0}
   m_LocalPosition: {x: -0.31393155, y: 0.4944638, z: -0.482217}
-  m_LocalScale: {x: 1, y: 1, z: 0.7006235}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4985344387147537418}
   - {fileID: 7706325017910444634}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 180}
 --- !u!33 &325348886228452850
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1382,9 +1382,9 @@ MonoBehaviour:
   Activate:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2830079698832116913}
-        m_TargetAssemblyTypeName: UI_Option, Assembly-CSharp
-        m_MethodName: Test
+      - m_Target: {fileID: 7190525064304566939}
+        m_TargetAssemblyTypeName: Interaction_FocusObject, Assembly-CSharp
+        m_MethodName: TakeTramToLocation
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1580,9 +1580,9 @@ MonoBehaviour:
   Activate:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7196678898888945688}
-        m_TargetAssemblyTypeName: UI_Option, Assembly-CSharp
-        m_MethodName: Test
+      - m_Target: {fileID: 7190525064304566939}
+        m_TargetAssemblyTypeName: Interaction_FocusObject, Assembly-CSharp
+        m_MethodName: TakeTramToLocation
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
