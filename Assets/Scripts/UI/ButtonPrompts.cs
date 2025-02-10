@@ -8,6 +8,7 @@ public class ButtonPrompts : MonoBehaviour
 
     [SerializeField] GameObject InteractionPrompt;
     [SerializeField] GameObject HoldInteractPrompt;
+    [SerializeField] GameObject HackToolPrompt;
     [SerializeField] GameObject ExitPrompt;
     [SerializeField] GameObject PanelNavigation;
     [SerializeField] GameObject UseTool;
@@ -21,6 +22,14 @@ public class ButtonPrompts : MonoBehaviour
     public void SetInteractionPrompt(bool value)
     {
         InteractionPrompt.SetActive(value);
+        if (value && MultiTool.instance.currentTool.CheckToolType(Tool.Hack_Panel)) // only set active if hack panel is equipped.
+        {
+            HackToolPrompt.SetActive(value);
+        }
+        else if (!value) // in the event you put the hack panel away, always set to false.
+        {
+            HackToolPrompt.SetActive(false);
+        }
     }
 
     public void SetExitPrompt(bool value)

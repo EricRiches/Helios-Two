@@ -55,6 +55,11 @@ public class PlayerInteractions : MonoBehaviour
 
     }
 
+    public IInteractable GetCurrentInteractable()
+    {
+        return currentInteractable;
+    }
+
     private Ray ray;
     private RaycastHit hit;
 
@@ -84,6 +89,7 @@ public class PlayerInteractions : MonoBehaviour
             currentInteractable.OnInteractableHoverExit();
             if (currentInteractableRenderer != null) currentInteractable.SetObjectOutline(currentInteractableRenderer, false);
             isHoveringInteractable = false;
+            currentInteractable = null;
         }
     }
 

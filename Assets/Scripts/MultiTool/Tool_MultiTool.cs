@@ -133,9 +133,17 @@ public class Hack_Panel : Tool_MultiTool
 
     public override void UseTool()
     {
-        if (storedInteractable == null || !storedInteractable.Interactable) return;
-        storedInteractable.OnInteractDown();
-        Debug.Log("tool used2");
+        IInteractable interactable = PlayerInteractions.instance.GetCurrentInteractable();
+        if (storedInteractable == null && interactable != null)
+        {
+            storedInteractable = interactable;
+        }
+
+        else if (storedInteractable != null && storedInteractable.Interactable)
+        {
+            storedInteractable.OnInteractDown();
+            storedInteractable = null;
+        }
 
     }
 

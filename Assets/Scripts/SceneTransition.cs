@@ -43,12 +43,19 @@ public class SceneTransition : MonoBehaviour
             }
 
 
-            playerController.enabled = false;
-            playerController.transform.position = positionOnLoad;
-            Debug.Log($"Player position set to: {positionOnLoad}");
-            playerController.enabled = true;
-            toTram = false;
-            positionOnLoad = Vector3.negativeInfinity; // set to negative infinity means "this loading zone has no target position set".
+    
+            try {
+                playerController.enabled = false;
+                playerController.transform.position = positionOnLoad;
+                Debug.Log($"Player position set to: {positionOnLoad}");
+                playerController.enabled = true;
+                toTram = false;
+                positionOnLoad = Vector3.negativeInfinity; // set to negative infinity means "this loading zone has no target position set".
+            } 
+            catch { 
+                Debug.LogError("tryied to assign negative infinity to Player position"); 
+            }
+
         }
     }
 
