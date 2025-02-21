@@ -78,11 +78,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: corporateRoundtable
       objectReference: {fileID: 0}
+    - target: {fileID: 2831065782900121813, guid: 0e2cdc6bfcaff2f4086173031ed4acc3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8452deff66f104e0abcfbbed5ffae158, type: 2}
     - target: {fileID: 7071182760956848314, guid: 0e2cdc6bfcaff2f4086173031ed4acc3,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ab79751a03bc0394bb8c595d318f8b30, type: 2}
+    - target: {fileID: 7202271454713460447, guid: 0e2cdc6bfcaff2f4086173031ed4acc3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8452deff66f104e0abcfbbed5ffae158, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

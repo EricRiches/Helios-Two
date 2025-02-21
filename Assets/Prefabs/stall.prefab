@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8614095978559625357}
   - component: {fileID: 7831516676589880390}
   - component: {fileID: 7912084846192937491}
+  - component: {fileID: 3137806594312713740}
   m_Layer: 0
   m_Name: Cube.003
   m_TagString: Untagged
@@ -87,6 +88,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3137806594312713740
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 417197867436723996}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8678823145569952518, guid: be91ddc038ddec54bb8ae5bb5dfa51e4, type: 3}
 --- !u!1 &1574344747629764156
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,6 +154,7 @@ GameObject:
   - component: {fileID: 4943706168151781820}
   - component: {fileID: 2314808072557114236}
   - component: {fileID: 8879331157683375063}
+  - component: {fileID: 6371813082349509169}
   m_Layer: 0
   m_Name: Cylinder.001
   m_TagString: Untagged
@@ -203,3 +227,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6371813082349509169
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8016150289951752798}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7387706064836869012, guid: be91ddc038ddec54bb8ae5bb5dfa51e4, type: 3}
