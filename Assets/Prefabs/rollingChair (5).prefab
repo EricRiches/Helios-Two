@@ -78,6 +78,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: rollingChair (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4531912228224351498, guid: 3f3f71b6f61717e49ada6f46d85c5211,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ad3e807a6433eb549b626163370b90d3, type: 2}
+    - target: {fileID: 5689214077219933787, guid: 3f3f71b6f61717e49ada6f46d85c5211,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 22db141e8c5ba4bcca5390702fbf97fd, type: 2}
+    - target: {fileID: 7923040608171621719, guid: 3f3f71b6f61717e49ada6f46d85c5211,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c2cd666f18cfffe4fab1c9f9a03bd2ef, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
