@@ -8,6 +8,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -9083876926075105498, guid: 6b1e39a95c1eb804dba1463111a8b9f2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b0baa9895f724b545b3f17f237ac76a5, type: 2}
     - target: {fileID: -8679921383154817045, guid: 6b1e39a95c1eb804dba1463111a8b9f2,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -73,11 +78,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6785716080565108130, guid: 6b1e39a95c1eb804dba1463111a8b9f2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 44149d1d5c59f487bb28063b9a042ff2, type: 2}
     - target: {fileID: 919132149155446097, guid: 6b1e39a95c1eb804dba1463111a8b9f2,
         type: 3}
       propertyPath: m_Name
       value: BunkBed 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8857391914489733555, guid: 6b1e39a95c1eb804dba1463111a8b9f2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 49ffbd9d06500cc4a800ec1efc951b93, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
