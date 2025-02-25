@@ -10,6 +10,7 @@ public class RespawnManager : MonoBehaviour
     ResetDeathCamera[] camerasForDies = new ResetDeathCamera[0];
     MonsterBehavior[] monstersInScene = new MonsterBehavior[0];
     string lastHitSavePointID;
+    SafeArea safeArea;
 
     SC_FPSController playerMove;
     float ResetPlayer = -1;
@@ -19,6 +20,7 @@ public class RespawnManager : MonoBehaviour
         playerMove = FindObjectOfType<SC_FPSController>();
         camerasForDies = FindObjectsOfType<ResetDeathCamera>();
         monstersInScene = FindObjectsOfType<MonsterBehavior>();
+        safeArea = FindObjectOfType<SafeArea>();
     }
 
     private void Update()
@@ -49,6 +51,7 @@ public class RespawnManager : MonoBehaviour
     {
         playerMove.enabled = false;
         ResetPlayer = 0.5f;
+        safeArea.ResetAfterDeath();
 
         foreach (RespawnSavePoint point in RespawnablePoints)
         { 
