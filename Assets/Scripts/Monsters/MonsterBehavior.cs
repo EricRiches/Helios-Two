@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MonsterBehavior : MonoBehaviour
 {
+    public bool canMove = true;
     protected Vector3 RespawnPosition;
 
     public virtual void TriggerHeardSounds(Vector3 SoundPosition, float soundPercent)

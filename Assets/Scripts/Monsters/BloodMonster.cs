@@ -22,18 +22,23 @@ public class BloodMonster : MonsterBehavior
     [SerializeField] float DeathDistance;
     [SerializeField] Transform DeathCamera;
 
-    SC_FPSController playerLocation;
+    Transform playerLocation;
 
     void Start()
     {
         controller = FindObjectOfType<NavMeshAgent>();
-        playerLocation = FindObjectOfType<SC_FPSController>();
+        playerLocation = FindObjectOfType<SC_FPSController>().transform;
         RespawnPosition = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!canMove)
+        {
+            return; // allows you to disable the enemy movement - used in freeze spray.
+        }
+
         float moveSpeed = 0;
 
         switch (currentBehavior)
@@ -67,7 +72,7 @@ public class BloodMonster : MonsterBehavior
         }
         controller.speed = (Mathf.Sin((MovementTimer / SecondsItTakesForMovementCycle) * Mathf.PI * 2) + 1) * (moveSpeed / 2);
 
-        if (Vector3.Distance(transform.position, playerLocation.transform.position) <= DeathDistance)
+        if (Vector3.Distance(transform.position, playerLocation.position) <= DeathDistance)
         {
             Debug.Log("Player Died");
 

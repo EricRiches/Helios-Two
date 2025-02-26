@@ -81,15 +81,12 @@ public class MultiTool : MonoBehaviour
             currentTool.UseTool();
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            SwitchTool(Tool.Flashlight);
-        }
+        if (Input.GetKeyDown(KeyCode.Alpha1)) SwitchTool(Tool.Flashlight);
 
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            SwitchTool(Tool.Hack_Panel);
-        }
+        if (Input.GetKeyDown(KeyCode.Alpha2)) SwitchTool(Tool.Freeze_Spray);
+
+        if (Input.GetKeyDown(KeyCode.Alpha4)) SwitchTool(Tool.Hack_Panel);
+
 
     }
 
