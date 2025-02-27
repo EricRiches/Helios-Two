@@ -28,6 +28,11 @@ public class MonsterSenses : MonoBehaviour
     private void Start()
     {
         isPlayerInPlayMode = true;
+
+        if (Player == null)
+        {
+            Player = FindObjectOfType<PrototypePlayerScript>().transform;
+        }
     }
 
     public void Hear_SoundPlayed(Vector3 soundPosition, float soundVolume)

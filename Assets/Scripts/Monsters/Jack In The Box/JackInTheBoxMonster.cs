@@ -8,9 +8,13 @@ public class JackInTheBoxMonster : MonoBehaviour
     PrimaryMonster m_PrimaryMonster;
     bool isCurrentlySeen;
 
+    JackVisionChecker checkers;
+
     private void Start()
     {
         m_PrimaryMonster = GetComponent<PrimaryMonster>();
+        checkers = FindObjectOfType<JackVisionChecker>();
+        checkers.JackInTheBoxes.Add(this);
     }
 
     void Update()
@@ -31,5 +35,11 @@ public class JackInTheBoxMonster : MonoBehaviour
     {
         isCurrentlySeen = true;
         m_PrimaryMonster.SetPlayerPosition = VisionPosition;
+    }
+
+    public void RemoveFromPlay()
+    {
+        checkers.JackInTheBoxes.Remove(this);
+        Destroy(gameObject);
     }
 }

@@ -19,47 +19,50 @@ public class JackVisionChecker : MonoBehaviour
 
     void Update()
     {
-        foreach (JackInTheBoxMonster Monster in JackInTheBoxes)
+        if (JackInTheBoxes.Count > 0)
         {
-            Vector3 ViewportPositionOfMonster = cam.WorldToViewportPoint(Monster.transform.position);
-            bool isInCamera = true;
+            foreach (JackInTheBoxMonster Monster in JackInTheBoxes)
+            {
+                Vector3 ViewportPositionOfMonster = cam.WorldToViewportPoint(Monster.transform.position);
+                bool isInCamera = true;
 
-            if (ViewportPositionOfMonster.x < 0 || ViewportPositionOfMonster.x > 1)
-            {
-                isInCamera = false;
-            }
-            if (ViewportPositionOfMonster.y < 0 || ViewportPositionOfMonster.y > 1)
-            {
-                isInCamera = false;
-            }
-            if (ViewportPositionOfMonster.z <= 0)
-            {
-                isInCamera = false;
-            }
-
-            if (isInCamera)
-            {
-                ObjectChecker.LookAt(Monster.transform.position);
-
-                RaycastHit hit;
-                if (Physics.Raycast(ObjectChecker.position, ObjectChecker.forward, out hit, Mathf.Infinity, hitMask, QueryTriggerInteraction.Ignore))
+                if (ViewportPositionOfMonster.x < 0 || ViewportPositionOfMonster.x > 1)
                 {
-                    //Debug.Log(hit.transform.name);
+                    isInCamera = false;
+                }
+                if (ViewportPositionOfMonster.y < 0 || ViewportPositionOfMonster.y > 1)
+                {
+                    isInCamera = false;
+                }
+                if (ViewportPositionOfMonster.z <= 0)
+                {
+                    isInCamera = false;
+                }
 
-                    if (hit.transform.GetComponent<JackInTheBoxMonster>() != Monster)
+                if (isInCamera)
+                {
+                    ObjectChecker.LookAt(Monster.transform.position);
+
+                    RaycastHit hit;
+                    if (Physics.Raycast(ObjectChecker.position, ObjectChecker.forward, out hit, Mathf.Infinity, hitMask, QueryTriggerInteraction.Ignore))
+                    {
+                        //Debug.Log(hit.transform.name);
+
+                        if (hit.transform.GetComponent<JackInTheBoxMonster>() != Monster)
+                        {
+                            isInCamera = false;
+                        }
+                    }
+                    else
                     {
                         isInCamera = false;
                     }
                 }
-                else
-                {
-                    isInCamera = false;
-                }
-            }
 
-            if (isInCamera)
-            {
-                Monster.setIsCurrentlySeen(transform.position);
+                if (isInCamera)
+                {
+                    Monster.setIsCurrentlySeen(transform.position);
+                }
             }
         }
     }

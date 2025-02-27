@@ -33,9 +33,14 @@ public class PrimaryMonster : MonsterBehavior
 
     void Start()
     {
-        controller = FindObjectOfType<NavMeshAgent>();
+        controller = GetComponent<NavMeshAgent>();
 
         Vector3 roamPosition;
+
+        if (grid == null)
+        {
+            grid = FindObjectOfType<MonsterNavigationGrid>();
+        }
 
         if (grid.FindRoamPosition(out roamPosition))
         {
@@ -46,6 +51,11 @@ public class PrimaryMonster : MonsterBehavior
     // Update is called once per frame
     void Update()
     {
+        if (grid == null)
+        {
+            grid = FindObjectOfType<MonsterNavigationGrid>();
+        }
+
         switch (currentBehavior)
         {
             case PrimaryMonsterBehvaior.Roam:
