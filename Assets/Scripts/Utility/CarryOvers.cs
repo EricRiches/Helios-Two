@@ -44,7 +44,7 @@ public static class CarryOvers
         return isIn;
     }
 
-    // Went sent the list of all logs, this function adds them all to a list. Use if the log players dont already have a list of logs
+    // When sent the list of all logs, this function adds them all to a list. Use if the log players dont already have a list of logs
     public static void SetLogList(List<AudioClip> audioClips)
     {
         if (isListEmpty)
@@ -59,9 +59,9 @@ public static class CarryOvers
     }
 
     // Return the log to play
-    public static AudioClip GetLog(int index)
+    public static int GetIndex()
     {
-        return logFiles[index];
+        return logNum;
     }
     #endregion Audio Logs
 
