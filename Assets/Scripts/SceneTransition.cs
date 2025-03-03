@@ -20,6 +20,11 @@ public class SceneTransition : MonoBehaviour
         DontDestroyOnLoad(gameObject); // persist through scene transitions.
     }
 
+    public void ToMainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
+
     public void SetPositionOnSceneLoad(Scene scene, LoadSceneMode mode)
     {
         if(positionOnLoad == Vector3.negativeInfinity && !toTram) { Debug.LogError("Loading zone position is: " + positionOnLoad.ToString() + "Please double check the target position variable is set."); return; }
