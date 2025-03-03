@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class LogDevice : MonoBehaviour
 {
-    [SerializeField] List<AudioClip> audioLogs;
+    [SerializeField] AudioClip audioLog;
+    //[SerializeField] List<AudioClip> audioLogs;
     AudioSource audioSource;
 
     // Start is called before the first frame update
@@ -20,7 +21,8 @@ public class LogDevice : MonoBehaviour
 
     void PlayAudioClip()
     {
-        audioLogs[CarryOvers.GetIndex()].LoadAudioData();
+        audioLog.LoadAudioData();
+        //audioLogs[CarryOvers.GetIndex()].LoadAudioData();
         CarryOvers.AppendLogObject(gameObject);
         CarryOvers.LogTickUp();
         audioSource.Play();
@@ -37,7 +39,7 @@ public class LogDevice : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (!CheckIfPlayed() & audioLogs[0] != null)
+            if (!CheckIfPlayed() & audioLog != null)
             {
                 PlayAudioClip();
             }
