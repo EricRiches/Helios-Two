@@ -51,7 +51,10 @@ public class RespawnManager : MonoBehaviour
     {
         playerMove.enabled = false;
         ResetPlayer = 0.5f;
-        safeArea.ResetAfterDeath();
+        if (safeArea != null)
+        {
+            safeArea.ResetAfterDeath();
+        }
 
         foreach (RespawnSavePoint point in RespawnablePoints)
         { 

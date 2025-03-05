@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class PlantMonsterManager : MonoBehaviour
 {
+    public bool isPlantDead = false;
     public LayerMask PlayerMask;
-    [SerializeField] PlantMonsterStaringPlants[] killPoints;
-    [SerializeField] float killPointRange;
+    //[SerializeField] PlantMonsterStaringPlants[] killPoints;
+    //[SerializeField] float killPointRange;
+
+    public Vector2 VineSwingTimes;
 
     SC_FPSController playerLocation;
 
@@ -17,7 +20,7 @@ public class PlantMonsterManager : MonoBehaviour
 
     void Update()
     {
-        if (killPoints.Length > 0)
+        /*if (killPoints.Length > 0)
         {
             foreach (PlantMonsterStaringPlants point in killPoints)
             {
@@ -26,23 +29,28 @@ public class PlantMonsterManager : MonoBehaviour
                     HitPlayer(point.gameObject.name);
                 }
             }
-        }
+        }*/
     }
 
     private void OnDrawGizmosSelected()
     {
-        if (killPoints.Length > 0)
+        /*if (killPoints.Length > 0)
         {
             foreach (PlantMonsterStaringPlants point in killPoints)
             {
                 Gizmos.color = Color.red;
                 Gizmos.DrawWireSphere(point.transform.position, killPointRange);
             }
-        }
+        }*/
     }
 
-    public void HitPlayer(string MurdererName)
+    /*public void HitPlayer(string MurdererName)
     {
         Debug.Log("Player Died to " + MurdererName);
+    }*/
+
+    public void PlantDied()
+    {
+        isPlantDead = true;
     }
 }
