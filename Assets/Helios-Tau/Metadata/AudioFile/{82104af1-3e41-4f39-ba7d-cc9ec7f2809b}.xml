@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{82104af1-3e41-4f39-ba7d-cc9ec7f2809b}">
 		<property name="assetPath">
 			<value>AmbientSpaceShipNoise.mp3</value>

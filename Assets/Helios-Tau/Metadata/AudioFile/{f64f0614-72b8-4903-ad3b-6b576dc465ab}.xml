@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{f64f0614-72b8-4903-ad3b-6b576dc465ab}">
 		<property name="assetPath">
 			<value>GeneratorPowerDown2.mp3</value>

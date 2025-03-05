@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{e120849b-a8d3-42dd-a3d6-2a28c4d26696}">
 		<property name="assetPath">
 			<value>offClick.mp3</value>

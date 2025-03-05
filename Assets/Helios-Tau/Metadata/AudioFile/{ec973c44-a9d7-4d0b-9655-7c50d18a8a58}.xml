@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{ec973c44-a9d7-4d0b-9655-7c50d18a8a58}">
+		<property name="assetPath">
+			<value>volkov-line5.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>9.1637414965986395</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{d881eb7d-919b-4d35-93ba-6b376105ce0e}</destination>
+		</relationship>
+	</object>
+</objects>

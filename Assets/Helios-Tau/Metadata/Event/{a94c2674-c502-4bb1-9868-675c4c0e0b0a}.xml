@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{a94c2674-c502-4bb1-9868-675c4c0e0b0a}">
 		<property name="name">
 			<value>FootSteps</value>
@@ -42,8 +42,8 @@
 	</object>
 	<object class="MasterTrack" id="{994ea41e-1af8-4429-aac0-4ef639df2c11}">
 		<relationship name="modules">
-			<destination>{2795b07d-2571-4f73-8ebb-f94eba8ce2f1}</destination>
 			<destination>{0348c8f8-eb0f-46f7-b9cb-b1aad9e03a2d}</destination>
+			<destination>{2795b07d-2571-4f73-8ebb-f94eba8ce2f1}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{aac89480-04de-4b0e-a640-a5af773a1ef1}</destination>
@@ -73,8 +73,8 @@
 	</object>
 	<object class="ParameterProxy" id="{e65dca43-569d-4dad-a7c0-c21d8ea60c50}">
 		<relationship name="modules">
-			<destination>{2795b07d-2571-4f73-8ebb-f94eba8ce2f1}</destination>
 			<destination>{0348c8f8-eb0f-46f7-b9cb-b1aad9e03a2d}</destination>
+			<destination>{2795b07d-2571-4f73-8ebb-f94eba8ce2f1}</destination>
 		</relationship>
 		<relationship name="preset">
 			<destination>{db10d5d1-4492-456e-9f40-223ff3bece98}</destination>
@@ -94,7 +94,6 @@
 			<destination>{109bddc1-d743-4ca1-8c8c-608d850d2345}</destination>
 		</relationship>
 	</object>
-	<object class="MultiSound" id="{2795b07d-2571-4f73-8ebb-f94eba8ce2f1}" />
 	<object class="MultiSound" id="{0348c8f8-eb0f-46f7-b9cb-b1aad9e03a2d}">
 		<relationship name="sounds">
 			<destination>{8531364c-ded6-40e8-915d-daea3e7ac69f}</destination>
@@ -105,6 +104,7 @@
 			<destination>{22cc033a-df65-404c-a903-c23094179bdb}</destination>
 		</relationship>
 	</object>
+	<object class="MultiSound" id="{2795b07d-2571-4f73-8ebb-f94eba8ce2f1}" />
 	<object class="MixerBusEffectChain" id="{53dab5e4-4daf-448e-9070-bdafdf33be8b}">
 		<relationship name="effects">
 			<destination>{44641b78-4211-4af2-9de1-11a32fcf71c3}</destination>

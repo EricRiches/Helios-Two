@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{3d7b2f5a-1303-423b-9af0-fc0a8a536f84}">
 		<property name="name">
 			<value>PALines</value>
@@ -96,6 +96,7 @@
 			<destination>{db29f86b-0faa-4ab3-bb95-69f233ff33d8}</destination>
 			<destination>{43d2a596-2af7-45a3-a08e-65a8d7350514}</destination>
 			<destination>{f0275251-2452-4855-99d3-e85116d61cd0}</destination>
+			<destination>{3a9e59ab-ca69-4f6a-894a-339eb0511ff8}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{b6c2fe7d-036f-428f-a2a7-07357f8393e6}">
@@ -128,6 +129,11 @@
 	<object class="SingleSound" id="{f0275251-2452-4855-99d3-e85116d61cd0}">
 		<relationship name="audioFile">
 			<destination>{15bc040b-a546-45d9-8948-8df97509f5c1}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{3a9e59ab-ca69-4f6a-894a-339eb0511ff8}">
+		<relationship name="audioFile">
+			<destination>{ec973c44-a9d7-4d0b-9655-7c50d18a8a58}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{5fa0ae9e-5ff8-4555-8786-fcaf9178be70}" />

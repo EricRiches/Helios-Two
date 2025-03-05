@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{52619bc9-d868-4775-97dc-169d872d70b3}">
 		<property name="name">
 			<value>BloodMonster</value>

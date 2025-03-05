@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.02.00">
+<objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{0fcdcfa9-666d-44ce-84d2-8430b40bf2e2}">
 		<property name="name">
 			<value>DoorOpen</value>
