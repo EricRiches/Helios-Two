@@ -71,15 +71,8 @@ public class SceneTransition : MonoBehaviour
 
     public void LoadScene(string sceneName, Vector3 newPosition)
     {
-        positionOnLoad = newPosition;
-        if (!SceneExists(sceneName)) { Debug.LogError("Scene name: " + sceneName + " Not found."); return; }
-        if(positionOnLoad == Vector3.negativeInfinity) { 
-            Debug.LogError("Loading zone position is: " + positionOnLoad.ToString() + "Please double check the target position variable is set.");
-            return;
-        }
-        positionOnLoad = newPosition;
-        SceneManager.LoadScene(sceneName);
-        
+
+        StartCoroutine(LoadSceneCoroutine(sceneName, newPosition));
     }
     /// <summary>
     /// load the scene name given, but send player to tram spawn point.
@@ -90,6 +83,24 @@ public class SceneTransition : MonoBehaviour
         if (!SceneExists(sceneName)) { Debug.LogError("Scene name: " + sceneName + " Not found."); return; }
         positionOnLoad = Vector3.negativeInfinity;
         toTram = true;
+        SceneManager.LoadScene(sceneName);
+
+    }
+
+
+    IEnumerator LoadSceneCoroutine(string sceneName, Vector3 scenePosition)
+    {
+        yield return SceneTransitionManager.PlayExitScene(sceneName);
+
+
+        positionOnLoad = scenePosition;
+        if (!SceneExists(sceneName)) { Debug.LogError("Scene name: " + sceneName + " Not found."); yield break; }
+        if (positionOnLoad == Vector3.negativeInfinity)
+        {
+            Debug.LogError("Loading zone position is: " + positionOnLoad.ToString() + "Please double check the target position variable is set.");
+            yield break;
+        }
+        positionOnLoad = scenePosition;
         SceneManager.LoadScene(sceneName);
 
     }
