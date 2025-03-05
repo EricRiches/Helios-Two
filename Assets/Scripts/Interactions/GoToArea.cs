@@ -11,7 +11,7 @@ public class GoToArea : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
 
-        Debug.Log("Entered Collider", gameObject);
+        // Debug.Log("Entered Collider", gameObject);
         if (other.CompareTag("Player"))
         {
             SceneTransition.instance.LoadScene(targetScene, targetPosition );

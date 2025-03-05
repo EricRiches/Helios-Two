@@ -571,10 +571,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1112.0,
-            "y": 15.3333158493042,
-            "width": 169.9998779296875,
-            "height": 120.00003051757813
+            "x": -1069.0,
+            "y": 207.0,
+            "width": 168.0,
+            "height": 118.0
         }
     },
     "m_Slots": [
@@ -912,7 +912,7 @@
     "m_ZTestMode": 4,
     "m_ZWriteControl": 0,
     "m_AlphaMode": 0,
-    "m_RenderFace": 0,
+    "m_RenderFace": 2,
     "m_AlphaClip": false,
     "m_CastShadows": false,
     "m_ReceiveShadows": false,
@@ -1735,7 +1735,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "625088baa55243499797d114b96124b6",
     "m_Id": 0,
-    "m_DisplayName": "fresnel pow",
+    "m_DisplayName": "Frozen Amount",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -2493,10 +2493,10 @@
     "m_Guid": {
         "m_GuidSerialized": "ccbe79cd-e7c6-4e08-8dca-ba009324224f"
     },
-    "m_Name": "fresnel pow",
+    "m_Name": "Frozen Amount",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "fresnel pow",
-    "m_DefaultReferenceName": "_fresnel_pow",
+    "m_RefNameGeneratedByDisplayName": "Frozen Amount",
+    "m_DefaultReferenceName": "_Frozen_Amount",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
@@ -2509,7 +2509,7 @@
     "m_Value": 1.0,
     "m_FloatType": 1,
     "m_RangeValues": {
-        "x": -2.0,
+        "x": -8.0,
         "y": 1.0
     }
 }

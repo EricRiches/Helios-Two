@@ -39,7 +39,7 @@ public class MonsterSenses : MonoBehaviour
             if (distanceToSound <= Hear_Distance)
             {
                 float HearTotalPercent = soundVolume * ((Hear_Distance - distanceToSound) / Hear_Distance);
-                Debug.Log(HearTotalPercent.ToString() + "% of the sound was heard");
+                //Debug.Log(HearTotalPercent.ToString() + "% of the sound was heard");
                 if (HearTotalPercent >= Hear_VolumeCutOff)
                 {
                     attackedMonster.TriggerHeardSounds(soundPosition, HearTotalPercent / Hear_VolumeCutOff);

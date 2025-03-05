@@ -99,16 +99,44 @@ public class Sonic_Burst : Tool_MultiTool
 
 public class Freeze_Spray : Tool_MultiTool
 {
+    Coroutine sprayCoroutine;
+    FreezeSprayCollider fsc;
     public Freeze_Spray()
     {
         toolType = Tool.Freeze_Spray;
     }
-
+    public override bool IsUnlocked => true;
     public override void UseTool()
     {
-        Debug.Log("Freeze Spray was used");
+        if (fsc == null) // if fsc is null ( was not set previously, or was deleted somehow?)
+        {
+            fsc = GameObject.FindFirstObjectByType<FreezeSprayCollider>(); // try to find it in scene.
+            if(fsc == null) // if it wasn't found, error out.
+            {
+                Debug.LogError("FreezeSprayCollider Not found in scene. double check there is an instance of it.");
+                return;
+            }
+        }
+        if(sprayCoroutine==null) sprayCoroutine = fsc.StartCoroutine(SprayCoroutine());// make sure only 1 freeze spray happens at a time.
+    }
+
+    IEnumerator SprayCoroutine()
+    {
+        Debug.Log("spray" + fsc == null);
+        fsc.Toggle(); // toggle collider on, wait, toggle off.
+        yield return new WaitForSeconds(2);
+        fsc.Toggle();
+        sprayCoroutine = null; // set coroutine reference back to null.
     }
     public override void OnSwapOff() { }
+
+    /// <summary>
+    /// set FreezeSprayCollider field of freeze spray ( in case it is not assigned over scene transitions).
+    /// </summary>
+    public void SetFSC(FreezeSprayCollider newFSC)
+    {
+        if(newFSC != null) fsc = newFSC;
+    }
 
 
 }
