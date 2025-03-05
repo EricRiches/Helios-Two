@@ -90,7 +90,7 @@ public class SceneTransition : MonoBehaviour
 
     IEnumerator LoadSceneCoroutine(string sceneName, Vector3 scenePosition)
     {
-        yield return SceneTransitionManager.PlayExitScene(sceneName);
+        yield return SceneTransitionManager.PlayExitScene();
 
 
         positionOnLoad = scenePosition;
