@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/Main Menu.unity
+    guid: 84e7ea975a2d3b64fbd9580a393ba2b5
   - enabled: 1
     path: Assets/Scenes/MedicalWing.unity
     guid: d221800e2b431644a903df1635e6b3e1

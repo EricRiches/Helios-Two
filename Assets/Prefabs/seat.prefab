@@ -260,6 +260,7 @@ GameObject:
   - component: {fileID: 6203041228622264455}
   - component: {fileID: 8574086554412964901}
   - component: {fileID: 5646228649237431174}
+  - component: {fileID: 2907011237074117121}
   m_Layer: 0
   m_Name: seat.001
   m_TagString: Untagged
@@ -333,6 +334,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2907011237074117121
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4175418466074308263}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3404429951612511585, guid: c285723cd778ec744b5f5c63279fbdc4, type: 3}
 --- !u!1 &4653084518105126832
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,6 +539,7 @@ GameObject:
   - component: {fileID: 5728903694826391164}
   - component: {fileID: 7379711480875848935}
   - component: {fileID: 6053396936431140779}
+  - component: {fileID: 5937618085217680514}
   m_Layer: 0
   m_Name: base
   m_TagString: Untagged
@@ -588,3 +612,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5937618085217680514
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8027502170821966888}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1388485733357891733, guid: c285723cd778ec744b5f5c63279fbdc4, type: 3}
