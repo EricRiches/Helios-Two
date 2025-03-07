@@ -21,14 +21,17 @@ public class VineMonsterTurret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Timer -= Time.deltaTime;
-        
-        if (Timer <= 0)
+        if (!manager.isPlantDead)
         {
-            ShootPoint.LookAt(player.transform.position + (Vector3.up * 10));
-            PlantMonsterBullet bulletOBJ = Instantiate(BulletPrefab, ShootPoint.position, ShootPoint.rotation);
-            bulletOBJ.manager = manager;
-            Timer = Random.Range(RandomShootTime.x, RandomShootTime.y);
+            Timer -= Time.deltaTime;
+
+            if (Timer <= 0)
+            {
+                ShootPoint.LookAt(player.transform.position + (Vector3.up * 10));
+                PlantMonsterBullet bulletOBJ = Instantiate(BulletPrefab, ShootPoint.position, ShootPoint.rotation);
+                bulletOBJ.manager = manager;
+                Timer = Random.Range(RandomShootTime.x, RandomShootTime.y);
+            }
         }
     }
 }
