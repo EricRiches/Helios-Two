@@ -10,12 +10,17 @@ public class PlantMonsterManager : MonoBehaviour
     //[SerializeField] float killPointRange;
 
     public Vector2 VineSwingTimes;
+    [Header("Visual Goop")]
+    [SerializeField] GameObject VisualGoop;
+    [SerializeField] float GoopTime;
+    float GoopTimer;
 
     SC_FPSController playerLocation;
 
     private void Start()
     {
         playerLocation = FindObjectOfType<SC_FPSController>();
+        VisualGoop.SetActive(false);
     }
 
     void Update()
@@ -30,6 +35,16 @@ public class PlantMonsterManager : MonoBehaviour
                 }
             }
         }*/
+
+        if (GoopTimer > 0)
+        {
+            GoopTimer -= Time.deltaTime;
+
+            if (GoopTimer <= 0)
+            {
+                VisualGoop.SetActive(false);
+            }
+        }
     }
 
     private void OnDrawGizmosSelected()
@@ -52,5 +67,11 @@ public class PlantMonsterManager : MonoBehaviour
     public void PlantDied()
     {
         isPlantDead = true;
+    }
+
+    public void ApplyGoop()
+    {
+        VisualGoop.SetActive(true);
+        GoopTimer = GoopTime;
     }
 }
