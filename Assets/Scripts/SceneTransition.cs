@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class SceneTransition : MonoBehaviour
 {
     public static SceneTransition instance;
-    [SerializeField] bool toTram;
+    [SerializeField] bool toTram = false;
     [SerializeField] Vector3 positionOnLoad = Vector3.negativeInfinity;
 
     private void Awake()
@@ -19,7 +19,10 @@ public class SceneTransition : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(gameObject); // persist through scene transitions.
     }
-
+    private void Start()
+    {
+        SceneManager.sceneLoaded += SetPositionOnSceneLoad;
+    }
     public void ToMainMenu()
     {
         SceneManager.LoadScene("Main Menu");
@@ -27,7 +30,18 @@ public class SceneTransition : MonoBehaviour
 
     public void SetPositionOnSceneLoad(Scene scene, LoadSceneMode mode)
     {
-        if(positionOnLoad == Vector3.negativeInfinity && !toTram) { Debug.LogError("Loading zone position is: " + positionOnLoad.ToString() + "Please double check the target position variable is set."); return; }
+        try
+        {
+            if (positionOnLoad == Vector3.negativeInfinity && !toTram)
+            {
+                Debug.LogError("Loading zone position is: " + positionOnLoad.ToString() + "Please double check the target position variable is set.");
+                return;
+            }
+        }
+        catch
+        {
+            Debug.LogError(" error setting position upon loading scene.");
+        }
         var playerController = FindObjectOfType<CharacterController>();
         if (playerController != null)
         {
@@ -51,7 +65,7 @@ public class SceneTransition : MonoBehaviour
     
             try {
                 playerController.enabled = false;
-                playerController.transform.position = positionOnLoad;
+               // playerController.transform.position = positionOnLoad;
                 Debug.Log($"Player position set to: {positionOnLoad}");
                 playerController.enabled = true;
                 toTram = false;
@@ -64,10 +78,6 @@ public class SceneTransition : MonoBehaviour
         }
     }
 
-    private void OnEnable()
-    {
-        SceneManager.sceneLoaded += SetPositionOnSceneLoad;
-    }
 
     private void OnDisable()
     {
