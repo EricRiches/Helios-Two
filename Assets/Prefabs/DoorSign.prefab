@@ -57,7 +57,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 644468123143301144, guid: 189f313a23df8b943b408608683400eb, type: 2}
+  - {fileID: 3371353177880725885, guid: 90628a86d1de4894086fcea0ffa31bec, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -101,8 +101,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: BRIDGE
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 189f313a23df8b943b408608683400eb, type: 2}
-  m_sharedMaterial: {fileID: 644468123143301144, guid: 189f313a23df8b943b408608683400eb,
+  m_fontAsset: {fileID: 11400000, guid: 90628a86d1de4894086fcea0ffa31bec, type: 2}
+  m_sharedMaterial: {fileID: 3371353177880725885, guid: 90628a86d1de4894086fcea0ffa31bec,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
