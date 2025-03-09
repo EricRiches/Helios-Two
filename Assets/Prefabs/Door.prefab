@@ -886,6 +886,69 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &5974380409114877380
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4224031553581915421}
+  - component: {fileID: 1286236951428367964}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4224031553581915421
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5974380409114877380}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.16, y: 2.42, z: -2.65}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6662437874152910306}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1286236951428367964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5974380409114877380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 265146281
+      Data2: 1154377325
+      Data3: 814011012
+      Data4: -487453772
+    Path: event:/DoorOpen
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 100
 --- !u!1 &6007419560169655441
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,7 +962,6 @@ GameObject:
   - component: {fileID: 1808376382415255548}
   - component: {fileID: 2128144300947851800}
   - component: {fileID: 9157662250867948915}
-  - component: {fileID: 1932861706757155885}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -933,6 +995,7 @@ Transform:
   - {fileID: 5312856403277455409}
   - {fileID: 1580786163807477991}
   - {fileID: 1360103616850680814}
+  - {fileID: 4224031553581915421}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &9215093238965720594
@@ -968,7 +1031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a2216ec7f202fe42ad46a1f478c8afd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emitter: {fileID: 1932861706757155885}
+  emitter: {fileID: 1286236951428367964}
   CanOpen: 1
   redPanelLights:
   - {fileID: 2834148774352673952}
@@ -1013,37 +1076,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 2.3, z: -3}
   m_TimeToStationary: 0.5
---- !u!114 &1932861706757155885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6007419560169655441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 265146281
-      Data2: 1154377325
-      Data3: 814011012
-      Data4: -487453772
-    Path: event:/DoorOpen
-  Event: 
-  EventPlayTrigger: 0
-  EventStopTrigger: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 100
 --- !u!1 &6035346928386766148
 GameObject:
   m_ObjectHideFlags: 0

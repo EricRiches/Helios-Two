@@ -150,10 +150,10 @@ MonoBehaviour:
   Path: Assets/Helios-Tau/Build/Desktop/UnityScene.bank
   Name: UnityScene
   StudioPath: bank:/UnityScene
-  lastModified: 638769559403187034
+  lastModified: 638771359813338072
   FileSizes:
   - Name: Desktop
-    Value: 834112
+    Value: 834592
   Exists: 1
 --- !u!114 &-3853967101111110545
 MonoBehaviour:
@@ -207,7 +207,7 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 650
   Length: 22000
 --- !u!114 &-1120181641555656870
 MonoBehaviour:
@@ -299,12 +299,14 @@ MonoBehaviour:
   - {fileID: 7343746527562417710}
   - {fileID: -1120181641555656870}
   - {fileID: 1401444953075191619}
+  - {fileID: 4958665625531435254}
+  - {fileID: 2967140072024152668}
   EditorParameters: []
   MasterBanks:
   - {fileID: 6386905492779891710}
   StringsBanks:
   - {fileID: 7267029105545027423}
-  cacheTime: 638771253819991214
+  cacheTime: 638771378033648916
   cacheVersion: 131846
 --- !u!114 &972780636482049982
 MonoBehaviour:
@@ -386,7 +388,7 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 250
+  MaxDistance: 600
   Length: 8653
 --- !u!114 &1401444953075191619
 MonoBehaviour:
@@ -496,6 +498,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 40435
+--- !u!114 &2967140072024152668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MenuMusic
+  m_EditorClassIdentifier: 
+  Path: event:/MenuMusic
+  Guid:
+    Data1: 1319543746
+    Data2: 1220351918
+    Data3: -511343434
+    Data4: -425361348
+  Banks:
+  - {fileID: 6386905492779891710}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 61622
+--- !u!114 &4958665625531435254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Plantmonster Breathing
+  m_EditorClassIdentifier: 
+  Path: event:/Plantmonster Breathing
+  Guid:
+    Data1: -1285445437
+    Data2: 1128699353
+    Data3: -257913158
+    Data4: -1829837043
+  Banks:
+  - {fileID: 6386905492779891710}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 200
+  Length: 43734
 --- !u!114 &5608132160736542054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -565,10 +621,10 @@ MonoBehaviour:
   Path: Assets/Helios-Tau/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638771253819975900
+  lastModified: 638771378033633759
   FileSizes:
   - Name: Desktop
-    Value: 2435104
+    Value: 3639232
   Exists: 1
 --- !u!114 &7267029105545027423
 MonoBehaviour:
@@ -585,10 +641,10 @@ MonoBehaviour:
   Path: Assets/Helios-Tau/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638771253819991214
+  lastModified: 638771378033648916
   FileSizes:
   - Name: Desktop
-    Value: 1742
+    Value: 1846
   Exists: 1
 --- !u!114 &7343746527562417710
 MonoBehaviour:
