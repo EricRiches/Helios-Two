@@ -5,7 +5,7 @@
 			<value>Audio Log 3</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{cad3e6f1-0366-4eea-870a-aba3201b364b}</destination>
@@ -56,7 +56,11 @@
 			<destination>{d27662ef-90cd-4a9f-b79d-45ca694fed43}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{1dedcb64-8309-489c-85eb-e31ee4cb90f1}" />
+	<object class="EventAutomatableProperties" id="{1dedcb64-8309-489c-85eb-e31ee4cb90f1}">
+		<property name="maximumDistance">
+			<value>100</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{f063c5c7-3685-4090-a0eb-b91edb88d9b4}" />
 	<object class="Timeline" id="{b1aa1b95-7d6a-4c13-82f4-ecae248381cc}">
 		<relationship name="modules">
@@ -64,6 +68,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{0550f678-aea4-434f-971c-bb8915e92d71}">
+		<property name="volume">
+			<value>-11</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{d60d00d3-c92d-4603-8afe-6393bd297916}</destination>
 		</relationship>
@@ -91,9 +98,11 @@
 	<object class="MixerBusEffectChain" id="{d60d00d3-c92d-4603-8afe-6393bd297916}">
 		<relationship name="effects">
 			<destination>{10c2bd6f-c4d3-49be-bc64-1e00c430ed7f}</destination>
+			<destination>{465fd26d-8c17-48c8-9437-2a29c57f5e40}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{134ca540-a0c0-4d36-9344-56f9d36bd302}" />
 	<object class="MixerBusFader" id="{53328e0f-dba4-40c8-9acc-f125cb80961c}" />
 	<object class="MixerBusFader" id="{10c2bd6f-c4d3-49be-bc64-1e00c430ed7f}" />
+	<object class="SpatialiserEffect" id="{465fd26d-8c17-48c8-9437-2a29c57f5e40}" />
 </objects>

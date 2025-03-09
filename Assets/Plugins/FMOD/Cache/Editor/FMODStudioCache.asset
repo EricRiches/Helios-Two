@@ -304,7 +304,7 @@ MonoBehaviour:
   - {fileID: 6386905492779891710}
   StringsBanks:
   - {fileID: 7267029105545027423}
-  cacheTime: 638770607475739160
+  cacheTime: 638771253819991214
   cacheVersion: 131846
 --- !u!114 &972780636482049982
 MonoBehaviour:
@@ -409,11 +409,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 6386905492779891710}
   IsStream: 1
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 100
   Length: 25957
 --- !u!114 &1402844823192870258
 MonoBehaviour:
@@ -565,10 +565,10 @@ MonoBehaviour:
   Path: Assets/Helios-Tau/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638770607475723972
+  lastModified: 638771253819975900
   FileSizes:
   - Name: Desktop
-    Value: 2434496
+    Value: 2435104
   Exists: 1
 --- !u!114 &7267029105545027423
 MonoBehaviour:
@@ -585,7 +585,7 @@ MonoBehaviour:
   Path: Assets/Helios-Tau/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638770607475739160
+  lastModified: 638771253819991214
   FileSizes:
   - Name: Desktop
     Value: 1742
@@ -611,11 +611,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 6386905492779891710}
   IsStream: 1
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 100
   Length: 23866
 --- !u!114 &9212614712505979577
 MonoBehaviour:
