@@ -8,11 +8,11 @@ using UnityEngine.Events;
 public class Interaction_GeneratorSwitch : MonoBehaviour, IInteractable
 {
     [SerializeField] float holdDuration;
-    [SerializeField] Transform switchHandle;
-    [SerializeField] float switchRotationStart;
-    [SerializeField] float switchRotationEnd;
-    Quaternion startRotation;
-    Quaternion endRotation;
+    //[SerializeField] Transform switchHandle;
+    //[SerializeField] float switchRotationStart;
+    //[SerializeField] float switchRotationEnd;
+   // Quaternion startRotation;
+   // Quaternion endRotation;
     bool IsOn = false;
     Coroutine holdSwitchCoroutine; 
 
@@ -20,13 +20,17 @@ public class Interaction_GeneratorSwitch : MonoBehaviour, IInteractable
 
     public bool Interactable => !IsOn;
 
+    public void IncrementLockdownTerminalCount()
+    {
+        CarryOvers.LockdownTerminalsActivated++;
+    }
     private void Start()
     {
-        var temp = switchHandle.localRotation.eulerAngles;
+        //var temp = switchHandle.localRotation.eulerAngles;
         // save quaternion rep of start and end rotations
 
-        startRotation = Quaternion.Euler(new Vector3(temp.x, temp.y, switchRotationStart));
-        endRotation = Quaternion.Euler(new Vector3(temp.x, temp.y, switchRotationEnd));
+        //startRotation = Quaternion.Euler(new Vector3(temp.x, temp.y, switchRotationStart));
+        //endRotation = Quaternion.Euler(new Vector3(temp.x, temp.y, switchRotationEnd));
     }
     public void OnInteractDown()
     {
@@ -39,7 +43,7 @@ public class Interaction_GeneratorSwitch : MonoBehaviour, IInteractable
     }
     public void OnInteractUp()
     {
-        if (!IsOn) { switchHandle.localRotation = startRotation; }
+       // if (!IsOn) { switchHandle.localRotation = startRotation; }
         if (holdSwitchCoroutine != null) StopCoroutine(holdSwitchCoroutine);
         Throbber.instance.SetVisibility(false);
     }
@@ -75,7 +79,7 @@ public class Interaction_GeneratorSwitch : MonoBehaviour, IInteractable
             Throbber.instance.UpdateFillAmount(percentComplete);
 
             // Interpolate using Quaternion.Lerp to avoid backward rotation
-            switchHandle.localRotation = Quaternion.Lerp(startRotation, endRotation, percentComplete);
+            //switchHandle.localRotation = Quaternion.Lerp(startRotation, endRotation, percentComplete);
         }
 
         // Final adjustments after the loop completes

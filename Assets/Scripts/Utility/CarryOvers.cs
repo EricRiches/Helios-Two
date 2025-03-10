@@ -10,6 +10,25 @@ public static class CarryOvers
     static List<GameObject> logObjects = new List<GameObject>();
     static bool isListEmpty = true;
 
+    static byte totalLockdownTerminals = 3;
+    static byte lockdownTerminalsActivated = 0;
+    static bool reactorDoorOpen = false;
+
+
+    public static byte LockdownTerminalsActivated
+    {
+        get { return lockdownTerminalsActivated; }
+        set { 
+            lockdownTerminalsActivated = value;
+            if (lockdownTerminalsActivated >= totalLockdownTerminals)
+            {
+                reactorDoorOpen = true;
+            }
+
+        }
+
+    }
+
     static bool multiTool = false;
     static bool flashlight = false;
 
