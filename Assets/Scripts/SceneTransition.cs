@@ -45,10 +45,8 @@ public class SceneTransition : MonoBehaviour
         var playerController = FindObjectOfType<CharacterController>();
         if (playerController != null)
         {
-
             if (toTram)
             {
-
                 try
                 {
                     Transform tramSP = GameObject.Find("Tram_SpawnPoint").transform;
@@ -60,12 +58,10 @@ public class SceneTransition : MonoBehaviour
                     return; 
                 }
             }
-
-
     
             try {
                 playerController.enabled = false;
-               // playerController.transform.position = positionOnLoad;
+                playerController.transform.position = positionOnLoad;
                 Debug.Log($"Player position set to: {positionOnLoad}");
                 playerController.enabled = true;
                 toTram = false;
@@ -78,7 +74,6 @@ public class SceneTransition : MonoBehaviour
         }
     }
 
-
     private void OnDisable()
     {
         SceneManager.sceneLoaded -= SetPositionOnSceneLoad;
@@ -86,7 +81,6 @@ public class SceneTransition : MonoBehaviour
 
     public void LoadScene(string sceneName, Vector3 newPosition)
     {
-
         StartCoroutine(LoadSceneCoroutine(sceneName, newPosition));
     }
     /// <summary>
@@ -99,14 +93,11 @@ public class SceneTransition : MonoBehaviour
         positionOnLoad = Vector3.negativeInfinity;
         toTram = true;
         SceneManager.LoadScene(sceneName);
-
     }
-
 
     IEnumerator LoadSceneCoroutine(string sceneName, Vector3 scenePosition)
     {
         yield return SceneTransitionManager.PlayExitScene();
-
 
         positionOnLoad = scenePosition;
         if (!SceneExists(sceneName)) { Debug.LogError("Scene name: " + sceneName + " Not found."); yield break; }
@@ -115,12 +106,9 @@ public class SceneTransition : MonoBehaviour
             Debug.LogError("Loading zone position is: " + positionOnLoad.ToString() + "Please double check the target position variable is set.");
             yield break;
         }
-        positionOnLoad = scenePosition;
+        
         SceneManager.LoadScene(sceneName);
-
     }
-
-
 
     /// <summary>
     /// checks if a scene exists.
