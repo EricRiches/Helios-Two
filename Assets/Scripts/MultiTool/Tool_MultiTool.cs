@@ -30,9 +30,6 @@ public abstract class Tool_MultiTool
         isUnlocked = value;
     }
     public abstract void OnSwapOff();
-
-
-
 }
 
 public class Flashlight : Tool_MultiTool
@@ -50,7 +47,6 @@ public class Flashlight : Tool_MultiTool
     public Flashlight()
     {
         toolType = Tool.Flashlight;
-
     }
     public void SetLight(Light light)
     {
@@ -76,11 +72,8 @@ public class Flashlight : Tool_MultiTool
     {
         this.sound = sound;
     }
-
+    
     public override void OnSwapOff() { light.enabled = false; }
-
-
-
 }
 
 public class Sonic_Burst : Tool_MultiTool
@@ -89,7 +82,7 @@ public class Sonic_Burst : Tool_MultiTool
     {
         toolType = Tool.Sonic_Burst;
     }
-
+    
     public override void UseTool()
     {
         Debug.Log("Sonic Burst was used");
@@ -137,8 +130,6 @@ public class Freeze_Spray : Tool_MultiTool
     {
         if(newFSC != null) fsc = newFSC;
     }
-
-
 }
 
 public class Hack_Panel : Tool_MultiTool
@@ -166,13 +157,11 @@ public class Hack_Panel : Tool_MultiTool
         {
             storedInteractable = interactable;
         }
-
         else if (storedInteractable != null && storedInteractable.Interactable)
         {
             storedInteractable.OnInteractDown();
             storedInteractable = null;
         }
-
     }
 
     public override void OnSwapOff() { }
@@ -183,7 +172,4 @@ public class Hack_Panel : Tool_MultiTool
 
         storedInteractable = interactable; // else set interactable.
     }
-
 }
-
-

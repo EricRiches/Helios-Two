@@ -7,7 +7,6 @@ using FMOD.Studio;
 
 public class MultiTool : MonoBehaviour
 {
-
     [SerializeField] Light flashlight_light;
 
     public static MultiTool instance;
@@ -23,10 +22,6 @@ public class MultiTool : MonoBehaviour
     public Tool_MultiTool currentTool;
 
     public bool canUseTool = true;
-
-   
-
-
 
     public float maxIntensity = 5f; // Default maximum intensity
     public float minIntensity = 0.5f; // Minimum intensity when very close
@@ -47,7 +42,6 @@ public class MultiTool : MonoBehaviour
         tools[Tool.Sonic_Burst] = sonic_Burst;
         tools[Tool.Freeze_Spray] = freeze_Spray;
         tools[Tool.Hack_Panel] = hack_Panel;
-
     }
 
     public void SwitchTool(Tool toolType)
@@ -56,16 +50,10 @@ public class MultiTool : MonoBehaviour
         {
             currentTool?.OnSwapOff();
             currentTool = tool;
-
         }
-        
     }
 
-
-
     public void SetCanUseTool(bool value) { canUseTool = value; }
-
-
 
     public void UnlockFlashlight() { flashlight.SetUnlocked(true); }
     public void UnlockSonicBurst() { sonic_Burst.SetUnlocked(true); }
@@ -86,8 +74,6 @@ public class MultiTool : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha2)) SwitchTool(Tool.Freeze_Spray);
 
         if (Input.GetKeyDown(KeyCode.Alpha4)) SwitchTool(Tool.Hack_Panel);
-
-
     }
 
     private void FixedUpdate()
