@@ -14,6 +14,10 @@ public static class CarryOvers
     static byte lockdownTerminalsActivated = 0;
     static bool reactorDoorOpen = false;
 
+    #region Objective Variables
+    static bool openedShutters = false;
+    static bool killedBlood = false;
+    #endregion Objective Variables
 
     public static byte LockdownTerminalsActivated
     {
@@ -109,4 +113,26 @@ public static class CarryOvers
         return flashlight;
     }
     #endregion
+
+    #region Objective Checks
+    public static bool GetOpenedShutters()
+    {
+        return openedShutters;
+    }
+
+    public static void SetOpenedShutters()
+    {
+        openedShutters = true;
+    }
+
+    public static bool GetKilledBlood()
+    {
+        return killedBlood;
+    }
+
+    public static void SetKilledBlood()
+    {
+        killedBlood = true;
+    }
+    #endregion Objective Checks
 }
