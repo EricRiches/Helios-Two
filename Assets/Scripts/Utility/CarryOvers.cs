@@ -14,6 +14,8 @@ public static class CarryOvers
     static byte lockdownTerminalsActivated = 0;
     static bool reactorDoorOpen = false;
 
+    public static List<string> paObj = new List<string>();
+
     #region Objective Variables
     static bool openedShutters = false;
     static bool killedBlood = false;
@@ -28,9 +30,7 @@ public static class CarryOvers
             {
                 reactorDoorOpen = true;
             }
-
         }
-
     }
 
     static bool multiTool = false;
@@ -135,4 +135,14 @@ public static class CarryOvers
         killedBlood = true;
     }
     #endregion Objective Checks
+
+    public static void AppendObj(string obj)
+    {
+        paObj.Add(obj);
+    }
+
+    public static List<string> GetPAObj()
+    {
+        return paObj;
+    }
 }

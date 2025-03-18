@@ -46,9 +46,7 @@ public class PlayerAudio : MonoBehaviour
                 {
                     footstepEmitter.Play();
                 }
-                
             }
-            
         }
     }
 
@@ -57,7 +55,9 @@ public class PlayerAudio : MonoBehaviour
         if (other.gameObject.CompareTag("PATrigger"))
         {
             paEmitter.Play();
-            Destroy(other);
+            CarryOvers.AppendObj(other.gameObject.name);
+            //Destroy(other);
+            other.gameObject.SetActive(false);
         }
     }
 
@@ -70,6 +70,4 @@ public class PlayerAudio : MonoBehaviour
     {
         
     }
-
-    
 }

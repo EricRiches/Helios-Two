@@ -16,14 +16,12 @@ public class SceneTransitionManager : MonoBehaviour
         { 3,"Crew Deck" },
         { 4,"Engineering Wing" },
         { 5,"Hangar Bay" }
-
     };
 
     Animator animator;
     TextMeshProUGUI locationText;
     private void Awake()
     {
-
         if (instance != null&&instance!=this) Destroy(instance);
         instance = this;
 
@@ -36,7 +34,6 @@ public class SceneTransitionManager : MonoBehaviour
             instance.locationText.text = mapNames[SceneManager.GetActiveScene().buildIndex];
         }
     }
-
     
     // Start is called before the first frame update
     public static IEnumerator PlayExitScene()
@@ -47,11 +44,5 @@ public class SceneTransitionManager : MonoBehaviour
 
         }
         yield return new WaitForSeconds(1.66f);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }
