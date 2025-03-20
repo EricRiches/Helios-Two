@@ -19,8 +19,6 @@ public class Tutorial_Helper : MonoBehaviour
 
     IEnumerator WaitUntilFlashlightEquipped()
     {
-
-
         yield return new WaitUntil(
            () => MultiTool.instance.currentTool != null &&
               MultiTool.instance.currentTool.CheckToolType(Tool.Flashlight)
