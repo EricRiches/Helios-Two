@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89bee741e91bd4c49921489dc221e38b, type: 3}
+  m_Name: PA Voice Line 3
+  m_EditorClassIdentifier: 
+  subtitles:
+  - Well done, you seem to have out run it for now.
+  - Make your way up the elevator. Once on the bridge--
+  - --use the mainframe to reroute control of the station--
+  - --to me in the reactor. All will be explained after.
+  events:
+  - Guid:
+      Data1: 1269588954
+      Data2: 1185575498
+      Data3: -1348618350
+      Data4: 2111490699
+    Path: event:/PA Voicelines/PA Voiceline 3/PA Voiceline 3-1
+  - Guid:
+      Data1: 1637064701
+      Data2: 1090709133
+      Data3: 1215070645
+      Data4: 1369318603
+    Path: event:/PA Voicelines/PA Voiceline 3/PA Voiceline 3-2
+  - Guid:
+      Data1: 2009164656
+      Data2: 1237734795
+      Data3: 1389121688
+      Data4: 1274415687
+    Path: event:/PA Voicelines/PA Voiceline 3/PA Voiceline 3-3
+  - Guid:
+      Data1: 1388418257
+      Data2: 1078686679
+      Data3: -529755006
+      Data4: -1185167155
+    Path: event:/PA Voicelines/PA Voiceline 3/PA Voiceline 3-4
