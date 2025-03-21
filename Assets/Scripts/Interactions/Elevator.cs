@@ -24,7 +24,7 @@ public class Elevator : MonoBehaviour
     }
 
     /// <summary>
-    /// flips the value of atTop. made as a method so you can call it in unity events.
+    /// flips the value of atTop. made as a method so you can call it in unity fmodEvents.
     /// </summary>
     public void FlipAtTop()
     {
