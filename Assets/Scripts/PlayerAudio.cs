@@ -56,7 +56,6 @@ public class PlayerAudio : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PATrigger"))
         {
-            Debug.Log("hit");
             other.gameObject.SetActive(false);
             //paEmitter.Play();
             if (PaNum >= subtitles.Count) { Debug.LogError("Indexing out of List bounds"); }

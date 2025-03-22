@@ -32,8 +32,6 @@ public class Subtitle : ScriptableObject
         if (string.IsNullOrEmpty(subtitles[index]))  return false;  // check if subtitle null/empty at index
         
         currentFmodEvent = RuntimeManager.CreateInstance(fmodEvents[index]); // make instance of the event.
-        eventCallback = new EVENT_CALLBACK(EndOfLine); // create callback that will call EndOfLine
-        currentFmodEvent.setCallback(eventCallback, EVENT_CALLBACK_TYPE.STOPPED); // set the callback to be called when the event stops.
         currentFmodEvent.start(); // start playing event.
 
         SubtitleManager.instance.SetText(subtitles[index]);
@@ -45,15 +43,7 @@ public class Subtitle : ScriptableObject
     }
 
 
-    // Callback function for when the event stops
-    private FMOD.RESULT EndOfLine(EVENT_CALLBACK_TYPE type, IntPtr instancePtr, IntPtr paramPtr)
-    {
-        if (type == EVENT_CALLBACK_TYPE.STOPPED) // if fmod event stopped, set playing to true.
-        {
-            isLinePlaying = false;
-        }
-        return FMOD.RESULT.OK;
-    }
+
 
     public IEnumerator PlayAll()
     {
@@ -61,11 +51,14 @@ public class Subtitle : ScriptableObject
         while (true)
         {
             if (!PlayLine())  break;// break if no next line.
-            yield return new WaitUntil(() => !isLinePlaying); // wait for current line to stop
+            yield return new WaitUntil(() => {
+                currentFmodEvent.getPlaybackState(out PLAYBACK_STATE state);
+                return state == PLAYBACK_STATE.STOPPED;
+                }
+            ); // wait for current line to stop
             yield return null;
             isLinePlaying = true; // reset bool
         }
         SubtitleManager.instance.SetText("");
-        SubtitleManager.instance.temp = null;
     }
 }
