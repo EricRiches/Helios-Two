@@ -22,7 +22,7 @@ MonoBehaviour:
   - My assistant, Dr. Borhiem, has a lab in the hydroponic's bay.
   - He was studying the effects of the alien cells on our crops.
   - He may have discovered something we can use.
-  events:
+  fmodEvents:
   - Guid:
       Data1: -1960394955
       Data2: 1332622324

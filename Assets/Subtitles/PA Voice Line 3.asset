@@ -17,7 +17,7 @@ MonoBehaviour:
   - Make your way up the elevator. Once on the bridge--
   - --use the mainframe to reroute control of the station--
   - --to me in the reactor. All will be explained after.
-  events:
+  fmodEvents:
   - Guid:
       Data1: 1269588954
       Data2: 1185575498

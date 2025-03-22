@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subtitles:
   - You're almost there. Through the access corridor. Hurry!
-  events:
+  fmodEvents:
   - Guid:
       Data1: 1450135400
       Data2: 1169707127

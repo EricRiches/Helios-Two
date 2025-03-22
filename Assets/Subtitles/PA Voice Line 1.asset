@@ -17,7 +17,7 @@ MonoBehaviour:
   - I need you help, it is coming.
   - 'Grab the M.U.L.T.I tool and make your way to the bridge '
   - I'll explain more when you arrive, now move.
-  events:
+  fmodEvents:
   - Guid:
       Data1: -967881148
       Data2: 1154576334

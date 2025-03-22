@@ -391,8 +391,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3169273840696226251}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.69, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 6.690001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -460,6 +460,7 @@ GameObject:
   - component: {fileID: -4329471080786663350}
   - component: {fileID: 1578590507954612278}
   - component: {fileID: 8033499551017103513}
+  - component: {fileID: 4076294934507647355}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -597,6 +598,8 @@ MonoBehaviour:
   footstepEmitter: {fileID: -4329471080786663350}
   paEmitter: {fileID: 1474465429600642989}
   characterController: {fileID: 4517209487581901940}
+  subtitles:
+  - {fileID: 11400000, guid: f8929350ac328a746b765cd113cff540, type: 2}
 --- !u!114 &1474465429600642989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -604,7 +607,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4553404097433228371}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
@@ -706,6 +709,20 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   isHoveringInteractable: 0
+--- !u!114 &4076294934507647355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4553404097433228371}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17b9520fed2ecf84b8c16613e63189f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayOnAwake: 1
+  SoundVolume: 100
 --- !u!1 &5326348122043353906
 GameObject:
   m_ObjectHideFlags: 0
@@ -1023,7 +1040,7 @@ GameObject:
   - component: {fileID: 8973913921773836909}
   - component: {fileID: 3424826500577265008}
   - component: {fileID: 4143606041244462738}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: FreezeSprayCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
