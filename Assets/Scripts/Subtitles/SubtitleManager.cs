@@ -9,7 +9,7 @@ public class SubtitleManager : MonoBehaviour
     [SerializeField]TextMeshProUGUI subtitleText;
     [SerializeField]Subtitle currentSubtitleSet;
 
-    public void SetSubtitle(Subtitle newSubtitle, bool startPlaying)
+    public void SetSubtitle(Subtitle newSubtitle, bool startPlaying = true)
     {
 
         currentSubtitleSet = newSubtitle;
@@ -46,11 +46,5 @@ public class SubtitleManager : MonoBehaviour
     {
         subtitleText = GetComponent<TextMeshProUGUI>();
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            PlayCurrentSubtitles();
-        }
-    }
+
 }

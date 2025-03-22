@@ -60,7 +60,7 @@ public class Subtitle : ScriptableObject
         while (true)
         {
             if (!PlayLine())  break;// break if no next line.
-            yield return new WaitUntil(() => isLinePlaying || Input.GetKeyDown(KeyCode.I)); // wait for current line to stop
+            yield return new WaitUntil(() => isLinePlaying); // wait for current line to stop
             yield return null;
             isLinePlaying = false; // reset bool
         }
