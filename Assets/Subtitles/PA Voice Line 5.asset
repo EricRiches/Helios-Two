@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subtitles:
   - The hydroponic's bay lies ahead. Be careful I am detecti... [Radio Static]
-  events:
+  fmodEvents:
   - Guid:
       Data1: 522590945
       Data2: 1238115043
