@@ -1518,6 +1518,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3c49562c9c3f1b47b424a35a5538271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spraySound:
+    Guid:
+      Data1: -1716761478
+      Data2: 1294763731
+      Data3: 1409291400
+      Data4: 1609602595
+    Path: event:/CryoSpray
   particle: {fileID: 1094222610788660687}
 --- !u!4 &3993000076260397276 stripped
 Transform:

@@ -57,23 +57,24 @@ public class PlayerAudio : MonoBehaviour
         if (other.gameObject.CompareTag("PATrigger"))
         {
             other.gameObject.SetActive(false);
-            //paEmitter.Play();
-            if (PaNum >= subtitles.Count) { Debug.LogError("Indexing out of List bounds"); }
-            else
-            {
-                SubtitleManager.instance.SetSubtitle(subtitles[PaNum]);
-                SubtitleManager.instance.PlayCurrentSubtitles();
-                PaNum++;
-            }
+            PaPlay();
             CarryOvers.AppendObj(other.gameObject.name);
-            //Destroy(other);
-            
         }
     }
 
     public void PaPlay()
     {
-        paEmitter.Play();
+        
+        //paEmitter.Play();
+        if (PaNum >= subtitles.Count) { Debug.LogError("Indexing out of List bounds"); }
+        else
+        {
+            SubtitleManager.instance.SetSubtitle(subtitles[PaNum]);
+            SubtitleManager.instance.PlayCurrentSubtitles();
+            PaNum++;
+        }
+       
+        //Destroy(other);
     }
 
     private void PlayFootSteps()

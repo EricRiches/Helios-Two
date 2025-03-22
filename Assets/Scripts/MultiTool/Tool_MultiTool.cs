@@ -124,6 +124,7 @@ public class Freeze_Spray : Tool_MultiTool
 
     IEnumerator SprayCoroutine()
     {
+
         fsc.Toggle(); // toggle collider on, wait, toggle off.
         FreezeSprayParticle.SetActive(true); // toggle particles. 
         yield return new WaitForSeconds(2);
