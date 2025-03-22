@@ -8,6 +8,7 @@ public class SubtitleManager : MonoBehaviour
     public static SubtitleManager instance;
     [SerializeField]TextMeshProUGUI subtitleText;
     [SerializeField]Subtitle currentSubtitleSet;
+    public Coroutine temp;
 
     public void SetSubtitle(Subtitle newSubtitle, bool startPlaying = false)
     {
@@ -17,7 +18,7 @@ public class SubtitleManager : MonoBehaviour
         if (currentSubtitleSet == null) return;
         if (startPlaying)
         {
-            StartCoroutine(currentSubtitleSet.PlayAll());
+            //StartCoroutine(currentSubtitleSet.PlayAll());
         }
     }
 
@@ -25,7 +26,7 @@ public class SubtitleManager : MonoBehaviour
     {
         if (subtitleText == null) { subtitleText = GetComponent<TextMeshProUGUI>(); }
         if (currentSubtitleSet == null) { Debug.Log("subtitleset null"); return; }
-        StartCoroutine(currentSubtitleSet.PlayAll());
+        if(temp== null) temp = StartCoroutine(currentSubtitleSet.PlayAll());
     }
 
     public void SetText(string newText)

@@ -66,6 +66,6 @@ public class Subtitle : ScriptableObject
             isLinePlaying = true; // reset bool
         }
         SubtitleManager.instance.SetText("");
-
+        SubtitleManager.instance.temp = null;
     }
 }
