@@ -26,7 +26,6 @@ public class SceneTransitionManager : MonoBehaviour
         instance = this;
 
         animator = GetComponent<Animator>();
-        Debug.LogError("12312313");
 
         locationText = GetComponentInChildren<TextMeshProUGUI>();
         if (instance.locationText != null)

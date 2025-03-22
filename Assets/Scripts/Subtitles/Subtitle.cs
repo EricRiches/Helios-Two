@@ -25,16 +25,17 @@ public class Subtitle : ScriptableObject
     /// </summary>
     /// <param name="index">index to play.</param>
     /// <returns> true if there is an element at that index.</returns>
-    public bool PlayLine(int index)
+    public bool PlayLine()
     {
-        if (index >= subtitles.Length || index >= fmodEvents.Length) return false;// check if index in bounds.
-        if (string.IsNullOrEmpty(subtitles[index]) ) return false; // check if subtitle null/empty at index
+        if (index >= subtitles.Length || index >= fmodEvents.Length) return false; // check if index in bounds.
+        if (string.IsNullOrEmpty(subtitles[index]))  return false;  // check if subtitle null/empty at index
+        
         currentFmodEvent = RuntimeManager.CreateInstance(fmodEvents[index]); // make instance of the event.
         eventCallback = new EVENT_CALLBACK(EndOfLine); // create callback that will call EndOfLine
         currentFmodEvent.setCallback(eventCallback, EVENT_CALLBACK_TYPE.STOPPED); // set the callback to be called when the event stops.
         currentFmodEvent.start(); // start playing event.
 
-        // UIMANAGER.DISPLAYSUBTITLE(subtitles[index]);
+        SubtitleManager.instance.SetText(subtitles[index]);
 
 
         index++; // increment index.
@@ -55,12 +56,15 @@ public class Subtitle : ScriptableObject
 
     public IEnumerator PlayAll()
     {
+        index = 0;
         while (true)
         {
-            if (!PlayLine(index)) break; // break if no next line.
-            yield return new WaitUntil(() => isLinePlaying); // wait for current line to stop
+            if (!PlayLine())  break;// break if no next line.
+            yield return new WaitUntil(() => isLinePlaying || Input.GetKeyDown(KeyCode.I)); // wait for current line to stop
+            yield return null;
             isLinePlaying = false; // reset bool
         }
+        SubtitleManager.instance.SetText("");
 
     }
 }

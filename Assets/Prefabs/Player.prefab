@@ -894,7 +894,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4271850676093857280}
   - component: {fileID: 7566534903966891822}
-  - component: {fileID: 1544944713908745608}
   - component: {fileID: 4799615271600970970}
   m_Layer: 12
   m_Name: MultiToolCam
@@ -969,14 +968,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &1544944713908745608
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6860839706625345705}
-  m_Enabled: 1
 --- !u!114 &4799615271600970970
 MonoBehaviour:
   m_ObjectHideFlags: 0
