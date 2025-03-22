@@ -50,7 +50,7 @@ public class Subtitle : ScriptableObject
     {
         if (type == EVENT_CALLBACK_TYPE.STOPPED) // if fmod event stopped, set playing to true.
         {
-            isLinePlaying = true;
+            isLinePlaying = false;
         }
         return FMOD.RESULT.OK;
     }
@@ -61,9 +61,9 @@ public class Subtitle : ScriptableObject
         while (true)
         {
             if (!PlayLine())  break;// break if no next line.
-            yield return new WaitUntil(() => isLinePlaying); // wait for current line to stop
+            yield return new WaitUntil(() => !isLinePlaying); // wait for current line to stop
             yield return null;
-            isLinePlaying = false; // reset bool
+            isLinePlaying = true; // reset bool
         }
         SubtitleManager.instance.SetText("");
 

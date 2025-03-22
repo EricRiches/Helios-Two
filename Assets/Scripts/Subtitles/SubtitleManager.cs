@@ -9,7 +9,7 @@ public class SubtitleManager : MonoBehaviour
     [SerializeField]TextMeshProUGUI subtitleText;
     [SerializeField]Subtitle currentSubtitleSet;
 
-    public void SetSubtitle(Subtitle newSubtitle, bool startPlaying = true)
+    public void SetSubtitle(Subtitle newSubtitle, bool startPlaying = false)
     {
 
         currentSubtitleSet = newSubtitle;
