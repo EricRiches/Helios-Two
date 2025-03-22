@@ -8,6 +8,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [CreateAssetMenu(menuName = "HeliosTao/Subtitle")]
+[System.Serializable]
 public class Subtitle : ScriptableObject
 {
 

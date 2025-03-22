@@ -11,9 +11,11 @@ public class PlayerAudio : MonoBehaviour
     public int footstepType = 0;
     public float footstepInterval = 0.5f;
     private float yet;
+    private int PaNum = 0;
     public StudioEventEmitter footstepEmitter;
     public StudioEventEmitter paEmitter;
     public CharacterController characterController;
+    public List<Subtitle> subtitles;
     
     void Awake()
     {
@@ -54,7 +56,11 @@ public class PlayerAudio : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PATrigger"))
         {
-            paEmitter.Play();
+            //paEmitter.Play();
+            Debug.Log("yes");
+            SubtitleManager.instance.SetSubtitle(subtitles[PaNum]);
+            SubtitleManager.instance.PlayCurrentSubtitles();
+            PaNum++;
             CarryOvers.AppendObj(other.gameObject.name);
             //Destroy(other);
             other.gameObject.SetActive(false);
