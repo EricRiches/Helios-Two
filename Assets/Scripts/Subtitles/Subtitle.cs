@@ -12,14 +12,11 @@ using UnityEngine.Events;
 public class Subtitle : ScriptableObject
 {
 
-    [SerializeField] string[] subtitles;
-    [SerializeField] EventReference[] fmodEvents;
+    [SerializeField] SubtitleTimestamp[] subtitles;
+    [SerializeField] EventReference fmodEvents;
     int index = 0;
 
-    bool isLinePlaying;
-
     EventInstance currentFmodEvent;
-    EVENT_CALLBACK eventCallback;
 
     /// <summary>
     /// Plays the next subtitle/fmodevent in the 
@@ -28,13 +25,12 @@ public class Subtitle : ScriptableObject
     /// <returns> true if there is an element at that index.</returns>
     public bool PlayLine()
     {
-        if (index >= subtitles.Length || index >= fmodEvents.Length) return false; // check if index in bounds.
-        if (string.IsNullOrEmpty(subtitles[index]))  return false;  // check if subtitle null/empty at index
+        if (index >= subtitles.Length) return false; // check if index in bounds.
+        if (string.IsNullOrEmpty(subtitles[index].subtitleLine))  return false;  // check if subtitle null/empty at index
         
-        currentFmodEvent = RuntimeManager.CreateInstance(fmodEvents[index]); // make instance of the event.
-        currentFmodEvent.start(); // start playing event.
+    
 
-        SubtitleManager.instance.SetText(subtitles[index]);
+        SubtitleManager.instance.SetText(subtitles[index].subtitleLine);
 
 
         index++; // increment index.
@@ -47,18 +43,38 @@ public class Subtitle : ScriptableObject
 
     public IEnumerator PlayAll()
     {
+
+
+        /*new WaitUntil(() => {
+            currentFmodEvent.getPlaybackState(out PLAYBACK_STATE state);
+            return state == PLAYBACK_STATE.STOPPED;
+        }
+            ); // wait for current line to stop*/
+
+
         index = 0;
+        currentFmodEvent = RuntimeManager.CreateInstance(fmodEvents); // make instance of the event.
+        currentFmodEvent.start(); // start playing event.
         while (true)
         {
-            if (!PlayLine())  break;// break if no next line.
-            yield return new WaitUntil(() => {
-                currentFmodEvent.getPlaybackState(out PLAYBACK_STATE state);
-                return state == PLAYBACK_STATE.STOPPED;
-                }
-            ); // wait for current line to stop
+            if (!PlayLine())
+            {
+                yield return new WaitForSecondsRealtime(subtitles[subtitles.Length-1].duration);
+                break;// break if no next line.
+            }
+              
+            yield return new WaitForSecondsRealtime(subtitles[index].duration);
             yield return null;
-            isLinePlaying = true; // reset bool
         }
         SubtitleManager.instance.SetText("");
     }
+}
+
+
+[System.Serializable]
+public class SubtitleTimestamp
+{
+    public float duration;
+    public string subtitleLine;
+
 }
