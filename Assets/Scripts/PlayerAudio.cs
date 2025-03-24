@@ -65,7 +65,7 @@ public class PlayerAudio : MonoBehaviour
     public void PaPlay()
     {
         
-        //paEmitter.Play();
+        paEmitter.Play();
         if (PaNum >= subtitles.Count) { Debug.LogError("Indexing out of List bounds"); }
         else
         {
