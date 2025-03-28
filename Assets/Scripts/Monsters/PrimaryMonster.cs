@@ -26,14 +26,25 @@ public class PrimaryMonster : MonsterBehavior
     [SerializeField] float SawWaitAtPointTime;
     bool isCurrentlyChasingPlayer;
 
+    [Header("Death")]
+    [SerializeField] Animator PrimaryMonsterAnimator;
+    [SerializeField] float DeathDistance;
+    [SerializeField] Transform DeathPoint;
+    [SerializeField] Transform DeathCamera;
+
     [Header("")]
     [SerializeField] float WaitTime;
 
-    [HideInInspector]public float speedMultiplier = 1;
+    [HideInInspector] public float speedMultiplier = 1;
+
+    Transform playerLocation;
+    bool canTriggerJumpscare = true;
 
     void Start()
     {
         controller = FindObjectOfType<NavMeshAgent>();
+        playerLocation = FindObjectOfType<SC_FPSController>().transform;
+        canTriggerJumpscare = true;
 
         Vector3 roamPosition;
 
@@ -53,7 +64,7 @@ public class PrimaryMonster : MonsterBehavior
                 controller.speed = RoamSpeed * speedMultiplier;
                 if (WaitTime > 0)
                 {
-                    WaitTime -=Time.deltaTime;
+                    WaitTime -= Time.deltaTime;
 
                     if (WaitTime <= 0)
                     {
@@ -132,6 +143,17 @@ public class PrimaryMonster : MonsterBehavior
                 }
                 break;
         }
+
+        if (Vector3.Distance(DeathPoint.position, playerLocation.position) <= DeathDistance && canTriggerJumpscare)
+        {
+            Debug.Log("Player Died");
+
+            PrimaryMonsterAnimator.SetTrigger("Player Killed");
+            DeathCamera.gameObject.SetActive(true);
+            canTriggerJumpscare = false;
+        }
+        PrimaryMonsterAnimator.SetBool("IsWalking", controller.remainingDistance >= 0.5f);
+        
     }
 
     public override void TriggerHeardSounds(Vector3 SoundPosition, float soundPercent)
@@ -173,6 +195,25 @@ public class PrimaryMonster : MonsterBehavior
             controller.destination = value;
             isCurrentlyChasingPlayer = true;
         }
+    }
+
+    public override void PlayerReset()
+    {
+        Vector3 roamPosition;
+
+        if (grid.FindRoamPosition(out roamPosition))
+        {
+            controller.destination = roamPosition;
+        }
+        canTriggerJumpscare = true;
+
+        base.PlayerReset();
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(DeathPoint.position, DeathDistance);
     }
 }
 
