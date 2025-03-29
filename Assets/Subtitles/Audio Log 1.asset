@@ -13,60 +13,23 @@ MonoBehaviour:
   m_Name: Audio Log 1
   m_EditorClassIdentifier: 
   subtitles:
-  - Come in NAR team three. We have picked up an incoming--
-  - --celestial body of moderate size, that is due to intersect--
-  - --with your jurisdiction in approximately forty minutes.
-  - Only minor nuclear bombardment is required for redirection. Over.
-  - Copy. [Chewing] We will be back from lunch in ten minutes--
-  - then we'll handle it. Over.
-  - Do not dare follow that order. I required the targer for my research.
-  - Copy. [Munching]
+  - duration: 6.2
+    subtitleLine: Come in N.A.R. Team 3. We have pick up an incoming celestial body
+      of moderate size that is due to intersect-
+  - duration: 7.3
+    subtitleLine: -with your jurisdiction in approximately forty minutes. Only minor
+      nuclear bombardment it required for redirection. Over.
+  - duration: 8.1
+    subtitleLine: Copy. [Chewing] We will be back from lunch in ten minutes. Then
+      we'll handle it. Over.
+  - duration: 4.9
+    subtitleLine: Do not dare follow that order! I require the target for my research!
+  - duration: 2.5
+    subtitleLine: Copy. [Continues Chewing]
   fmodEvents:
-  - Guid:
-      Data1: -1728045594
-      Data2: 1096726663
-      Data3: 1857356206
-      Data4: -1109542926
-    Path: event:/Audio Logs/Audio Log 1/Audio Log 1-1
-  - Guid:
-      Data1: -573562516
-      Data2: 1318633514
-      Data3: 320447109
-      Data4: -1388239262
-    Path: event:/Audio Logs/Audio Log 1/Audio Log 1-2
-  - Guid:
-      Data1: -636687504
-      Data2: 1322985353
-      Data3: 743034518
-      Data4: 2125106644
-    Path: event:/Audio Logs/Audio Log 1/Audio Log 1-3
-  - Guid:
-      Data1: 1619441449
-      Data2: 1213449222
-      Data3: 1102798994
-      Data4: 1431601797
-    Path: event:/Audio Logs/Audio Log 1/Audio Log 1-4
-  - Guid:
-      Data1: 1763296691
-      Data2: 1192282735
-      Data3: 586637471
-      Data4: -63273624
-    Path: event:/Audio Logs/Audio Log 1/Audio Log 1-5
-  - Guid:
-      Data1: 703379145
-      Data2: 1197275734
-      Data3: -1041802585
-      Data4: 1317098642
-    Path: event:/Audio Logs/Audio Log 1/Audio Log 1-6
-  - Guid:
-      Data1: -1845324768
-      Data2: 1321105074
-      Data3: 123815587
-      Data4: 455332915
-    Path: event:/Audio Logs/Audio Log 1/Audio Log 1-7
-  - Guid:
-      Data1: 1959372186
-      Data2: 1306948048
-      Data3: 72523421
-      Data4: 536488816
-    Path: event:/Audio Logs/Audio Log 1/Audio Log 1-8
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 

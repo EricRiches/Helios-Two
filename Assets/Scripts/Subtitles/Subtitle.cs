@@ -13,7 +13,7 @@ public class Subtitle : ScriptableObject
 {
 
     [SerializeField] SubtitleTimestamp[] subtitles;
-    [SerializeField] EventReference fmodEvents;
+    //[SerializeField] EventReference fmodEvents;
     int index = 0;
 
     EventInstance currentFmodEvent;
@@ -53,8 +53,8 @@ public class Subtitle : ScriptableObject
 
 
         index = 0;
-        currentFmodEvent = RuntimeManager.CreateInstance(fmodEvents); // make instance of the event.
-        currentFmodEvent.start(); // start playing event.
+        //currentFmodEvent = RuntimeManager.CreateInstance(fmodEvents); // make instance of the event.
+        //currentFmodEvent.start(); // start playing event.
         while (true)
         {
             if (!PlayLine())
@@ -63,7 +63,7 @@ public class Subtitle : ScriptableObject
                 break;// break if no next line.
             }
               
-            yield return new WaitForSecondsRealtime(subtitles[index].duration);
+            yield return new WaitForSecondsRealtime(subtitles[index-1].duration);
             yield return null;
         }
         SubtitleManager.instance.SetText("");
