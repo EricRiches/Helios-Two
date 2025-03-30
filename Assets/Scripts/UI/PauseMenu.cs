@@ -5,18 +5,18 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
     public static PauseMenu instance;
-
-    [SerializeField] CanvasGroup canvasGroup;
+    [SerializeField] GameObject pauseUI;
 
     static bool isPaused;
 
-    public static bool IsPaused { 
-    get { return isPaused; }
+    public static bool IsPaused
+    {
+        get { return isPaused; }
     }
 
     private void Awake()
     {
-        if(instance != null)Destroy(instance);
+        if (instance != null) Destroy(instance);
         instance = this;
     }
 
@@ -24,7 +24,7 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -36,21 +36,28 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    public  void PauseGame()
+    public void PauseGame()
     {
         isPaused = !isPaused;
         if (IsPaused)
         {
             Time.timeScale = 0;
-            canvasGroup.alpha = 0.55f;
+            pauseUI.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
         }
         else
         {
             Time.timeScale = 1;
-            canvasGroup.alpha = 0;
+            pauseUI.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
         }
-       
 
-        
+
+
+    }
+
+    public void ReturnToMenu()
+    {
+        SceneTransition.instance.LoadScene("Main Menu", Vector3.negativeInfinity);
     }
 }

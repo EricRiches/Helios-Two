@@ -3,7 +3,6 @@ using FMODUnity;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 using UnityEngine.Events;
 

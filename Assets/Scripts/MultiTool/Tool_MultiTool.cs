@@ -78,6 +78,7 @@ public class Flashlight : Tool_MultiTool
 
 public class Sonic_Burst : Tool_MultiTool
 {
+    Transform cam = Camera.main.transform;
     public Sonic_Burst()
     {
         toolType = Tool.Sonic_Burst;
@@ -85,7 +86,13 @@ public class Sonic_Burst : Tool_MultiTool
 
     public override void UseTool()
     {
-        Debug.Log("Sonic Burst was used");
+        if(cam == null) { cam = Camera.main.transform; }
+        Ray ray = new Ray(cam.position, cam.forward);
+        RaycastHit hit;
+        if(Physics.Raycast(ray, out hit))
+        {
+            MonsterHearable.PlaySoundAtLocation(hit.point);
+        }
     }
     public override void OnSwapOff() { }
 }
