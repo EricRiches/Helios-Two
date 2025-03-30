@@ -515,10 +515,10 @@ MonoBehaviour:
   Path: Assets/Helios-Tau/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638788837905422359
+  lastModified: 638788907079881887
   FileSizes:
   - Name: Desktop
-    Value: 4725888
+    Value: 4734720
   Exists: 1
 --- !u!114 &-6227344641270433157
 MonoBehaviour:
@@ -1216,6 +1216,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 323
+--- !u!114 &-2281070418460439927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/GrabNoise
+  m_EditorClassIdentifier: 
+  Path: event:/GrabNoise
+  Guid:
+    Data1: 1557805154
+    Data2: 1190998432
+    Data3: 1746270107
+    Data4: -261301373
+  Banks:
+  - {fileID: -6451297807101015739}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 640
 --- !u!114 &-1843925364029041737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1498,12 +1525,13 @@ MonoBehaviour:
   - {fileID: -344382218401578115}
   - {fileID: 1354584521402543528}
   - {fileID: 1613981279431283594}
+  - {fileID: -2281070418460439927}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6451297807101015739}
   StringsBanks:
   - {fileID: 332585134118395987}
-  cacheTime: 638788837905438040
+  cacheTime: 638788907079903840
   cacheVersion: 131846
 --- !u!114 &118811233401082111
 MonoBehaviour:
@@ -1574,10 +1602,10 @@ MonoBehaviour:
   Path: Assets/Helios-Tau/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638788837905438040
+  lastModified: 638788907079903840
   FileSizes:
   - Name: Desktop
-    Value: 2980
+    Value: 3032
   Exists: 1
 --- !u!114 &346237666322832516
 MonoBehaviour:
