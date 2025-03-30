@@ -59,5 +59,6 @@ public class PauseMenu : MonoBehaviour
     public void ReturnToMenu()
     {
         SceneTransition.instance.LoadScene("Main Menu", Vector3.negativeInfinity);
+        SetCorrectMimic.hasVisitedBefore = false; //Set it so starter mimic spawn on first playthrough.
     }
 }
