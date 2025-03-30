@@ -78,7 +78,7 @@ public class Flashlight : Tool_MultiTool
 
 public class Sonic_Burst : Tool_MultiTool
 {
-    Transform cam = Camera.main.transform;
+    Transform cam;
     public Sonic_Burst()
     {
         toolType = Tool.Sonic_Burst;
