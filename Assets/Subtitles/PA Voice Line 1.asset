@@ -13,32 +13,13 @@ MonoBehaviour:
   m_Name: PA Voice Line 1
   m_EditorClassIdentifier: 
   subtitles:
-  - 'Good, you''re awake. I don''t have much time. '
-  - I need you help, it is coming.
-  - 'Grab the M.U.L.T.I tool and make your way to the bridge '
-  - I'll explain more when you arrive, now move.
-  fmodEvents:
-  - Guid:
-      Data1: -967881148
-      Data2: 1154576334
-      Data3: 1797074860
-      Data4: -1077784980
-    Path: event:/PA Voicelines/PA Voiceline 1/PA Voiceline 1-1
-  - Guid:
-      Data1: 941279902
-      Data2: 1335454550
-      Data3: 883858831
-      Data4: 188155968
-    Path: event:/PA Voicelines/PA Voiceline 1/PA Voiceline 1-2
-  - Guid:
-      Data1: 668880617
-      Data2: 1179525460
-      Data3: 1634548142
-      Data4: 1120518795
-    Path: event:/PA Voicelines/PA Voiceline 1/PA Voiceline 1-3
-  - Guid:
-      Data1: -1489728897
-      Data2: 1313898165
-      Data3: 1023929488
-      Data4: 407877923
-    Path: event:/PA Voicelines/PA Voiceline 1/PA Voiceline 1-4
+  - duration: 6.6
+    subtitleLine: Good, you're awake. Quick there isn't much time, I've opened the
+      locker in the room.
+  - duration: 4.2
+    subtitleLine: Grab the M.U.L.T.I. Tool from inside and I will open the way out.
+  - duration: 5
+    subtitleLine: Take the hallway left and follow the signs to reach the bridge.
+      I will explain more when you arrive.
+  - duration: 2
+    subtitleLine: Now Move.

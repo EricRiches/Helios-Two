@@ -13,67 +13,29 @@ MonoBehaviour:
   m_Name: PA Voice Line 4
   m_EditorClassIdentifier: 
   subtitles:
-  - Well done my friend. As you can see, the station is no longer under our control.
-  - Weeks ago, the crew discovered a genuine alien artifact--
-  - --with living cells inside. It grew far faster then we could control--
-  - --and wiped out most of the crew in a matter of days.
-  - We will need to work together if we wish to survive.
-  - I need you to make your way to the crewdeck.
-  - My assistant, Dr. Borhiem, has a lab in the hydroponic's bay.
-  - He was studying the effects of the alien cells on our crops.
-  - He may have discovered something we can use.
-  fmodEvents:
-  - Guid:
-      Data1: -1960394955
-      Data2: 1332622324
-      Data3: -454124406
-      Data4: -1824276437
-    Path: event:/PA Voicelines/PA Voiceline 4/PA Voiceline 4-1
-  - Guid:
-      Data1: 2100542662
-      Data2: 1183426078
-      Data3: -1708720247
-      Data4: -1455626755
-    Path: event:/PA Voicelines/PA Voiceline 4/PA Voiceline 4-2
-  - Guid:
-      Data1: -313587826
-      Data2: 1196470043
-      Data3: 1873398430
-      Data4: -1720447960
-    Path: event:/PA Voicelines/PA Voiceline 4/PA Voiceline 4-3
-  - Guid:
-      Data1: -2056535787
-      Data2: 1145520335
-      Data3: 531246007
-      Data4: -317475891
-    Path: event:/PA Voicelines/PA Voiceline 4/PA Voiceline 4-4
-  - Guid:
-      Data1: 1327866558
-      Data2: 1235724397
-      Data3: -2017465981
-      Data4: -376447098
-    Path: event:/PA Voicelines/PA Voiceline 4/PA Voiceline 4-5
-  - Guid:
-      Data1: 735788534
-      Data2: 1220304398
-      Data3: -1234207828
-      Data4: 1631263791
-    Path: event:/PA Voicelines/PA Voiceline 4/PA Voiceline 4-6
-  - Guid:
-      Data1: -1622735598
-      Data2: 1316441644
-      Data3: -1099974261
-      Data4: 375670975
-    Path: event:/PA Voicelines/PA Voiceline 4/PA Voiceline 4-7
-  - Guid:
-      Data1: -159302053
-      Data2: 1293239573
-      Data3: 512124290
-      Data4: -777076311
-    Path: event:/PA Voicelines/PA Voiceline 4/PA Voiceline 4-8
-  - Guid:
-      Data1: -661796500
-      Data2: 1247999039
-      Data3: 1609267844
-      Data4: 1052315019
-    Path: event:/PA Voicelines/PA Voiceline 4/PA Voiceline 4-9
+  - duration: 9.1
+    subtitleLine: Finally, well done my friend. As you can see the station is no
+      longer under our control.
+  - duration: 6.5
+    subtitleLine: 'Weeks ago our science team uncovered a genuine alien artifact
+      beneath the surface of an asteroid. '
+  - duration: 14.2
+    subtitleLine: And there curiosity comprimised our operation here. It is now time
+      that you join us come... [Static]
+  - duration: 6.5
+    subtitleLine: 'Hello, I am automated lifestyle informant but please call me A.L.I.  '
+  - duration: 7.8
+    subtitleLine: As I am sure you've deduced the ship has been completely over run.
+      You are the only remaining human lifeform on board.
+  - duration: 6.7
+    subtitleLine: Station controls have been rerouted to the mainframe on the reactor
+      level and I have been locked out of controlling key systems.
+  - duration: 5
+    subtitleLine: 'We must access the mainframe in order open the hangar doors and
+      get off of the station. '
+  - duration: 7
+    subtitleLine: 'Each wing of the ship holds a lockdown terminal. If we can activate
+      them all we''ll be able to access the reactor. '
+  - duration: 9
+    subtitleLine: 'Downloading to your M.U.L.T.I. Tool. [Transfer Noise] Excellent.
+      Let''s get moving I am not sure how long this area will be safe.  '
