@@ -6,12 +6,13 @@ using UnityEngine;
 
 public class PlayerAudio : MonoBehaviour
 {
-    //[SerializeField] private FMODUnity.EventReference _PAsystem;
-    //private FMOD.Studio.EventInstance PAsystem;
+    //public FMODUnity.EventReference _PAsystem;
+    //public FMOD.Studio.EventInstance PAsystem;
     public int footstepType = 0;
     public float footstepInterval = 0.5f;
     private float yet;
     private int PaNum = 0;
+    private int PaInstance = 0;
     public StudioEventEmitter footstepEmitter;
     public StudioEventEmitter paEmitter;
     public CharacterController characterController;
@@ -19,10 +20,10 @@ public class PlayerAudio : MonoBehaviour
     
     void Awake()
     {
-       // if (!_PAsystem.IsNull)
-        //{
-        //    PAsystem = FMODUnity.RuntimeManager.CreateInstance(_PAsystem);
-       // }
+      // if (!_PAsystem.IsNull)
+      // {
+         //  PAsystem = FMODUnity.RuntimeManager.CreateInstance(_PAsystem);
+       //}
     }
 
     void Update()
@@ -56,25 +57,34 @@ public class PlayerAudio : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PATrigger"))
         {
+            other.gameObject.GetComponent<StudioEventEmitter>().Play();
+            //PaInstance = other.gameObject.GetComponent<ValueHolder>().value;
+            SubtitleManager.instance.SetSubtitle(other.gameObject.GetComponent<ValueHolder>().subtitle);
+            SubtitleManager.instance.PlayCurrentSubtitles();
             other.gameObject.SetActive(false);
-            PaPlay();
+            
             CarryOvers.AppendObj(other.gameObject.name);
         }
     }
 
     public void PaPlay()
     {
-        
-        paEmitter.Play();
         if (PaNum >= subtitles.Count) { Debug.LogError("Indexing out of List bounds"); }
         else
         {
-            SubtitleManager.instance.SetSubtitle(subtitles[PaNum]);
-            SubtitleManager.instance.PlayCurrentSubtitles();
-            PaNum++;
+            
+            //SubtitleManager.instance.SetSubtitle(subtitles[PaInstance);
+           // SubtitleManager.instance.PlayCurrentSubtitles();
+           // PaNum++;
         }
-       
+
+
         //Destroy(other);
+    }
+
+    public void BridgeCorrection()
+    {
+        PaInstance = 1;
     }
 
     private void PlayFootSteps()
