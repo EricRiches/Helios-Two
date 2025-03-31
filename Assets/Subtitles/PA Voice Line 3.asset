@@ -13,32 +13,11 @@ MonoBehaviour:
   m_Name: PA Voice Line 3
   m_EditorClassIdentifier: 
   subtitles:
-  - Well done, you seem to have out run it for now.
-  - Make your way up the elevator. Once on the bridge--
-  - --use the mainframe to reroute control of the station--
-  - --to me in the reactor. All will be explained after.
-  events:
-  - Guid:
-      Data1: 1269588954
-      Data2: 1185575498
-      Data3: -1348618350
-      Data4: 2111490699
-    Path: event:/PA Voicelines/PA Voiceline 3/PA Voiceline 3-1
-  - Guid:
-      Data1: 1637064701
-      Data2: 1090709133
-      Data3: 1215070645
-      Data4: 1369318603
-    Path: event:/PA Voicelines/PA Voiceline 3/PA Voiceline 3-2
-  - Guid:
-      Data1: 2009164656
-      Data2: 1237734795
-      Data3: 1389121688
-      Data4: 1274415687
-    Path: event:/PA Voicelines/PA Voiceline 3/PA Voiceline 3-3
-  - Guid:
-      Data1: 1388418257
-      Data2: 1078686679
-      Data3: -529755006
-      Data4: -1185167155
-    Path: event:/PA Voicelines/PA Voiceline 3/PA Voiceline 3-4
+  - duration: 7.7
+    subtitleLine: Well done. You seem to have out run it for now. Make your way up
+      the elevator.
+  - duration: 5.3
+    subtitleLine: 'Once on the bridge, use the mainframe to reroute control of the
+      station to me in the reactor. '
+  - duration: 2
+    subtitleLine: All will be explained after.

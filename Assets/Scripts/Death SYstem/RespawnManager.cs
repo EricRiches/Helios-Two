@@ -1,10 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.Video;
+using UnityEngine.SceneManagement;
+using FMODUnity;
 
 public class RespawnManager : MonoBehaviour
 {
     [SerializeField] float GroundOffset;
+
+    [Header("Death Canvas")]
+    [SerializeField] GameObject DeathScreenUI;
+    [SerializeField] VideoPlayer DeathScreenPlayer;
+    [SerializeField] StudioEventEmitter emitter;
 
     List<RespawnSavePoint> RespawnablePoints = new List<RespawnSavePoint>();
     ResetDeathCamera[] camerasForDies = new ResetDeathCamera[0];
@@ -47,9 +56,28 @@ public class RespawnManager : MonoBehaviour
         RespawnablePoints.Add(point);
     }
 
+    public void OpenDeathUI()
+    {
+        emitter.Play();
+        Cursor.lockState = CursorLockMode.None;
+        playerMove.enabled = false;
+        DeathScreenUI.SetActive(true);
+        DeathScreenPlayer.Play();
+    }
+
+    public void GoToMainMenu()
+    {
+        emitter.Stop();
+        SceneManager.LoadScene(0);
+        SetCorrectMimic.hasVisitedBefore = false; //Set it so starter mimic spawn on first playthrough.
+    }
+
     public void RespawnPlayer()
     {
-        playerMove.enabled = false;
+        emitter.Stop();
+        DeathScreenUI.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+
         ResetPlayer = 0.5f;
         if (safeArea != null)
         {

@@ -3,22 +3,19 @@ using FMODUnity;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 using UnityEngine.Events;
 
 [CreateAssetMenu(menuName = "HeliosTao/Subtitle")]
+[System.Serializable]
 public class Subtitle : ScriptableObject
 {
 
-    [SerializeField] string[] subtitles;
-    [SerializeField] EventReference[] fmodEvents;
+    [SerializeField] SubtitleTimestamp[] subtitles;
+    //[SerializeField] EventReference fmodEvents;
     int index = 0;
 
-    bool isLinePlaying;
-
     EventInstance currentFmodEvent;
-    EVENT_CALLBACK eventCallback;
 
     /// <summary>
     /// Plays the next subtitle/fmodevent in the 
@@ -27,15 +24,12 @@ public class Subtitle : ScriptableObject
     /// <returns> true if there is an element at that index.</returns>
     public bool PlayLine()
     {
-        if (index >= subtitles.Length || index >= fmodEvents.Length) return false; // check if index in bounds.
-        if (string.IsNullOrEmpty(subtitles[index]))  return false;  // check if subtitle null/empty at index
+        if (index >= subtitles.Length) return false; // check if index in bounds.
+        if (string.IsNullOrEmpty(subtitles[index].subtitleLine))  return false;  // check if subtitle null/empty at index
         
-        currentFmodEvent = RuntimeManager.CreateInstance(fmodEvents[index]); // make instance of the event.
-        eventCallback = new EVENT_CALLBACK(EndOfLine); // create callback that will call EndOfLine
-        currentFmodEvent.setCallback(eventCallback, EVENT_CALLBACK_TYPE.STOPPED); // set the callback to be called when the event stops.
-        currentFmodEvent.start(); // start playing event.
+    
 
-        SubtitleManager.instance.SetText(subtitles[index]);
+        SubtitleManager.instance.SetText(subtitles[index].subtitleLine);
 
 
         index++; // increment index.
@@ -44,27 +38,42 @@ public class Subtitle : ScriptableObject
     }
 
 
-    // Callback function for when the event stops
-    private FMOD.RESULT EndOfLine(EVENT_CALLBACK_TYPE type, IntPtr instancePtr, IntPtr paramPtr)
-    {
-        if (type == EVENT_CALLBACK_TYPE.STOPPED) // if fmod event stopped, set playing to true.
-        {
-            isLinePlaying = true;
-        }
-        return FMOD.RESULT.OK;
-    }
+
 
     public IEnumerator PlayAll()
     {
+
+
+        /*new WaitUntil(() => {
+            currentFmodEvent.getPlaybackState(out PLAYBACK_STATE state);
+            return state == PLAYBACK_STATE.STOPPED;
+        }
+            ); // wait for current line to stop*/
+
+
         index = 0;
+        //currentFmodEvent = RuntimeManager.CreateInstance(fmodEvents); // make instance of the event.
+        //currentFmodEvent.start(); // start playing event.
         while (true)
         {
-            if (!PlayLine())  break;// break if no next line.
-            yield return new WaitUntil(() => isLinePlaying); // wait for current line to stop
+            if (!PlayLine())
+            {
+                yield return new WaitForSecondsRealtime(subtitles[subtitles.Length-1].duration);
+                break;// break if no next line.
+            }
+              
+            yield return new WaitForSecondsRealtime(subtitles[index-1].duration);
             yield return null;
-            isLinePlaying = false; // reset bool
         }
         SubtitleManager.instance.SetText("");
-
     }
+}
+
+
+[System.Serializable]
+public class SubtitleTimestamp
+{
+    public float duration;
+    public string subtitleLine;
+
 }

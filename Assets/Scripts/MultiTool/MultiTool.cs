@@ -4,10 +4,14 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using FMOD.Studio;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class MultiTool : MonoBehaviour
 {
     [SerializeField] Light flashlight_light;
+    [SerializeField] List<Sprite> toolIcons = new List<Sprite>();
+    [SerializeField] UnityEngine.UI.Image image;
 
     public static MultiTool instance;
     public static Flashlight flashlight = new();
@@ -69,11 +73,29 @@ public class MultiTool : MonoBehaviour
             currentTool.UseTool();
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha1)) SwitchTool(Tool.Flashlight);
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            SwitchTool(Tool.Flashlight);
+            image.sprite = toolIcons[1];
+        }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2)) SwitchTool(Tool.Freeze_Spray);
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            SwitchTool(Tool.Freeze_Spray);
+            image.sprite = toolIcons[2];
+        }
 
-        if (Input.GetKeyDown(KeyCode.Alpha4)) SwitchTool(Tool.Hack_Panel);
+        /*if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            SwitchTool(Tool.Sonic_Burst);
+            image.sprite = toolIcons[3];
+        }*/
+
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            SwitchTool(Tool.Hack_Panel);
+            image.sprite = toolIcons[4];
+        }
     }
 
     private void FixedUpdate()

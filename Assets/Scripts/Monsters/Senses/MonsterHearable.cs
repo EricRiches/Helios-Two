@@ -39,4 +39,14 @@ public class MonsterHearable : MonoBehaviour
             senser.Hear_SoundPlayed(transform.position, SoundVolume);
         }
     }
+
+    public static void PlaySoundAtLocation(Vector3 location)
+    {
+        MonsterSenses[] monstersInScene = FindObjectsOfType<MonsterSenses>();
+
+        foreach (MonsterSenses senser in monstersInScene)
+        {
+            senser.Hear_SoundPlayed(location, 125);
+        }
+    }
 }

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89bee741e91bd4c49921489dc221e38b, type: 3}
+  m_Name: Audio Log 3
+  m_EditorClassIdentifier: 
+  subtitles:
+  - duration: 5
+    subtitleLine: Can you believe it Berthold? Within this artifact are traces of
+      genuine alien life.
+  - duration: 6
+    subtitleLine: Humanity controls the entire galaxy and yet never has any trace
+      of alien life been found.
+  - duration: 3.2
+    subtitleLine: This could be the scientific discovery of our lifetime.
+  - duration: 2.8
+    subtitleLine: What of these markings is this writing?
+  - duration: 7
+    subtitleLine: 'Curious. Make a copy of the text and get to work on dechipering
+      it. I will try to crack it open. '

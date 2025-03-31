@@ -13,11 +13,5 @@ MonoBehaviour:
   m_Name: Pa Voice Line 2
   m_EditorClassIdentifier: 
   subtitles:
-  - You're almost there. Through the access corridor. Hurry!
-  events:
-  - Guid:
-      Data1: 1450135400
-      Data2: 1169707127
-      Data3: 1475216519
-      Data4: 453682113
-    Path: event:/PA Voicelines/PA Voiceline 2/PA Voiceline 2-1
+  - duration: 5
+    subtitleLine: You're almost there, through the access corridor. HURRY!

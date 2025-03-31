@@ -1,9 +1,12 @@
+using FMOD.Studio;
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class FreezeSprayParticle : MonoBehaviour
 {
+    public EventReference spraySound;
     public static FreezeSprayParticle instance;
     [SerializeField] ParticleSystem particle;
     private void Awake()
@@ -42,6 +45,8 @@ public class FreezeSprayParticle : MonoBehaviour
     {
         if (value)
         {
+            EventInstance sprayEvent = RuntimeManager.CreateInstance(instance.spraySound);
+            sprayEvent.start();
             instance.particle.Play(); instance.particle.Play();
             a++;
 
