@@ -16,17 +16,16 @@ public class LogDevice : MonoBehaviour
 
     bool CheckIfPlayed()
     {
-        return CarryOvers.HasLogObjectPlayed(gameObject);
+        return CarryOvers.HasLogObjectPlayed(gameObject.name);
     }
 
     void PlayAudioClip()
     {
+        CarryOvers.AppendLogObject(gameObject.name);
         audioLog.LoadAudioData();
         //audioLogs[CarryOvers.GetIndex()].LoadAudioData();
-        CarryOvers.AppendLogObject(gameObject);
-        CarryOvers.LogTickUp();
+        //CarryOvers.LogTickUp();
         audioSource.Play();
-
     }
 
     public void PauseAudio()
@@ -42,6 +41,10 @@ public class LogDevice : MonoBehaviour
             if (!CheckIfPlayed() & audioLog != null)
             {
                 PlayAudioClip();
+            }
+            else
+            {
+                Destroy(gameObject.GetComponent<Collider>());
             }
         }
     }

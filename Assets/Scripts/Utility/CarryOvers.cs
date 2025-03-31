@@ -7,7 +7,7 @@ public static class CarryOvers
     // Add more variables for things as necessary
     static int logNum = 0;
     static List<AudioClip> logFiles = new List<AudioClip>();
-    static List<GameObject> logObjects = new List<GameObject>();
+    static List<string> logObjects = new List<string>();
     static bool isListEmpty = true;
 
     static byte totalLockdownTerminals = 3;
@@ -45,19 +45,19 @@ public static class CarryOvers
     }
 
     // This function adds the log player to the list of objects that have played a log so it wont play another one
-    public static void AppendLogObject(GameObject log)
+    public static void AppendLogObject(string log)
     {
         logObjects.Add(log);
     }
 
     // Checks if the log player has already played by seeing if it is in the list of played players
-    public static bool HasLogObjectPlayed(GameObject log)
+    public static bool HasLogObjectPlayed(string logName)
     {
         bool isIn = false;
 
         for (int i = 0; i < logObjects.Count; i++)
         {
-            if (logObjects[i] == log)
+            if (logObjects[i] == logName)
             {
                 isIn = true;
                 i = logObjects.Count;
