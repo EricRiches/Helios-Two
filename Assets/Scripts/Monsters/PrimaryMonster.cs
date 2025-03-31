@@ -1,3 +1,4 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -39,6 +40,9 @@ public class PrimaryMonster : MonsterBehavior
 
     Transform playerLocation;
     bool canTriggerJumpscare = true;
+
+    public StudioEventEmitter footsteps;
+    public StudioEventEmitter JumpScare;
 
     void Start()
     {
@@ -147,6 +151,8 @@ public class PrimaryMonster : MonsterBehavior
         if (Vector3.Distance(DeathPoint.position, playerLocation.position) <= DeathDistance && canTriggerJumpscare)
         {
             Debug.Log("Player Died");
+            footsteps.Stop();
+            JumpScare.Play();
 
             PrimaryMonsterAnimator.SetTrigger("Player Killed");
             DeathCamera.gameObject.SetActive(true);

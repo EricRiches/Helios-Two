@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89bee741e91bd4c49921489dc221e38b, type: 3}
+  m_Name: Audio Log 4
+  m_EditorClassIdentifier: 
+  subtitles:
+  - duration: 8.5
+    subtitleLine: Welcome back Berthold. the text has been 100% deciphered to our
+      capabilities. Would you like to hear the final results now?
+  - duration: 2.5
+    subtitleLine: Yeah, I have time now.
+  - duration: 8
+    subtitleLine: "The text reads, \u201CWarning, do not open under any circumstances\u201D
+      as well as what seems to be a name [Deciphering Error]. "
+  - duration: 5
+    subtitleLine: 'It describes a parasitic life form that poses a threat on a galactic
+      scale. '
+  - duration: 5
+    subtitleLine: "The text on the entrance to the chamber appears to read \u201CWe
+      are the last of our kind. "
+  - duration: 7
+    subtitleLine: We have established this asteroid base as a haven to study the
+      [Deciphering Error] life form and develop countermeasures.
+  - duration: 4
+    subtitleLine: Our only breakthrough is" [Deciphering Error].
+  - duration: 6
+    subtitleLine: 'Good god. A.L.I. send this information to Dr. Volkov and get him
+      to stop all experimentation. '
+  - duration: 4
+    subtitleLine: We need to go to the bridge and start the quarantine procedures
+      for the ship.
+  - duration: 2
+    subtitleLine: Sending message now.
+  - duration: 3.7
+    subtitleLine: Ok, we need to go, upload to my M.U.L.T.I Tool. [Transfer Noise]

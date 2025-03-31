@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Audio Log 3
   m_EditorClassIdentifier: 
   subtitles:
-  - duration: 5
+  - duration: 5.3
     subtitleLine: Can you believe it Berthold? Within this artifact are traces of
       genuine alien life.
   - duration: 6

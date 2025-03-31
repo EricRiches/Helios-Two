@@ -262,8 +262,8 @@ MonoBehaviour:
     Data3: 814011012
     Data4: -487453772
   Banks:
-  - {fileID: -6451297807101015739}
   - {fileID: -6452999241178671516}
+  - {fileID: -6451297807101015739}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -399,6 +399,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3200
+--- !u!114 &-7176193928095621657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/HunterFootstepts
+  m_EditorClassIdentifier: 
+  Path: event:/HunterFootstepts
+  Guid:
+    Data1: 102016770
+    Data2: 1221771843
+    Data3: -1123706231
+    Data4: 35498445
+  Banks:
+  - {fileID: -6451297807101015739}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 250
+  Length: 1207
 --- !u!114 &-7037070266563048057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -522,7 +549,7 @@ MonoBehaviour:
   Path: Assets/Helios-Tau/Build/Desktop/UnityScene.bank
   Name: UnityScene
   StudioPath: bank:/UnityScene
-  lastModified: 638773897345103600
+  lastModified: 638771359813338072
   FileSizes:
   - Name: Desktop
     Value: 834592
@@ -542,11 +569,38 @@ MonoBehaviour:
   Path: Assets/Helios-Tau/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638790281797042325
+  lastModified: 638790411112366979
   FileSizes:
   - Name: Desktop
-    Value: 4737632
+    Value: 5783008
   Exists: 1
+--- !u!114 &-6346462118678165544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/HunterKillSound
+  m_EditorClassIdentifier: 
+  Path: event:/HunterKillSound
+  Guid:
+    Data1: 2004004714
+    Data2: 1173057733
+    Data3: 2124755130
+    Data4: 1564463254
+  Banks:
+  - {fileID: -6451297807101015739}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3411
 --- !u!114 &-6227344641270433157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -737,6 +791,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 600
   Length: 8653
+--- !u!114 &-5477498987035870288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Audio Log 5
+  m_EditorClassIdentifier: 
+  Path: event:/Audio Log 5
+  Guid:
+    Data1: 12048097
+    Data2: 1238541049
+    Data3: 1962457276
+    Data4: 1584743587
+  Banks:
+  - {fileID: -6451297807101015739}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 100
+  Length: 24325
 --- !u!114 &-5078950112007387529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -952,7 +1033,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 100
-  Length: 29009
+  Length: 29341
 --- !u!114 &-4656579599427789720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1350,7 +1431,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 100
-  Length: 25957
+  Length: 26289
 --- !u!114 &-450137106483665463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1557,12 +1638,16 @@ MonoBehaviour:
   - {fileID: 4558677430428709840}
   - {fileID: 5100224226288101983}
   - {fileID: 7745007541734325916}
+  - {fileID: 3866079462060887203}
+  - {fileID: -5477498987035870288}
+  - {fileID: -7176193928095621657}
+  - {fileID: -6346462118678165544}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6451297807101015739}
   StringsBanks:
   - {fileID: 332585134118395987}
-  cacheTime: 638790281797465367
+  cacheTime: 638790411112382224
   cacheVersion: 131846
 --- !u!114 &118811233401082111
 MonoBehaviour:
@@ -1633,10 +1718,10 @@ MonoBehaviour:
   Path: Assets/Helios-Tau/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638790281797465367
+  lastModified: 638790411112382224
   FileSizes:
   - Name: Desktop
-    Value: 3188
+    Value: 3350
   Exists: 1
 --- !u!114 &346237666322832516
 MonoBehaviour:
@@ -2333,6 +2418,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 200
   Length: 43734
+--- !u!114 &3866079462060887203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Audio Log 4
+  m_EditorClassIdentifier: 
+  Path: event:/Audio Log 4
+  Guid:
+    Data1: -842594256
+    Data2: 1210807067
+    Data3: 573567128
+    Data4: -626617282
+  Banks:
+  - {fileID: -6451297807101015739}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 100
+  Length: 56080
 --- !u!114 &4143632767585161274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2926,7 +3038,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 100
-  Length: 23866
+  Length: 24198
 --- !u!114 &9003245691588918837
 MonoBehaviour:
   m_ObjectHideFlags: 0

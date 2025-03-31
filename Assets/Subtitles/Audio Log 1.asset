@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Audio Log 1
   m_EditorClassIdentifier: 
   subtitles:
-  - duration: 6.2
+  - duration: 6.5
     subtitleLine: Come in N.A.R. Team 3. We have pick up an incoming celestial body
       of moderate size that is due to intersect-
   - duration: 7.3
@@ -26,10 +26,3 @@ MonoBehaviour:
     subtitleLine: Do not dare follow that order! I require the target for my research!
   - duration: 2.5
     subtitleLine: Copy. [Continues Chewing]
-  fmodEvents:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
