@@ -167,6 +167,7 @@ public class PrimaryMonster : MonsterBehavior
             if (!isCurrentlyChasingPlayer)
             {
                 controller.destination = SoundPosition;
+                WaitTime = 0;
             }
         }
     }
@@ -177,6 +178,8 @@ public class PrimaryMonster : MonsterBehavior
         if (soundPercent >= HearStateChangerPercent)
         {
             controller.destination = SoundPosition;
+            controller.speed = ChaseSpeed * speedMultiplier;
+            WaitTime = 0;
         }
         else
         {
@@ -194,6 +197,7 @@ public class PrimaryMonster : MonsterBehavior
             currentBehavior = PrimaryMonsterBehvaior.SawPlayer;
             controller.destination = value;
             isCurrentlyChasingPlayer = true;
+            WaitTime = 0;
         }
     }
 
