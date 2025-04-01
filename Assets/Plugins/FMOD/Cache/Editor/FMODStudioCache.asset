@@ -189,6 +189,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 7500
+--- !u!114 &-7987066439287046198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AliVoiceLine1
+  m_EditorClassIdentifier: 
+  Path: event:/AliVoiceLine1
+  Guid:
+    Data1: 2114753274
+    Data2: 1227178534
+    Data3: 1130624927
+    Data4: 1482923528
+  Banks:
+  - {fileID: -6451297807101015739}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 13500
 --- !u!114 &-7827207779877025227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,8 +289,8 @@ MonoBehaviour:
     Data3: 814011012
     Data4: -487453772
   Banks:
-  - {fileID: -6451297807101015739}
   - {fileID: -6452999241178671516}
+  - {fileID: -6451297807101015739}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -549,7 +576,7 @@ MonoBehaviour:
   Path: Assets/Helios-Tau/Build/Desktop/UnityScene.bank
   Name: UnityScene
   StudioPath: bank:/UnityScene
-  lastModified: 638781756182412171
+  lastModified: 638771359813338072
   FileSizes:
   - Name: Desktop
     Value: 834592
@@ -569,10 +596,10 @@ MonoBehaviour:
   Path: Assets/Helios-Tau/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638790999109564250
+  lastModified: 638791238548645402
   FileSizes:
   - Name: Desktop
-    Value: 5783008
+    Value: 6183744
   Exists: 1
 --- !u!114 &-6346462118678165544
 MonoBehaviour:
@@ -818,6 +845,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 100
   Length: 24325
+--- !u!114 &-5234971853190818929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AliVoiceLine1 2
+  m_EditorClassIdentifier: 
+  Path: event:/AliVoiceLine1 2
+  Guid:
+    Data1: 1809482157
+    Data2: 1128285882
+    Data3: -961825106
+    Data4: -1697772097
+  Banks:
+  - {fileID: -6451297807101015739}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 14000
 --- !u!114 &-5078950112007387529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1642,12 +1696,15 @@ MonoBehaviour:
   - {fileID: -5477498987035870288}
   - {fileID: -7176193928095621657}
   - {fileID: -6346462118678165544}
+  - {fileID: -5234971853190818929}
+  - {fileID: 1541076474203511419}
+  - {fileID: -7987066439287046198}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6451297807101015739}
   StringsBanks:
   - {fileID: 332585134118395987}
-  cacheTime: 638790999109574761
+  cacheTime: 638791238548650564
   cacheVersion: 131846
 --- !u!114 &118811233401082111
 MonoBehaviour:
@@ -1718,10 +1775,10 @@ MonoBehaviour:
   Path: Assets/Helios-Tau/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638790999109574761
+  lastModified: 638791238548650564
   FileSizes:
   - Name: Desktop
-    Value: 3350
+    Value: 3482
   Exists: 1
 --- !u!114 &346237666322832516
 MonoBehaviour:
@@ -1939,6 +1996,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 5204
+--- !u!114 &1541076474203511419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AliVoiceLine1 3
+  m_EditorClassIdentifier: 
+  Path: event:/AliVoiceLine1 3
+  Guid:
+    Data1: -1837779761
+    Data2: 1105446923
+    Data3: 1009301897
+    Data4: -522016566
+  Banks:
+  - {fileID: -6451297807101015739}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 14985
 --- !u!114 &1613981279431283594
 MonoBehaviour:
   m_ObjectHideFlags: 0
