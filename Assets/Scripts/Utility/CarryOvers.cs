@@ -10,7 +10,7 @@ public static class CarryOvers
     static List<string> logObjects = new List<string>();
     static bool isListEmpty = true;
 
-    static byte totalLockdownTerminals = 3;
+    static byte totalLockdownTerminals = 2;
     static byte lockdownTerminalsActivated = 0;
     static bool reactorDoorOpen = false;
 

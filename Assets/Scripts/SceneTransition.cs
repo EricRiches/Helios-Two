@@ -83,6 +83,11 @@ public class SceneTransition : MonoBehaviour
     {
         StartCoroutine(LoadSceneCoroutine(sceneName, newPosition));
     }
+
+    public void LoadScene(string sceneName)
+    {
+        StartCoroutine(LoadSceneCoroutine(sceneName));
+    }
     /// <summary>
     /// load the scene name given, but send player to tram spawn point.
     /// </summary>
@@ -92,6 +97,14 @@ public class SceneTransition : MonoBehaviour
         if (!SceneExists(sceneName)) { Debug.LogError("Scene name: " + sceneName + " Not found."); return; }
         positionOnLoad = Vector3.negativeInfinity;
         toTram = true;
+        SceneManager.LoadScene(sceneName);
+    }
+
+    IEnumerator LoadSceneCoroutine(string sceneName)
+    {
+        positionOnLoad = Vector3.negativeInfinity;
+        if (!SceneExists(sceneName)) { Debug.LogError("Scene name: " + sceneName + " Not found."); yield break; }
+
         SceneManager.LoadScene(sceneName);
     }
 
