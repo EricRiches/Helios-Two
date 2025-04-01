@@ -35,7 +35,10 @@ public class PauseMenu : MonoBehaviour
             PauseGame();
         }
     }
-
+    public void test()
+    {
+        Debug.Log("123");
+    }
     public void PauseGame()
     {
         isPaused = !isPaused;
@@ -58,7 +61,7 @@ public class PauseMenu : MonoBehaviour
 
     public void ReturnToMenu()
     {
-        SceneTransition.instance.LoadScene("Main Menu", Vector3.negativeInfinity);
+        SceneTransition.instance.LoadScene("Main Menu");
         SetCorrectMimic.hasVisitedBefore = false; //Set it so starter mimic spawn on first playthrough.
     }
 }
