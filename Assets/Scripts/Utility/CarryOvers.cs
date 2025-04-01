@@ -21,6 +21,7 @@ public static class CarryOvers
     static bool killedBlood = false;
     #endregion Objective Variables
 
+    public static bool ReactorDoorOpen => reactorDoorOpen;
     public static byte LockdownTerminalsActivated
     {
         get { return lockdownTerminalsActivated; }
