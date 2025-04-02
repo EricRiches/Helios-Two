@@ -13,6 +13,7 @@ public static class CarryOvers
     static byte totalLockdownTerminals = 2;
     static byte lockdownTerminalsActivated = 0;
     static bool reactorDoorOpen = false;
+    static bool tramFirstUse = false;
 
     public static List<string> paObj = new List<string>();
 
@@ -22,6 +23,7 @@ public static class CarryOvers
     #endregion Objective Variables
 
     public static bool ReactorDoorOpen => reactorDoorOpen;
+    public static bool TramFirstUse => tramFirstUse;
     public static byte LockdownTerminalsActivated
     {
         get { return lockdownTerminalsActivated; }
@@ -137,6 +139,11 @@ public static class CarryOvers
     }
     #endregion Objective Checks
 
+
+    public static void OnTramFirstUse()
+    {
+        tramFirstUse = true;
+    }
     public static void AppendObj(string obj)
     {
         paObj.Add(obj);

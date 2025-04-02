@@ -45,6 +45,10 @@ public class Interaction_FocusObject : MonoBehaviour, IInteractable
         ButtonPrompts.instance.SetInteractionPrompt(false);
     }
 
+    public void TramFirstUse()
+    {
+        CarryOvers.OnTramFirstUse();
+    }
     public void OnInteractUp() { }
 
     public void SetInteractable(bool value) { interactable = value; }
