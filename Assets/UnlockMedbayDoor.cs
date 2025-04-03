@@ -9,9 +9,10 @@ public class UnlockMedbayDoor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         door = GetComponent<Doors>();
-        if (door == null) return;
-
+        if (door == null) { Debug.Log("door not found"); return; }
+        Debug.Log(CarryOvers.TramFirstUse);
         door.SetCanOpen(CarryOvers.TramFirstUse);
     }
 

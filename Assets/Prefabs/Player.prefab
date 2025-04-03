@@ -785,7 +785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HUD: {fileID: 3840461457890126365}
-  playerCamera: {fileID: 0}
+  playerCamera: {fileID: 5745961676621538323}
   interactRange: 15
   interactableLayer:
     serializedVersion: 2

@@ -12,9 +12,9 @@ public static class CarryOvers
 
     static byte totalLockdownTerminals = 2;
     static byte lockdownTerminalsActivated = 0;
-    static bool reactorDoorOpen = false;
-    static bool tramFirstUse = false;
-    static bool hudEnabled = false;
+    static bool reactorDoorOpen;
+    static bool tramFirstUse;
+    static bool hudEnabled;
     static bool labOpen;
 
     public static List<string> paObj = new List<string>();
