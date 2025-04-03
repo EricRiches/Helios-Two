@@ -9,7 +9,7 @@ public class HackPanelVisuals : MonoBehaviour
     public static HackPanelVisuals instance;
     Animator animator;
     [SerializeField] TextMeshProUGUI panelText;
-    const string defaultString = "\"Interact with a terminal\\r\\nto store it.\\r\\n\\r\\nStorage:";
+    const string defaultString = "Interact with a terminal\r\nto store it.\r\n\r\nStorage:";
 
     private void Awake()
     {
