@@ -14,6 +14,8 @@ public static class CarryOvers
     static byte lockdownTerminalsActivated = 0;
     static bool reactorDoorOpen = false;
     static bool tramFirstUse = false;
+    static bool hudEnabled = false;
+    static bool labOpen;
 
     public static List<string> paObj = new List<string>();
 
@@ -24,6 +26,8 @@ public static class CarryOvers
 
     public static bool ReactorDoorOpen => reactorDoorOpen;
     public static bool TramFirstUse => tramFirstUse;
+    public static bool HudEnabled => hudEnabled;
+    public static bool LabOpen => labOpen;
     public static byte LockdownTerminalsActivated
     {
         get { return lockdownTerminalsActivated; }
@@ -144,6 +148,18 @@ public static class CarryOvers
     {
         tramFirstUse = true;
     }
+
+    public static void SetHudEnabled(bool value)
+    {
+        hudEnabled = value;
+        PlayerInteractions.instance.HUD.SetActive(value);
+    }
+
+    public static void SetLabOpen(bool value)
+    {
+        labOpen = value;
+    }
+
     public static void AppendObj(string obj)
     {
         paObj.Add(obj);

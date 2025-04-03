@@ -7,6 +7,7 @@ using UnityEngine;
 public class PlayerInteractions : MonoBehaviour
 {
     public static PlayerInteractions instance;
+    public GameObject HUD;
     [SerializeField] Transform playerCamera;
     [SerializeField] float interactRange = 15f; // The distance the raycast will travel
     public LayerMask interactableLayer;

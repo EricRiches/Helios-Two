@@ -284,7 +284,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3394265241689268815
 RectTransform:
   m_ObjectHideFlags: 0
@@ -773,6 +773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51c57e1dc652c0440853e521800a0320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HUD: {fileID: 3840461457890126365}
   playerCamera: {fileID: 0}
   interactRange: 15
   interactableLayer:

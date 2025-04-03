@@ -26,6 +26,11 @@ public class Tutorial_Helper : MonoBehaviour
         FlashlightEquipped.Invoke();
     }
 
+    public void EnableHud()
+    {
+        CarryOvers.SetHudEnabled(true);
+    }
+
     IEnumerator WaitFlashlightUsed()
     {
         yield return new WaitUntil(
