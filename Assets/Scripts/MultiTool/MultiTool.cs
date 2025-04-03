@@ -48,13 +48,15 @@ public class MultiTool : MonoBehaviour
         tools[Tool.Hack_Panel] = hack_Panel;
     }
 
-    public void SwitchTool(Tool toolType)
+    public bool SwitchTool(Tool toolType)
     {
         if (tools.TryGetValue(toolType, out Tool_MultiTool tool) && tool.IsUnlocked)
         {
             currentTool?.OnSwapOff();
             currentTool = tool;
+            return true;
         }
+        return false;
     }
 
     public void SetCanUseTool(bool value) { canUseTool = value; }
@@ -75,14 +77,12 @@ public class MultiTool : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            SwitchTool(Tool.Flashlight);
-            image.sprite = toolIcons[1];
+            if(SwitchTool(Tool.Flashlight)) image.sprite = toolIcons[1];
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            SwitchTool(Tool.Freeze_Spray);
-            image.sprite = toolIcons[2];
+            if(SwitchTool(Tool.Freeze_Spray)) image.sprite = toolIcons[2];
         }
 
         /*if (Input.GetKeyDown(KeyCode.Alpha3))
@@ -93,8 +93,7 @@ public class MultiTool : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            SwitchTool(Tool.Hack_Panel);
-            image.sprite = toolIcons[4];
+            if(SwitchTool(Tool.Hack_Panel)) image.sprite = toolIcons[4];
         }
     }
 
