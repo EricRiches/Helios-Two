@@ -5,7 +5,8 @@ using UnityEngine;
 public class EnableHud : MonoBehaviour
 {
     public static EnableHud instance;
-    static bool isEnabled = false;
+    public static bool isEnabled = true;
+    Canvas canvas;
     // Start is called before the first frame update
 
     private void Awake()
@@ -17,12 +18,13 @@ public class EnableHud : MonoBehaviour
     }
     private void Start()
     {
+        canvas = GetComponentInChildren<Canvas>();
         SetHudEnabled(isEnabled);
     }
     public void SetHudEnabled(bool value)
     {
         isEnabled = value;
-        gameObject.SetActive(value);
+        canvas.enabled = value;
     }
     // Update is called once per frame
 
