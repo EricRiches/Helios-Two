@@ -5,7 +5,7 @@
 			<value>BloodMonster</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{cad3e6f1-0366-4eea-870a-aba3201b364b}</destination>
@@ -115,11 +115,11 @@
 	<object class="MixerBusEffectChain" id="{4fe193bd-c500-47f0-8840-63212abb9c7c}">
 		<relationship name="effects">
 			<destination>{0a07d19c-336c-433b-bf69-a08fb1a727d8}</destination>
-			<destination>{38410890-febe-497a-830d-e8f7429c4d28}</destination>
+			<destination>{334ebd98-9779-4fc1-81f9-15ff172b1900}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{ff8c9787-b5e3-4560-941f-eeb127df16f4}" />
 	<object class="MixerBusFader" id="{59de2b5f-3509-4526-b06b-8a81636dc327}" />
 	<object class="MixerBusFader" id="{0a07d19c-336c-433b-bf69-a08fb1a727d8}" />
-	<object class="SpatialiserEffect" id="{38410890-febe-497a-830d-e8f7429c4d28}" />
+	<object class="ObjectSpatialiserEffect" id="{334ebd98-9779-4fc1-81f9-15ff172b1900}" />
 </objects>
