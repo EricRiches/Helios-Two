@@ -175,6 +175,7 @@ public class Hack_Panel : Tool_MultiTool
         if (storedInteractable == null && interactable != null)
         {
             storedInteractable = interactable;
+            HackPanelVisuals.instance.SetStorageState(true);
         }
         else if (storedInteractable != null && storedInteractable.Interactable)
         {
@@ -183,7 +184,9 @@ public class Hack_Panel : Tool_MultiTool
         }
     }
 
-    public override void OnSwapOff() { }
+    public override void OnSwapOff() {
+        HackPanelVisuals.instance.Hide();
+    }
 
     public void SetInteractable(IInteractable interactable)
     {

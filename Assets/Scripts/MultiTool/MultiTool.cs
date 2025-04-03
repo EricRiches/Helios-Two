@@ -93,7 +93,11 @@ public class MultiTool : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            if(SwitchTool(Tool.Hack_Panel)) image.sprite = toolIcons[4];
+            if (SwitchTool(Tool.Hack_Panel))
+            {
+                HackPanelVisuals.instance.Show();
+                image.sprite = toolIcons[4];
+            }
         }
     }
 

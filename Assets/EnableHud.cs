@@ -30,6 +30,7 @@ public class EnableHud : MonoBehaviour
 
     private void OnEnable()
     {
+        if (canvas == null) return;
         SetHudEnabled(isEnabled);
     }
 }
