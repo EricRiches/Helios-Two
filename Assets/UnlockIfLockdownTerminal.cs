@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UnlockIfLockdownTerminal : MonoBehaviour
 {
-    Doors door;
+    [SerializeField]Doors door;
     // Start is called before the first frame update
     void Start()
     {

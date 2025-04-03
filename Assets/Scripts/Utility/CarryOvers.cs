@@ -14,8 +14,10 @@ public static class CarryOvers
     static byte lockdownTerminalsActivated = 0;
     static bool reactorDoorOpen;
     static bool tramFirstUse;
+    static bool bridgeEntered;
     static bool hudEnabled;
     static bool labOpen;
+  
 
     public static List<string> paObj = new List<string>();
 
@@ -24,19 +26,20 @@ public static class CarryOvers
     static bool killedBlood = false;
     #endregion Objective Variables
 
-    public static bool ReactorDoorOpen => reactorDoorOpen;
+    #region Properties
+    public static bool ReactorDoorOpen => lockdownTerminalsActivated >= totalLockdownTerminals;
     public static bool TramFirstUse => tramFirstUse;
     public static bool HudEnabled => hudEnabled;
     public static bool LabOpen => labOpen;
+    public static bool BridgeEntered => bridgeEntered;
+
+    #endregion
     public static byte LockdownTerminalsActivated
     {
         get { return lockdownTerminalsActivated; }
-        set { 
+        set
+        {
             lockdownTerminalsActivated = value;
-            if (lockdownTerminalsActivated >= totalLockdownTerminals)
-            {
-                reactorDoorOpen = true;
-            }
         }
     }
 
@@ -159,7 +162,10 @@ public static class CarryOvers
     {
         labOpen = value;
     }
-
+    public static void SetBridgeOpen(bool value)
+    {
+        bridgeEntered = value;
+    }
     public static void AppendObj(string obj)
     {
         paObj.Add(obj);
