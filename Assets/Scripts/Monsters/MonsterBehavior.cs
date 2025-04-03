@@ -6,6 +6,7 @@ public class MonsterBehavior : MonoBehaviour
 {
     public bool canMove = true;
     protected Vector3 RespawnPosition;
+    [HideInInspector] public bool CanKillPlayer = true;
 
     public virtual void TriggerHeardSounds(Vector3 SoundPosition, float soundPercent)
     {
@@ -25,5 +26,6 @@ public class MonsterBehavior : MonoBehaviour
     public virtual void PlayerReset()
     {
         transform.position = RespawnPosition;
+        CanKillPlayer = true;
     }
 }

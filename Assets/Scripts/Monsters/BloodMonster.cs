@@ -24,11 +24,14 @@ public class BloodMonster : MonsterBehavior
 
     Transform playerLocation;
 
+    [HideInInspector] public bool canKillPlayer;
+
     void Start()
     {
         controller = FindObjectOfType<NavMeshAgent>();
         playerLocation = FindObjectOfType<SC_FPSController>().transform;
         RespawnPosition = transform.position;
+        CanKillPlayer = true;
     }
 
     // Update is called once per frame
@@ -72,12 +75,13 @@ public class BloodMonster : MonsterBehavior
         }
         controller.speed = (Mathf.Sin((MovementTimer / SecondsItTakesForMovementCycle) * Mathf.PI * 2) + 1) * (moveSpeed / 2);
 
-        if (Vector3.Distance(transform.position, playerLocation.position) <= DeathDistance)
+        if (Vector3.Distance(transform.position, playerLocation.position) <= DeathDistance && CanKillPlayer)
         {
             Debug.Log("Player Died");
 
             BloodMonsterAnimator.SetTrigger("Is Dead");
             DeathCamera.gameObject.SetActive(true);
+            CanKillPlayer = false;
         }
     }
 

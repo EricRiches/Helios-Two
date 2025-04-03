@@ -46,6 +46,7 @@ public class PrimaryMonster : MonsterBehavior
 
     void Start()
     {
+        CanKillPlayer = true;
         controller = FindObjectOfType<NavMeshAgent>();
         playerLocation = FindObjectOfType<SC_FPSController>().transform;
         canTriggerJumpscare = true;
@@ -148,7 +149,7 @@ public class PrimaryMonster : MonsterBehavior
                 break;
         }
 
-        if (Vector3.Distance(DeathPoint.position, playerLocation.position) <= DeathDistance && canTriggerJumpscare)
+        if (Vector3.Distance(DeathPoint.position, playerLocation.position) <= DeathDistance && canTriggerJumpscare && CanKillPlayer)
         {
             Debug.Log("Player Died");
             footsteps.Stop();
@@ -157,6 +158,7 @@ public class PrimaryMonster : MonsterBehavior
             PrimaryMonsterAnimator.SetTrigger("Player Killed");
             DeathCamera.gameObject.SetActive(true);
             canTriggerJumpscare = false;
+            CanKillPlayer = false;
         }
         PrimaryMonsterAnimator.SetBool("IsWalking", controller.remainingDistance >= 0.5f);
         

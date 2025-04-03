@@ -44,6 +44,18 @@ public class RespawnManager : MonoBehaviour
                 ResetPlayer = -1;
             }
         }
+
+        if (DeathScreenUI.activeSelf)
+        {
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                GoToMainMenu();
+            }
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                RespawnPlayer();
+            }
+        }
     }
 
     public void SetRespawnPoint(string ID)
