@@ -181,6 +181,7 @@ public class Hack_Panel : Tool_MultiTool
         {
             storedInteractable.OnInteractDown();
             storedInteractable = null;
+            HackPanelVisuals.instance.SetStorageState(false);
         }
     }
 

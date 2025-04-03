@@ -28,7 +28,15 @@ public class HackPanelVisuals : MonoBehaviour
 
     public void SetStorageState(bool value)
     {
-        panelText.text = defaultString + (value ?  "empty" : "stored") ;
+        string temp   = defaultString;
+        if(value){
+            temp += " <color=#00ff00>stored</color>";
+            temp += "\nPress f to reactivate.";
+        }
+        else{
+            temp += " <color=#ff0000>empty</color>";
+        }
+        panelText.text = temp;
        
     }
 
