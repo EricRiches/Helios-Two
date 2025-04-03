@@ -30,14 +30,10 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             PauseGame();
         }
-    }
-    public void test()
-    {
-        Debug.Log("123");
     }
     public void PauseGame()
     {

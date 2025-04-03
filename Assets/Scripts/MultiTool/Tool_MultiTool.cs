@@ -156,7 +156,7 @@ public class Hack_Panel : Tool_MultiTool
     // current interactable to activate when tool used.
     IInteractable storedInteractable;
 
-    public override bool IsUnlocked => true;
+    public override bool IsUnlocked => isUnlocked;
     // readonly field for the types that cannot be hacked.
     private static readonly HashSet<Type> excludedTypes = new HashSet<Type>
     {
