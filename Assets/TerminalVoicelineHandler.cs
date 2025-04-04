@@ -23,7 +23,7 @@ public class TerminalVoicelineHandler : MonoBehaviour
             voiceLine1.Play();
             SubtitleManager.instance.SetSubtitle(subtitle1);
             SubtitleManager.instance.PlayCurrentSubtitles();
-            lastTerminal = false;
+            lastTerminal = true;
         }
         else
         {
