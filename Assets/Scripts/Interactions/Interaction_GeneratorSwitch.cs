@@ -51,7 +51,6 @@ public class Interaction_GeneratorSwitch : MonoBehaviour, IInteractable
     public void OnInteractableHoverEnter()
     {
         if (IsOn) return;
-        Debug.Log("hovering");
         ButtonPrompts.instance.SetHoldInteractPrompt(true);
     }
 

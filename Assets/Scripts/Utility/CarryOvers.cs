@@ -40,6 +40,7 @@ public static class CarryOvers
         set
         {
             lockdownTerminalsActivated = value;
+            Debug.Log(lockdownTerminalsActivated);
         }
     }
 

@@ -1326,6 +1326,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 147580395}
     m_Modifications:
+    - target: {fileID: 109986282894312147, guid: d121938ab27a6a54887d2cefc88303e7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 192968546551733601, guid: d121938ab27a6a54887d2cefc88303e7,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -1530,6 +1535,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7610490470691012844, guid: d121938ab27a6a54887d2cefc88303e7,
+        type: 3}
+      propertyPath: Activate.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: EngineeringWing
       objectReference: {fileID: 0}
     - target: {fileID: 9205459671915927913, guid: d121938ab27a6a54887d2cefc88303e7,
         type: 3}
